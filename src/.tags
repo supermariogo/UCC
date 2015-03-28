@@ -1,0 +1,866 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADA	cc_main.h	/^	ADA,					\/\/ ADA$/;"	e	enum:ClassType
+ADDED	CmpMngr.h	/^enum MARKER {MODIFIED, UNMODIFIED, DELETED, ADDED};$/;"	e	enum:MARKER
+AdaCounter_h	CAdaCounter.h	9;"	d
+AddError	UserIF.cpp	/^void UserIF::AddError(const string &err, bool \/*logOnly*\/, int preNL, int postNL)$/;"	f	class:UserIF
+AddError	UserIF.cpp	/^void UserIF::AddError(const string &err, bool logOnly, int preNL, int postNL)$/;"	f	class:UserIF
+AddLinesPair	CmpMngrHtml.h	/^    void AddLinesPair(const LinesPair& lp) { mapped_lines.push_back(lp); }$/;"	f	class:FilePairComparisonData
+AllWebTotalValue	MainObject.h	/^		AllWebTotalValue()$/;"	f	struct:MainObject::AllWebTotalValue
+AllWebTotalValue	MainObject.h	/^	struct AllWebTotalValue$/;"	s	class:MainObject
+BAR_S	DiffTool.h	29;"	d
+BASELINE_INF1	DiffTool.h	18;"	d
+BASELINE_INF2	DiffTool.h	19;"	d
+BASH	cc_main.h	/^	BASH,					\/\/ Bash$/;"	e	enum:ClassType
+BATCH	cc_main.h	/^	BATCH,					\/\/DOS_Batch$/;"	e	enum:ClassType
+BaselineFileMapType	DiffTool.h	/^	typedef map<SourceFileElement *, SourceFileElement *> BaselineFileMapType;$/;"	t	class:DiffTool
+BaselineFileName1	MainObject.h	/^	string BaselineFileName1;						\/\/!< Baseline file name 1$/;"	m	class:MainObject
+BaselineFileName2	MainObject.h	/^	string BaselineFileName2;						\/\/!< Baseline file name 2$/;"	m	class:MainObject
+BaselinePreferenceMapType	DiffTool.h	/^	typedef map<SourceFileElement *, PreferenceMapType *> BaselinePreferenceMapType;$/;"	t	class:DiffTool
+BlockCommentEnd	CCodeCounter.h	/^	StringVector BlockCommentEnd;			\/\/!< Block comment end character(s) (ex. *\/ in C++)$/;"	m	class:CCodeCounter
+BlockCommentStart	CCodeCounter.h	/^	StringVector BlockCommentStart;			\/\/!< Block comment start character(s) (ex. \/* in C++)$/;"	m	class:CCodeCounter
+CAdaCounter	CAdaCounter.cpp	/^CAdaCounter::CAdaCounter()$/;"	f	class:CAdaCounter
+CAdaCounter	CAdaCounter.h	/^class CAdaCounter : public CCodeCounter$/;"	c
+CBashCounter	CBashCounter.cpp	/^CBashCounter::CBashCounter()$/;"	f	class:CBashCounter
+CBashCounter	CBashCounter.h	/^class CBashCounter : public CCodeCounter$/;"	c
+CBashCounter_h	CBashCounter.h	10;"	d
+CBatchCounter	CBatchCounter.cpp	/^CBatchCounter::CBatchCounter ()$/;"	f	class:CBatchCounter
+CBatchCounter	CBatchCounter.h	/^class CBatchCounter : public CCodeCounter$/;"	c
+CBatchCounter_h	CBatchCounter.h	10;"	d
+CCCounter	CCCounter.cpp	/^CCCounter::CCCounter()$/;"	f	class:CCCounter
+CCCounter	CCCounter.h	/^class CCCounter : public CCJavaCsCounter$/;"	c
+CCCounter_h	CCCounter.h	9;"	d
+CCFScriptCounter	CCFScriptCounter.cpp	/^CCFScriptCounter::CCFScriptCounter()$/;"	f	class:CCFScriptCounter
+CCFScriptCounter	CCFScriptCounter.h	/^class CCFScriptCounter : public CCodeCounter$/;"	c
+CCFScriptCounter_h	CCFScriptCounter.h	9;"	d
+CCJavaCsCounter	CCJavaCsCounter.cpp	/^CCJavaCsCounter::CCJavaCsCounter()$/;"	f	class:CCJavaCsCounter
+CCJavaCsCounter	CCJavaCsCounter.h	/^class CCJavaCsCounter : public CCodeCounter$/;"	c
+CCJavaCsCounter_h	CCJavaCsCounter.h	9;"	d
+CCodeCounter	CCodeCounter.cpp	/^CCodeCounter::CCodeCounter()$/;"	f	class:CCodeCounter
+CCodeCounter	CCodeCounter.h	/^class CCodeCounter$/;"	c
+CCodeCounter_h	CCodeCounter.h	9;"	d
+CColdFusionCounter	CColdFusionCounter.cpp	/^CColdFusionCounter::CColdFusionCounter()$/;"	f	class:CColdFusionCounter
+CColdFusionCounter	CColdFusionCounter.h	/^class CColdFusionCounter : public CTagCounter$/;"	c
+CColdFusionCounter_h	CColdFusionCounter.h	9;"	d
+CCshCounter	CCshCounter.cpp	/^CCshCounter::CCshCounter()$/;"	f	class:CCshCounter
+CCshCounter	CCshCounter.h	/^class CCshCounter : public CCodeCounter$/;"	c
+CCshCounter_h	CCshCounter.h	10;"	d
+CCsharpAspCounter	CCsharpCounter.cpp	/^CCsharpAspCounter::CCsharpAspCounter()$/;"	f	class:CCsharpAspCounter
+CCsharpAspCounter	CCsharpCounter.h	/^class CCsharpAspCounter : public CCsharpCounter$/;"	c
+CCsharpCounter	CCsharpCounter.cpp	/^CCsharpCounter::CCsharpCounter()$/;"	f	class:CCsharpCounter
+CCsharpCounter	CCsharpCounter.h	/^class CCsharpCounter : public CCJavaCsCounter$/;"	c
+CCsharpCounter_h	CCsharpCounter.h	9;"	d
+CCsharpHtmlCounter	CCsharpCounter.cpp	/^CCsharpHtmlCounter::CCsharpHtmlCounter()$/;"	f	class:CCsharpHtmlCounter
+CCsharpHtmlCounter	CCsharpCounter.h	/^class CCsharpHtmlCounter : public CCsharpCounter$/;"	c
+CCsharpXmlCounter	CCsharpCounter.cpp	/^CCsharpXmlCounter::CCsharpXmlCounter()$/;"	f	class:CCsharpXmlCounter
+CCsharpXmlCounter	CCsharpCounter.h	/^class CCsharpXmlCounter : public CCsharpCounter$/;"	c
+CCssCounter	CCssCounter.cpp	/^CCssCounter::CCssCounter()$/;"	f	class:CCssCounter
+CCssCounter	CCssCounter.h	/^class CCssCounter : public CCodeCounter$/;"	c
+CCssCounter_h	CCssCounter.h	9;"	d
+CDataCounter	CDataCounter.cpp	/^CDataCounter::CDataCounter()$/;"	f	class:CDataCounter
+CDataCounter	CDataCounter.h	/^class CDataCounter : public CCodeCounter$/;"	c
+CDataCounter_h	CDataCounter.h	9;"	d
+CFSCRIPT	cc_main.h	/^	CFSCRIPT,				\/\/ ColdFusion CFScript$/;"	e	enum:ClassType
+CFortranCounter	CFortranCounter.cpp	/^CFortranCounter::CFortranCounter()$/;"	f	class:CFortranCounter
+CFortranCounter	CFortranCounter.h	/^class CFortranCounter :  public CCodeCounter$/;"	c
+CFortranCounter_h	CFortranCounter.h	10;"	d
+CHtmlAspCounter	CHtmlCounter.cpp	/^CHtmlAspCounter::CHtmlAspCounter()$/;"	f	class:CHtmlAspCounter
+CHtmlAspCounter	CHtmlCounter.h	/^class CHtmlAspCounter : public CHtmlCounter$/;"	c
+CHtmlColdFusionCounter	CHtmlCounter.cpp	/^CHtmlColdFusionCounter::CHtmlColdFusionCounter()$/;"	f	class:CHtmlColdFusionCounter
+CHtmlColdFusionCounter	CHtmlCounter.h	/^class CHtmlColdFusionCounter : public CHtmlCounter$/;"	c
+CHtmlCounter	CHtmlCounter.cpp	/^CHtmlCounter::CHtmlCounter()$/;"	f	class:CHtmlCounter
+CHtmlCounter	CHtmlCounter.h	/^class CHtmlCounter : public CTagCounter$/;"	c
+CHtmlCounter_h	CHtmlCounter.h	9;"	d
+CHtmlJspCounter	CHtmlCounter.cpp	/^CHtmlJspCounter::CHtmlJspCounter()$/;"	f	class:CHtmlJspCounter
+CHtmlJspCounter	CHtmlCounter.h	/^class CHtmlJspCounter : public CHtmlCounter$/;"	c
+CHtmlPhpCounter	CHtmlCounter.cpp	/^CHtmlPhpCounter::CHtmlPhpCounter()$/;"	f	class:CHtmlPhpCounter
+CHtmlPhpCounter	CHtmlCounter.h	/^class CHtmlPhpCounter : public CHtmlCounter$/;"	c
+CJavaCounter	CJavaCounter.cpp	/^CJavaCounter::CJavaCounter()$/;"	f	class:CJavaCounter
+CJavaCounter	CJavaCounter.h	/^class CJavaCounter : public CCJavaCsCounter$/;"	c
+CJavaCounter_h	CJavaCounter.h	9;"	d
+CJavaJspCounter	CJavaCounter.cpp	/^CJavaJspCounter::CJavaJspCounter()$/;"	f	class:CJavaJspCounter
+CJavaJspCounter	CJavaCounter.h	/^class CJavaJspCounter : public CJavaCounter$/;"	c
+CJavascriptAspClientCounter	CJavascriptCounter.cpp	/^CJavascriptAspClientCounter::CJavascriptAspClientCounter()$/;"	f	class:CJavascriptAspClientCounter
+CJavascriptAspClientCounter	CJavascriptCounter.h	/^class CJavascriptAspClientCounter : public CJavascriptCounter$/;"	c
+CJavascriptAspServerCounter	CJavascriptCounter.cpp	/^CJavascriptAspServerCounter::CJavascriptAspServerCounter()$/;"	f	class:CJavascriptAspServerCounter
+CJavascriptAspServerCounter	CJavascriptCounter.h	/^class CJavascriptAspServerCounter : public CJavascriptCounter$/;"	c
+CJavascriptColdFusionCounter	CJavascriptCounter.cpp	/^CJavascriptColdFusionCounter::CJavascriptColdFusionCounter()$/;"	f	class:CJavascriptColdFusionCounter
+CJavascriptColdFusionCounter	CJavascriptCounter.h	/^class CJavascriptColdFusionCounter : public CJavascriptCounter$/;"	c
+CJavascriptCounter	CJavascriptCounter.cpp	/^CJavascriptCounter::CJavascriptCounter()$/;"	f	class:CJavascriptCounter
+CJavascriptCounter	CJavascriptCounter.h	/^class CJavascriptCounter : public CCodeCounter$/;"	c
+CJavascriptCounter_h	CJavascriptCounter.h	9;"	d
+CJavascriptHtmlCounter	CJavascriptCounter.cpp	/^CJavascriptHtmlCounter::CJavascriptHtmlCounter()$/;"	f	class:CJavascriptHtmlCounter
+CJavascriptHtmlCounter	CJavascriptCounter.h	/^class CJavascriptHtmlCounter : public CJavascriptCounter$/;"	c
+CJavascriptJspCounter	CJavascriptCounter.cpp	/^CJavascriptJspCounter::CJavascriptJspCounter()$/;"	f	class:CJavascriptJspCounter
+CJavascriptJspCounter	CJavascriptCounter.h	/^class CJavascriptJspCounter : public CJavascriptCounter$/;"	c
+CJavascriptPhpCounter	CJavascriptCounter.cpp	/^CJavascriptPhpCounter::CJavascriptPhpCounter()$/;"	f	class:CJavascriptPhpCounter
+CJavascriptPhpCounter	CJavascriptCounter.h	/^class CJavascriptPhpCounter : public CJavascriptCounter$/;"	c
+CJavascriptXmlCounter	CJavascriptCounter.cpp	/^CJavascriptXmlCounter::CJavascriptXmlCounter()$/;"	f	class:CJavascriptXmlCounter
+CJavascriptXmlCounter	CJavascriptCounter.h	/^class CJavascriptXmlCounter : public CJavascriptCounter$/;"	c
+CMPMNGRHTML_H	CmpMngrHtml.h	2;"	d
+CMPMNGR_H	CmpMngr.h	9;"	d
+CMakefileCounter	CMakefileCounter.cpp	/^CMakefileCounter::CMakefileCounter()$/;"	f	class:CMakefileCounter
+CMakefileCounter	CMakefileCounter.h	/^class CMakefileCounter : public CCodeCounter$/;"	c
+CMakefileCounter_h	CMakefileCounter.h	9;"	d
+CMatlabCounter	CMatlabCounter.cpp	/^CMatlabCounter::CMatlabCounter()$/;"	f	class:CMatlabCounter
+CMatlabCounter	CMatlabCounter.h	/^class CMatlabCounter : public CCodeCounter$/;"	c
+CMatlabCounter_h	CMatlabCounter.h	9;"	d
+CMidasCounter	CMidasCounter.cpp	/^CMidasCounter::CMidasCounter()$/;"	f	class:CMidasCounter
+CMidasCounter	CMidasCounter.h	/^class CMidasCounter : public CCodeCounter$/;"	c
+CMidasCounter_h	CMidasCounter.h	9;"	d
+CNeXtMidasCounter	CNeXtMidasCounter.cpp	/^CNeXtMidasCounter::CNeXtMidasCounter()$/;"	f	class:CNeXtMidasCounter
+CNeXtMidasCounter	CNeXtMidasCounter.h	/^class CNeXtMidasCounter : public CMidasCounter$/;"	c
+CNeXtMidasCounter_h	CNeXtMidasCounter.h	9;"	d
+CODE	cc_main.h	27;"	d
+COLDFUSION	cc_main.h	/^	COLDFUSION,				\/\/ ColdFusion$/;"	e	enum:ClassType
+CONTINUATION_CHAR	CVbCounter.cpp	10;"	d	file:
+CONTINUATION_CHAR	CVbscriptCounter.cpp	10;"	d	file:
+CONT_STR_LENGTH	CPythonCounter.cpp	586;"	d	file:
+CPascalCounter	CPascalCounter.cpp	/^CPascalCounter::CPascalCounter()$/;"	f	class:CPascalCounter
+CPascalCounter	CPascalCounter.h	/^class CPascalCounter : public CCodeCounter$/;"	c
+CPascalCounter_h	CPascalCounter.h	9;"	d
+CPerlCounter	CPerlCounter.cpp	/^CPerlCounter::CPerlCounter()$/;"	f	class:CPerlCounter
+CPerlCounter	CPerlCounter.h	/^class CPerlCounter : public CCodeCounter$/;"	c
+CPerlCounter_h	CPerlCounter.h	9;"	d
+CPhpCounter	CPhpCounter.cpp	/^CPhpCounter::CPhpCounter()$/;"	f	class:CPhpCounter
+CPhpCounter	CPhpCounter.h	/^class CPhpCounter : public CCodeCounter$/;"	c
+CPhpCounter_h	CPhpCounter.h	9;"	d
+CPythonCounter	CPythonCounter.cpp	/^CPythonCounter::CPythonCounter()$/;"	f	class:CPythonCounter
+CPythonCounter	CPythonCounter.h	/^class CPythonCounter : public CCodeCounter$/;"	c
+CPythonCounter_h	CPythonCounter.h	9;"	d
+CRubyCounter	CRubyCounter.cpp	/^CRubyCounter::CRubyCounter()$/;"	f	class:CRubyCounter
+CRubyCounter	CRubyCounter.h	/^class CRubyCounter : public CCodeCounter$/;"	c
+CRubyCounter_h	CRubyCounter.h	9;"	d
+CSH	cc_main.h	/^	CSH,					\/\/ C-Shell$/;"	e	enum:ClassType
+CSHARP	cc_main.h	/^	CSHARP,					\/\/ C#$/;"	e	enum:ClassType
+CSHARP_ASP_S	cc_main.h	/^	CSHARP_ASP_S,			\/\/ C# server side in ASP$/;"	e	enum:ClassType
+CSHARP_HTML	cc_main.h	/^	CSHARP_HTML,			\/\/ C# in HTML$/;"	e	enum:ClassType
+CSHARP_XML	cc_main.h	/^	CSHARP_XML,				\/\/ C# in XML$/;"	e	enum:ClassType
+CSS	cc_main.h	/^	CSS,					\/\/ CSS$/;"	e	enum:ClassType
+CSqlColdFusionCounter	CSqlCounter.cpp	/^CSqlColdFusionCounter::CSqlColdFusionCounter()$/;"	f	class:CSqlColdFusionCounter
+CSqlColdFusionCounter	CSqlCounter.h	/^class CSqlColdFusionCounter : public CSqlCounter$/;"	c
+CSqlCounter	CSqlCounter.cpp	/^CSqlCounter::CSqlCounter()$/;"	f	class:CSqlCounter
+CSqlCounter	CSqlCounter.h	/^class CSqlCounter : public CCodeCounter$/;"	c
+CSqlCounter_h	CSqlCounter.h	9;"	d
+CTagCounter	CTagCounter.cpp	/^CTagCounter::CTagCounter()$/;"	f	class:CTagCounter
+CTagCounter	CTagCounter.h	/^class CTagCounter : public CCodeCounter$/;"	c
+CTagCounter_h	CTagCounter.h	9;"	d
+CUTIL_H	CUtil.h	9;"	d
+CUtil	CUtil.h	/^class CUtil$/;"	c
+CVHDLCounter	CVHDLCounter.cpp	/^CVHDLCounter::CVHDLCounter()$/;"	f	class:CVHDLCounter
+CVHDLCounter	CVHDLCounter.h	/^class CVHDLCounter : public CCodeCounter$/;"	c
+CVHDLCounter_h	CVHDLCounter.h	9;"	d
+CVbCounter	CVbCounter.cpp	/^CVbCounter::CVbCounter()$/;"	f	class:CVbCounter
+CVbCounter	CVbCounter.h	/^class CVbCounter : public CCodeCounter$/;"	c
+CVbCounter_h	CVbCounter.h	9;"	d
+CVbsAspClientCounter	CVbscriptCounter.cpp	/^CVbsAspClientCounter::CVbsAspClientCounter()$/;"	f	class:CVbsAspClientCounter
+CVbsAspClientCounter	CVbscriptCounter.h	/^class CVbsAspClientCounter : public CVbscriptCounter$/;"	c
+CVbsAspServerCounter	CVbscriptCounter.cpp	/^CVbsAspServerCounter::CVbsAspServerCounter()$/;"	f	class:CVbsAspServerCounter
+CVbsAspServerCounter	CVbscriptCounter.h	/^class CVbsAspServerCounter : public CVbscriptCounter$/;"	c
+CVbsColdFusionCounter	CVbscriptCounter.cpp	/^CVbsColdFusionCounter::CVbsColdFusionCounter()$/;"	f	class:CVbsColdFusionCounter
+CVbsColdFusionCounter	CVbscriptCounter.h	/^class CVbsColdFusionCounter : public CVbscriptCounter$/;"	c
+CVbsHtmlCounter	CVbscriptCounter.cpp	/^CVbsHtmlCounter::CVbsHtmlCounter()$/;"	f	class:CVbsHtmlCounter
+CVbsHtmlCounter	CVbscriptCounter.h	/^class CVbsHtmlCounter : public CVbscriptCounter$/;"	c
+CVbsJspCounter	CVbscriptCounter.cpp	/^CVbsJspCounter::CVbsJspCounter()$/;"	f	class:CVbsJspCounter
+CVbsJspCounter	CVbscriptCounter.h	/^class CVbsJspCounter : public CVbscriptCounter$/;"	c
+CVbsPhpCounter	CVbscriptCounter.cpp	/^CVbsPhpCounter::CVbsPhpCounter()$/;"	f	class:CVbsPhpCounter
+CVbsPhpCounter	CVbscriptCounter.h	/^class CVbsPhpCounter : public CVbscriptCounter$/;"	c
+CVbsXmlCounter	CVbscriptCounter.cpp	/^CVbsXmlCounter::CVbsXmlCounter()$/;"	f	class:CVbsXmlCounter
+CVbsXmlCounter	CVbscriptCounter.h	/^class CVbsXmlCounter : public CVbscriptCounter$/;"	c
+CVbscriptCounter	CVbscriptCounter.cpp	/^CVbscriptCounter::CVbscriptCounter()$/;"	f	class:CVbscriptCounter
+CVbscriptCounter	CVbscriptCounter.h	/^class CVbscriptCounter : public CVbCounter$/;"	c
+CVbscriptCounter_h	CVbscriptCounter.h	9;"	d
+CVerilogCounter	CVerilogCounter.cpp	/^CVerilogCounter::CVerilogCounter()$/;"	f	class:CVerilogCounter
+CVerilogCounter	CVerilogCounter.h	/^class CVerilogCounter : public CCodeCounter$/;"	c
+CVerilogCounter_h	CVerilogCounter.h	9;"	d
+CWebCounter	CWebCounter.cpp	/^CWebCounter::CWebCounter()$/;"	f	class:CWebCounter
+CWebCounter	CWebCounter.h	/^class CWebCounter : public CCodeCounter$/;"	c
+CWebCounter_h	CWebCounter.h	9;"	d
+CXMidasCounter	CXMidasCounter.cpp	/^CXMidasCounter::CXMidasCounter()$/;"	f	class:CXMidasCounter
+CXMidasCounter	CXMidasCounter.h	/^class CXMidasCounter : public CMidasCounter$/;"	c
+CXMidasCounter_h	CXMidasCounter.h	9;"	d
+CXmlCounter	CXmlCounter.cpp	/^CXmlCounter::CXmlCounter()$/;"	f	class:CXmlCounter
+CXmlCounter	CXmlCounter.h	/^class CXmlCounter : public CTagCounter$/;"	c
+CXmlCounter_h	CXmlCounter.h	9;"	d
+C_CPP	cc_main.h	/^	C_CPP,					\/\/ C\/C++$/;"	e	enum:ClassType
+CheckBlank	CUtil.cpp	/^bool CUtil::CheckBlank(const string &str)$/;"	f	class:CUtil
+ClassType	cc_main.h	/^enum ClassType {$/;"	g
+CleanSeparatedFile	CWebCounter.cpp	/^void CWebCounter::CleanSeparatedFile()$/;"	f	class:CWebCounter
+CleanSeparatedLine	CWebCounter.cpp	/^void CWebCounter::CleanSeparatedLine()$/;"	f	class:CWebCounter
+ClearRedundantSpaces	CUtil.cpp	/^string CUtil::ClearRedundantSpaces(const string &str)$/;"	f	class:CUtil
+CloseOutputStream	CCodeCounter.cpp	/^void CCodeCounter::CloseOutputStream()$/;"	f	class:CCodeCounter
+CloseOutputStream	CWebCounter.cpp	/^void CWebCounter::CloseOutputStream()$/;"	f	class:CWebCounter
+CloseOutputSummaryStream	MainObject.cpp	/^void MainObject::CloseOutputSummaryStream()$/;"	f	class:MainObject
+CloseTotalOutputStream	MainObject.cpp	/^void MainObject::CloseTotalOutputStream()$/;"	f	class:MainObject
+CmpMngr	CmpMngr.cpp	/^CmpMngr::CmpMngr(){}$/;"	f	class:CmpMngr
+CmpMngr	CmpMngr.cpp	/^CmpMngr::CmpMngr(ofstream *file_stream)$/;"	f	class:CmpMngr
+CmpMngr	CmpMngr.h	/^class CmpMngr$/;"	c
+CmpMngrHtml	CmpMngrHtml.cpp	/^CmpMngrHtml::CmpMngrHtml($/;"	f	class:CmpMngrHtml
+CmpMngrHtml	CmpMngrHtml.h	/^class CmpMngrHtml$/;"	c
+Compare	CmpMngr.cpp	/^void CmpMngr::Compare(srcLineVector* baseFileMap, srcLineVector* compFileMap, double match_threshold)$/;"	f	class:CmpMngr
+CompareFileNames	DiffTool.cpp	/^int DiffTool::CompareFileNames(const string &file1, const string &file2)$/;"	f	class:DiffTool
+CompareForDuplicate	MainObject.cpp	/^void MainObject::CompareForDuplicate(srcLineVector &firstFile, srcLineVector &secondFile,$/;"	f	class:MainObject
+ConnectUserIF	MainObject.cpp	/^void MainObject::ConnectUserIF(QWidget *parent)$/;"	f	class:MainObject
+ContinueLine	CCodeCounter.h	/^	string ContinueLine;					\/\/!< Line continuation character(s) (ex. \\\\ in C++)$/;"	m	class:CCodeCounter
+ConvertClearCaseFile	CUtil.cpp	/^string CUtil::ConvertClearCaseFile(const string &fileName)$/;"	f	class:CUtil
+CountBlankSLOC	CCodeCounter.cpp	/^int CCodeCounter::CountBlankSLOC(filemap* fmap, results* result)$/;"	f	class:CCodeCounter
+CountCommentsSLOC	CCodeCounter.cpp	/^int CCodeCounter::CountCommentsSLOC(filemap* fmap, results* result, filemap *fmapBak)$/;"	f	class:CCodeCounter
+CountCommentsSLOC	CFortranCounter.cpp	/^int CFortranCounter::CountCommentsSLOC(filemap* fmap, results* result, filemap *fmapBak)$/;"	f	class:CFortranCounter
+CountCommentsSLOC	CPascalCounter.cpp	/^int CPascalCounter::CountCommentsSLOC(filemap* fmap, results* result, filemap *fmapBak)$/;"	f	class:CPascalCounter
+CountCommentsSLOC	CPythonCounter.cpp	/^int CPythonCounter::CountCommentsSLOC(filemap* fmap, results* result, filemap *fmapBak)$/;"	f	class:CPythonCounter
+CountCommentsSLOC	CVHDLCounter.cpp	/^int CVHDLCounter::CountCommentsSLOC(filemap* fmap, results* result, filemap *fmapBak)$/;"	f	class:CVHDLCounter
+CountComplexity	CBatchCounter.cpp	/^int CBatchCounter::CountComplexity(filemap* fmap, results* result)$/;"	f	class:CBatchCounter
+CountComplexity	CCodeCounter.cpp	/^int CCodeCounter::CountComplexity(filemap* fmap, results* result)$/;"	f	class:CCodeCounter
+CountComplexity	CCshCounter.cpp	/^int CCshCounter::CountComplexity(filemap* fmap, results* result)$/;"	f	class:CCshCounter
+CountComplexity	CPascalCounter.cpp	/^int CPascalCounter::CountComplexity(filemap* fmap, results* result)$/;"	f	class:CPascalCounter
+CountComplexity	CPythonCounter.cpp	/^int CPythonCounter::CountComplexity(filemap* fmap, results* result)$/;"	f	class:CPythonCounter
+CountComplexity	CVHDLCounter.cpp	/^int CVHDLCounter::CountComplexity(filemap* fmap, results* result)$/;"	f	class:CVHDLCounter
+CountComplexity	CVerilogCounter.cpp	/^int CVerilogCounter::CountComplexity(filemap* fmap, results* result)$/;"	f	class:CVerilogCounter
+CountDirectiveSLOC	CAdaCounter.cpp	/^int CAdaCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CAdaCounter
+CountDirectiveSLOC	CCJavaCsCounter.cpp	/^int CCJavaCsCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CCJavaCsCounter
+CountDirectiveSLOC	CCodeCounter.h	/^	virtual int CountDirectiveSLOC(filemap* \/*fmap*\/, results* \/*result*\/, filemap* \/*fmapBak = NULL*\/) { return 0; }$/;"	f	class:CCodeCounter
+CountDirectiveSLOC	CFortranCounter.cpp	/^int CFortranCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CFortranCounter
+CountDirectiveSLOC	CJavascriptCounter.cpp	/^int CJavascriptCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CJavascriptCounter
+CountDirectiveSLOC	CMakefileCounter.cpp	/^int CMakefileCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CMakefileCounter
+CountDirectiveSLOC	CMatlabCounter.cpp	/^int CMatlabCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CMatlabCounter
+CountDirectiveSLOC	CMidasCounter.cpp	/^int CMidasCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CMidasCounter
+CountDirectiveSLOC	CPerlCounter.cpp	/^int CPerlCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CPerlCounter
+CountDirectiveSLOC	CPhpCounter.cpp	/^int CPhpCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CPhpCounter
+CountDirectiveSLOC	CPythonCounter.cpp	/^int CPythonCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CPythonCounter
+CountDirectiveSLOC	CVHDLCounter.cpp	/^int CVHDLCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CVHDLCounter
+CountDirectiveSLOC	CVbCounter.cpp	/^int CVbCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* \/*fmapBak*\/)$/;"	f	class:CVbCounter
+CountDirectiveSLOC	CVerilogCounter.cpp	/^int CVerilogCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CVerilogCounter
+CountDistinctCond	CUtil.cpp	/^void CUtil::CountDistinctCond(const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
+CountSLOC	CCodeCounter.cpp	/^int CCodeCounter::CountSLOC(filemap* fmap, results* result)$/;"	f	class:CCodeCounter
+CountSLOC	CWebCounter.cpp	/^int CWebCounter::CountSLOC(filemap* fmap, results* result)$/;"	f	class:CWebCounter
+CountTagTally	CTagCounter.cpp	/^void CTagCounter::CountTagTally(string base, StringVector& container, unsigned int &count, int mode, string exclude,$/;"	f	class:CTagCounter
+CountTally	CUtil.cpp	/^void CUtil::CountTally(const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
+CounterForEachLanguage	MainObject.h	/^	map<int, CCodeCounter*> CounterForEachLanguage;	\/\/!< List of code counters for each language$/;"	m	class:MainObject
+CreateExtMap	MainObject.cpp	/^void MainObject::CreateExtMap()$/;"	f	class:MainObject
+CustomCMP	DiffTool.h	/^	struct CustomCMP$/;"	s	class:DiffTool
+DATA	cc_main.h	28;"	d
+DATAFILE	cc_main.h	/^	DATAFILE,				\/\/ Data file type$/;"	e	enum:ClassType
+DEFAULT_TRUNCATE	cc_main.h	96;"	d
+DEF_LANG_NAME	cc_main.h	95;"	d
+DELETED	CmpMngr.h	/^enum MARKER {MODIFIED, UNMODIFIED, DELETED, ADDED};$/;"	e	enum:MARKER
+DIFFTOOL_H	DiffTool.h	9;"	d
+DIFF_OUTFILE	DiffTool.h	20;"	d
+DIFF_OUTFILE_CSV	DiffTool.h	21;"	d
+DUP_PAIRS_OUTFILE	MainObject.h	44;"	d
+DUP_PAIRS_OUTFILE_CSV	MainObject.h	45;"	d
+DecideLanguage	MainObject.cpp	/^ClassType MainObject::DecideLanguage(const string &file_name, bool setCounter)$/;"	f	class:MainObject
+DiffTool	DiffTool.cpp	/^DiffTool::DiffTool()$/;"	f	class:DiffTool
+DiffTool	DiffTool.h	/^class DiffTool: public MainObject$/;"	c
+EMBEDDED_FILE_PREFIX	cc_main.h	94;"	d
+EVAL_BAD	CmpMngrHtml.h	/^enum EVAL_STATUS {EVAL_GOOD,EVAL_NA_FOUND,EVAL_BAD};$/;"	e	enum:EVAL_STATUS
+EVAL_GOOD	CmpMngrHtml.h	/^enum EVAL_STATUS {EVAL_GOOD,EVAL_NA_FOUND,EVAL_BAD};$/;"	e	enum:EVAL_STATUS
+EVAL_NA_FOUND	CmpMngrHtml.h	/^enum EVAL_STATUS {EVAL_GOOD,EVAL_NA_FOUND,EVAL_BAD};$/;"	e	enum:EVAL_STATUS
+EVAL_STATUS	CmpMngrHtml.h	/^enum EVAL_STATUS {EVAL_GOOD,EVAL_NA_FOUND,EVAL_BAD};$/;"	g
+EraseString	CUtil.cpp	/^string CUtil::EraseString(const string &srcstr, const string &erasedstr)$/;"	f	class:CUtil
+EscapeHtml	CmpMngrHtml.cpp	/^string CmpMngrHtml::EscapeHtml(const string& data)$/;"	f	class:CmpMngrHtml
+ExtractFilename	CUtil.cpp	/^string CUtil::ExtractFilename(const string &filepath)$/;"	f	class:CUtil
+FILE_DUMP	DiffTool.h	24;"	d
+FILE_PAIR_FOOTER	CmpMngrHtml.cpp	83;"	d	file:
+FILE_PAIR_HEADER	CmpMngrHtml.cpp	82;"	d	file:
+FORTRAN	cc_main.h	/^	FORTRAN,				\/\/ Fortran$/;"	e	enum:ClassType
+FileNamePair	DiffTool.h	/^	typedef pair<string, SourceFileElement *> FileNamePair;$/;"	t	class:DiffTool
+FilePairComparisonData	CmpMngrHtml.h	/^    FilePairComparisonData(string orig_fn, string paired_fn)$/;"	f	class:FilePairComparisonData
+FilePairComparisonData	CmpMngrHtml.h	/^class FilePairComparisonData{$/;"	c
+FillMapData	CmpMngrHtml.cpp	/^EVAL_STATUS CmpMngrHtml::FillMapData()$/;"	f	class:CmpMngrHtml
+FindCharAvoidEscape	CUtil.cpp	/^size_t CUtil::FindCharAvoidEscape(const string &source, char target, size_t start_idx, char escape)$/;"	f	class:CUtil
+FindCommentStart	CCodeCounter.cpp	/^int CCodeCounter::FindCommentStart(string strline, size_t &idx_start, int &comment_type,$/;"	f	class:CCodeCounter
+FindDuplicateFiles	MainObject.cpp	/^void MainObject::FindDuplicateFiles(SourceFileList &fileList, StringVector &dupList1, StringVector &dupList2, bool checkMatch)$/;"	f	class:MainObject
+FindDuplicateFor	MainObject.cpp	/^bool MainObject::FindDuplicateFor(SourceFileList &compareList, SourceFileList::iterator &sfi,$/;"	f	class:MainObject
+FindKeyword	CUtil.cpp	/^size_t CUtil::FindKeyword(const string &str, const string &keyword, size_t start, size_t end, bool case_sensitive)$/;"	f	class:CUtil
+FindModifiedLines	CmpMngr.cpp	/^void CmpMngr::FindModifiedLines(srcLineVector* aHm, srcLineVector* bHm)$/;"	f	class:CmpMngr
+FindOriginalLineType	CmpMngrHtml.cpp	/^int FilePairComparisonData::FindOriginalLineType(int line_no) const$/;"	f	class:FilePairComparisonData
+FindPairedLineType	CmpMngrHtml.cpp	/^int FilePairComparisonData::FindPairedLineType(int line_no) const$/;"	f	class:FilePairComparisonData
+FindQuote	CCodeCounter.cpp	/^size_t CCodeCounter::FindQuote(string const &strline, string const &strQuote, size_t idx_start, char QuoteEscapeFront)$/;"	f	class:CCodeCounter
+FindStringsCaseInsensitive	CUtil.cpp	/^size_t CUtil::FindStringsCaseInsensitive(const string &target, map<string, int> &table, size_t &pos, size_t preLang)$/;"	f	class:CUtil
+FindUnmodifiedLines	CmpMngr.cpp	/^void CmpMngr::FindUnmodifiedLines(srcLineVector* aHm, srcLineVector* bHm)$/;"	f	class:CmpMngr
+FoundSLOC	CAdaCounter.cpp	/^void CAdaCounter::FoundSLOC(results* result, size_t lineNumber, string &strLSLOC, string &strLSLOCBak, bool &found_block, bool &found_forifwhile,$/;"	f	class:CAdaCounter
+FoundSLOC	CPascalCounter.cpp	/^void CPascalCounter::FoundSLOC(results* result, size_t lineNumber, string &strLSLOC, string &strLSLOCBak, bool &found_block,$/;"	f	class:CPascalCounter
+FoundSLOC	CVHDLCounter.cpp	/^void CVHDLCounter::FoundSLOC(results* result, size_t lineNumber, string &strLSLOC, string &strLSLOCBak, bool &found_block, $/;"	f	class:CVHDLCounter
+GetFileList	CUtil.cpp	/^bool CUtil::GetFileList(StringVector &fileList, const string &path, bool symLinks)$/;"	f	class:CUtil
+GetLanguageExtensionMap	MainObject.cpp	/^void MainObject::GetLanguageExtensionMap(multimap<const string, string> *lang_ext_map)$/;"	f	class:MainObject
+GetLanguageName	MainObject.cpp	/^string MainObject::GetLanguageName(ClassType class_type, const string &file_name) $/;"	f	class:MainObject
+GetOutputStream	CCodeCounter.cpp	/^ofstream* CCodeCounter::GetOutputStream(const string &outputFileNamePrePend, const string &cmd, bool csvOutput, bool legacyOutput)$/;"	f	class:CCodeCounter
+GetOutputStream	CWebCounter.cpp	/^ofstream* CWebCounter::GetOutputStream(WebType webType, const string &outputFileNamePrePend, const string &cmd, bool csvOutput, bool legacyOutput)$/;"	f	class:CWebCounter
+GetOutputSummaryStream	MainObject.cpp	/^ofstream* MainObject::GetOutputSummaryStream(const string &outputFileNamePrePend, bool csvOutput)$/;"	f	class:MainObject
+GetSeparationMap	CWebCounter.h	/^	map<int, SourceFileElement>* GetSeparationMap() { return &Separation; }$/;"	f	class:CWebCounter
+GetTotalOutputStream	MainObject.cpp	/^ofstream* MainObject::GetTotalOutputStream(const string &outputFileNamePrePend, bool csvOutput)$/;"	f	class:MainObject
+GetWebLangName	CWebCounter.cpp	/^string CWebCounter::GetWebLangName(WebType webType)$/;"	f	class:CWebCounter
+GetWebType	CWebCounter.cpp	/^WebType CWebCounter::GetWebType(const string &fname)$/;"	f	class:CWebCounter
+HTML	cc_main.h	/^	HTML,					\/\/ HTML$/;"	e	enum:ClassType
+HTML_ASP	cc_main.h	/^	HTML_ASP,				\/\/ HTML in ASP$/;"	e	enum:ClassType
+HTML_CFM	cc_main.h	/^	HTML_CFM,				\/\/ HTML in ColdFusion$/;"	e	enum:ClassType
+HTML_DIFF	DiffTool.h	25;"	d
+HTML_FOOTER	CmpMngrHtml.cpp	81;"	d	file:
+HTML_HEADER	CmpMngrHtml.cpp	5;"	d	file:
+HTML_JSP	cc_main.h	/^	HTML_JSP,				\/\/ HTML in JSP$/;"	e	enum:ClassType
+HTML_PHP	cc_main.h	/^	HTML_PHP,				\/\/ HTML in PHP$/;"	e	enum:ClassType
+INPUT_FILE_LIST_NAME	cc_main.h	99;"	d
+INPUT_FILE_LIST_OLD	cc_main.h	98;"	d
+INVALID_POSITION	CUtil.h	15;"	d
+InitializeCounts	CCodeCounter.cpp	/^void CCodeCounter::InitializeCounts()$/;"	f	class:CCodeCounter
+InitializeResultsCounts	CCodeCounter.cpp	/^void CCodeCounter::InitializeResultsCounts(results* result)$/;"	f	class:CCodeCounter
+IsInteger	CUtil.cpp	/^bool CUtil::IsInteger(const string &str)$/;"	f	class:CUtil
+IsSupportedFileExtension	CCodeCounter.cpp	/^bool CCodeCounter::IsSupportedFileExtension(const string &file_name)$/;"	f	class:CCodeCounter
+IsSupportedFileExtension	MainObject.cpp	/^bool MainObject::IsSupportedFileExtension(const string &file_name) $/;"	f	class:MainObject
+JAVA	cc_main.h	/^	JAVA,					\/\/ Java$/;"	e	enum:ClassType
+JAVASCRIPT	cc_main.h	/^	JAVASCRIPT,				\/\/ JavaScript$/;"	e	enum:ClassType
+JAVASCRIPT_ASP_C	cc_main.h	/^	JAVASCRIPT_ASP_C,		\/\/ JavaScript client side in ASP$/;"	e	enum:ClassType
+JAVASCRIPT_ASP_S	cc_main.h	/^	JAVASCRIPT_ASP_S,		\/\/ JavaScript server side in ASP$/;"	e	enum:ClassType
+JAVASCRIPT_CFM	cc_main.h	/^	JAVASCRIPT_CFM,			\/\/ Javascript in ColdFusion$/;"	e	enum:ClassType
+JAVASCRIPT_HTML	cc_main.h	/^	JAVASCRIPT_HTML,		\/\/ JavaScript in HTML$/;"	e	enum:ClassType
+JAVASCRIPT_JSP	cc_main.h	/^	JAVASCRIPT_JSP,			\/\/ JavaScript in JSP$/;"	e	enum:ClassType
+JAVASCRIPT_PHP	cc_main.h	/^	JAVASCRIPT_PHP,			\/\/ JavaScript in PHP$/;"	e	enum:ClassType
+JAVASCRIPT_XML	cc_main.h	/^	JAVASCRIPT_XML,			\/\/ JavaScript in XML$/;"	e	enum:ClassType
+JAVA_JSP	cc_main.h	/^	JAVA_JSP,				\/\/ Java	in JSP$/;"	e	enum:ClassType
+LINE_TYPE_ADDED	CmpMngrHtml.h	15;"	d
+LINE_TYPE_DELETED	CmpMngrHtml.h	12;"	d
+LINE_TYPE_MODIFIED	CmpMngrHtml.h	13;"	d
+LINE_TYPE_PHYSICAL	CmpMngrHtml.h	16;"	d
+LINE_TYPE_UNMODIFIED	CmpMngrHtml.h	14;"	d
+LOG	cc_main.h	26;"	d
+LOG_FILENAME	cc_main.h	108;"	d
+LSLOC	CAdaCounter.cpp	/^void CAdaCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, $/;"	f	class:CAdaCounter
+LSLOC	CBashCounter.cpp	/^void CBashCounter::LSLOC(results* result, string line,  size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak,$/;"	f	class:CBashCounter
+LSLOC	CBatchCounter.cpp	/^void CBatchCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak,$/;"	f	class:CBatchCounter
+LSLOC	CCFScriptCounter.cpp	/^void CCFScriptCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, $/;"	f	class:CCFScriptCounter
+LSLOC	CCJavaCsCounter.cpp	/^void CCJavaCsCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, unsigned int &paren_cnt,$/;"	f	class:CCJavaCsCounter
+LSLOC	CCshCounter.cpp	/^void CCshCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak,$/;"	f	class:CCshCounter
+LSLOC	CCssCounter.cpp	/^void CCssCounter::LSLOC(results* result, string &line, size_t lineNumber, string &strLSLOC, char &lastLinesLastChar, $/;"	f	class:CCssCounter
+LSLOC	CFortranCounter.cpp	/^void CFortranCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak,$/;"	f	class:CFortranCounter
+LSLOC	CJavascriptCounter.cpp	/^void CJavascriptCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, unsigned int &paren_cnt,$/;"	f	class:CJavascriptCounter
+LSLOC	CMakefileCounter.cpp	/^void CMakefileCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak)$/;"	f	class:CMakefileCounter
+LSLOC	CMatlabCounter.cpp	/^void CMatlabCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak,$/;"	f	class:CMatlabCounter
+LSLOC	CMidasCounter.cpp	/^void CMidasCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak,$/;"	f	class:CMidasCounter
+LSLOC	CPascalCounter.cpp	/^void CPascalCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, bool &found_block,$/;"	f	class:CPascalCounter
+LSLOC	CPerlCounter.cpp	/^void CPerlCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, unsigned int &paren_cnt,$/;"	f	class:CPerlCounter
+LSLOC	CPhpCounter.cpp	/^void CPhpCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, unsigned int &paren_cnt,$/;"	f	class:CPhpCounter
+LSLOC	CPythonCounter.cpp	/^void CPythonCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak,$/;"	f	class:CPythonCounter
+LSLOC	CRubyCounter.cpp	/^void CRubyCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak)$/;"	f	class:CRubyCounter
+LSLOC	CSqlCounter.cpp	/^void CSqlCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, bool &data_continue)$/;"	f	class:CSqlCounter
+LSLOC	CTagCounter.cpp	/^void CTagCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, char &prev_char,$/;"	f	class:CTagCounter
+LSLOC	CVHDLCounter.cpp	/^void CVHDLCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, $/;"	f	class:CVHDLCounter
+LSLOC	CVerilogCounter.cpp	/^void CVerilogCounter::LSLOC(results* result, string line, size_t lineNumber, string lineBak, string &strLSLOC, string &strLSLOCBak, $/;"	f	class:CVerilogCounter
+LanguageExtensionMap	MainObject.h	/^	map<string, string> LanguageExtensionMap;		\/\/!< List of languages and their extensions$/;"	m	class:MainObject
+LanguageSpecificProcess	CAdaCounter.cpp	/^int CAdaCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CAdaCounter
+LanguageSpecificProcess	CBashCounter.cpp	/^int CBashCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CBashCounter
+LanguageSpecificProcess	CBatchCounter.cpp	/^int CBatchCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CBatchCounter
+LanguageSpecificProcess	CCFScriptCounter.cpp	/^int CCFScriptCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CCFScriptCounter
+LanguageSpecificProcess	CCJavaCsCounter.cpp	/^int CCJavaCsCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CCJavaCsCounter
+LanguageSpecificProcess	CCodeCounter.cpp	/^int CCodeCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* \/*fmapBak*\/)$/;"	f	class:CCodeCounter
+LanguageSpecificProcess	CCshCounter.cpp	/^int CCshCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CCshCounter
+LanguageSpecificProcess	CCssCounter.cpp	/^int CCssCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* \/*fmapBak*\/) $/;"	f	class:CCssCounter
+LanguageSpecificProcess	CFortranCounter.cpp	/^int CFortranCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CFortranCounter
+LanguageSpecificProcess	CJavascriptCounter.cpp	/^int CJavascriptCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CJavascriptCounter
+LanguageSpecificProcess	CMakefileCounter.cpp	/^int CMakefileCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CMakefileCounter
+LanguageSpecificProcess	CMatlabCounter.cpp	/^int CMatlabCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CMatlabCounter
+LanguageSpecificProcess	CMidasCounter.cpp	/^int CMidasCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CMidasCounter
+LanguageSpecificProcess	CPascalCounter.cpp	/^int CPascalCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CPascalCounter
+LanguageSpecificProcess	CPerlCounter.cpp	/^int CPerlCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CPerlCounter
+LanguageSpecificProcess	CPhpCounter.cpp	/^int CPhpCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CPhpCounter
+LanguageSpecificProcess	CPythonCounter.cpp	/^int CPythonCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CPythonCounter
+LanguageSpecificProcess	CRubyCounter.cpp	/^int CRubyCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CRubyCounter
+LanguageSpecificProcess	CSqlCounter.cpp	/^int CSqlCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CSqlCounter
+LanguageSpecificProcess	CTagCounter.cpp	/^int CTagCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CTagCounter
+LanguageSpecificProcess	CVHDLCounter.cpp	/^int CVHDLCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CVHDLCounter
+LanguageSpecificProcess	CVbCounter.cpp	/^int CVbCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CVbCounter
+LanguageSpecificProcess	CVerilogCounter.cpp	/^int CVerilogCounter::LanguageSpecificProcess(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CVerilogCounter
+LineCommentStart	CCodeCounter.h	/^	StringVector LineCommentStart;			\/\/!< Single line or embedded comment character(s)$/;"	m	class:CCodeCounter
+LinesPair	CmpMngrHtml.cpp	/^LinesPair::LinesPair(int num1, int num2, string type_str){$/;"	f	class:LinesPair
+LinesPair	CmpMngrHtml.h	/^    LinesPair(){}$/;"	f	class:LinesPair
+LinesPair	CmpMngrHtml.h	/^class LinesPair {$/;"	c
+LinesPairOriginalComparator	CmpMngrHtml.h	/^    LinesPairOriginalComparator(int line_no)$/;"	f	class:LinesPairOriginalComparator
+LinesPairOriginalComparator	CmpMngrHtml.h	/^class LinesPairOriginalComparator {$/;"	c
+LinesPairPairedComparator	CmpMngrHtml.h	/^    LinesPairPairedComparator(int line_no)$/;"	f	class:LinesPairPairedComparator
+LinesPairPairedComparator	CmpMngrHtml.h	/^class LinesPairPairedComparator {$/;"	c
+ListAllFiles	CUtil.cpp	/^bool CUtil::ListAllFiles(string &folder, StringVector &fileExtList, StringVector &fileList, bool symLinks)$/;"	f	class:CUtil
+MAKEFILE	cc_main.h	/^	MAKEFILE,				\/\/ Makefiles$/;"	e	enum:ClassType
+MARKER	CmpMngr.h	/^enum MARKER {MODIFIED, UNMODIFIED, DELETED, ADDED};$/;"	g
+MARKER_TABLE	CmpMngr.cpp	/^const string CmpMngr::MARKER_TABLE[] = {"MODIFIED", "UNMODIFIED", "DELETED", "ADDED"};$/;"	m	class:CmpMngr	file:
+MARKER_TABLE	CmpMngr.h	/^	const static string MARKER_TABLE[];$/;"	m	class:CmpMngr
+MATCH_PAIRS_OUTFILE	DiffTool.h	22;"	d
+MATCH_PAIRS_OUTFILE_CSV	DiffTool.h	23;"	d
+MATCH_THRESHOLD	CmpMngr.h	/^	double MATCH_THRESHOLD;			\/\/!< % threshold for matching, if greater then added\/deleted instead of modified$/;"	m	class:CmpMngr
+MATLAB	cc_main.h	/^	MATLAB,					\/\/ MATLAB$/;"	e	enum:ClassType
+MAX_LINE_LENGTH	cc_main.h	30;"	d
+MAX_MISMATCH_COST	DiffTool.h	27;"	d
+MODIFIED	CmpMngr.h	/^enum MARKER {MODIFIED, UNMODIFIED, DELETED, ADDED};$/;"	e	enum:MARKER
+MainObject	MainObject.cpp	/^MainObject::MainObject()$/;"	f	class:MainObject
+MainObject	MainObject.h	/^class MainObject$/;"	c
+MainObject_h	MainObject.h	9;"	d
+MainProcess	MainObject.cpp	/^int MainObject::MainProcess(int argc, char *argv[])$/;"	f	class:MainObject
+MatchBaseLines	DiffTool.cpp	/^void DiffTool::MatchBaseLines(bool webSepFilesOnly)$/;"	f	class:DiffTool
+MatchFilename	CUtil.cpp	/^bool CUtil::MatchFilename(const string &filename, const string &matchstr)$/;"	f	class:CUtil
+MatchedFilePair	DiffTool.h	/^	typedef pair<SourceFileElement *, SourceFileElement *> MatchedFilePair;$/;"	t	class:DiffTool
+MatchingType	DiffTool.h	/^	typedef vector<pair<resultStruct, MatchedFilePair> > MatchingType;$/;"	t	class:DiffTool
+MkPath	CUtil.cpp	/^int CUtil::MkPath(const string &path)$/;"	f	class:CUtil
+NEXTMIDAS	cc_main.h	/^	NEXTMIDAS,				\/\/ NeXtMidas$/;"	e	enum:ClassType
+OUTPUT_FILE_CPLX	cc_main.h	102;"	d
+OUTPUT_FILE_CPLX_CSV	cc_main.h	103;"	d
+OUTPUT_FILE_CYC_CPLX	cc_main.h	106;"	d
+OUTPUT_FILE_CYC_CPLX_CSV	cc_main.h	107;"	d
+OUTPUT_FILE_NAME	cc_main.h	100;"	d
+OUTPUT_FILE_NAME_CSV	cc_main.h	101;"	d
+OUTPUT_FILE_SUM	cc_main.h	104;"	d
+OUTPUT_FILE_SUM_CSV	cc_main.h	105;"	d
+OpenOriginalFile	CmpMngrHtml.cpp	/^ifstream& FilePairComparisonData::OpenOriginalFile(ifstream& file_stream) const$/;"	f	class:FilePairComparisonData
+OpenPairedFile	CmpMngrHtml.cpp	/^ifstream& FilePairComparisonData::OpenPairedFile(ifstream& file_stream) const$/;"	f	class:FilePairComparisonData
+OriginalFileName	CmpMngrHtml.h	/^    const string& OriginalFileName() const { return original_filename; }$/;"	f	class:FilePairComparisonData
+PASCAL	cc_main.h	/^	PASCAL,					\/\/ Pascal$/;"	e	enum:ClassType
+PERL	cc_main.h	/^	PERL,					\/\/ Perl$/;"	e	enum:ClassType
+PHP	cc_main.h	/^	PHP,					\/\/ PHP$/;"	e	enum:ClassType
+PHY	cc_main.h	25;"	d
+PRODUCT_REVISION	cc_main.h	23;"	d
+PYTHON	cc_main.h	/^	PYTHON,					\/\/ Python$/;"	e	enum:ClassType
+PairedFileName	CmpMngrHtml.h	/^    const string& PairedFileName() const { return paired_filename; }$/;"	f	class:FilePairComparisonData
+ParseCommandLine	MainObject.cpp	/^int MainObject::ParseCommandLine(int argc, char *argv[])$/;"	f	class:MainObject
+ParseFunctionName	CAdaCounter.cpp	/^int CAdaCounter::ParseFunctionName(const string &line, string &\/*lastline*\/,$/;"	f	class:CAdaCounter
+ParseFunctionName	CBashCounter.cpp	/^int CBashCounter::ParseFunctionName(const string &line, string &lastline,$/;"	f	class:CBashCounter
+ParseFunctionName	CBatchCounter.cpp	/^int CBatchCounter::ParseFunctionName(const string &line, string &lastline,$/;"	f	class:CBatchCounter
+ParseFunctionName	CCFScriptCounter.cpp	/^int CCFScriptCounter::ParseFunctionName(const string &line, string &lastline,$/;"	f	class:CCFScriptCounter
+ParseFunctionName	CCJavaCsCounter.cpp	/^int CCJavaCsCounter::ParseFunctionName(const string &line, string &lastline,$/;"	f	class:CCJavaCsCounter
+ParseFunctionName	CCodeCounter.h	/^	virtual int ParseFunctionName(const string & \/*line*\/, string & \/*lastline*\/,$/;"	f	class:CCodeCounter
+ParseFunctionName	CColdFusionCounter.cpp	/^int CColdFusionCounter::ParseFunctionName(const string &line, string &\/*lastline*\/,$/;"	f	class:CColdFusionCounter
+ParseFunctionName	CCshCounter.h	/^	int ParseFunctionName(const string & \/*line*\/, string & \/*lastline*\/, filemap & \/*functionStack*\/, string & \/*functionName*\/) { return 2; }$/;"	f	class:CCshCounter
+ParseFunctionName	CFortranCounter.cpp	/^int CFortranCounter::ParseFunctionName(const string &line, string &\/*lastline*\/,$/;"	f	class:CFortranCounter
+ParseFunctionName	CJavascriptCounter.cpp	/^int CJavascriptCounter::ParseFunctionName(const string &line, string &lastline,$/;"	f	class:CJavascriptCounter
+ParseFunctionName	CMatlabCounter.cpp	/^int CMatlabCounter::ParseFunctionName(const string &line, string &\/*lastline*\/,$/;"	f	class:CMatlabCounter
+ParseFunctionName	CPascalCounter.cpp	/^int CPascalCounter::ParseFunctionName(const string &line, string &\/*lastline*\/,$/;"	f	class:CPascalCounter
+ParseFunctionName	CPerlCounter.cpp	/^int CPerlCounter::ParseFunctionName(const string &line, string &lastline,$/;"	f	class:CPerlCounter
+ParseFunctionName	CPhpCounter.cpp	/^int CPhpCounter::ParseFunctionName(const string &line, string &lastline,$/;"	f	class:CPhpCounter
+ParseFunctionName	CPythonCounter.cpp	/^int CPythonCounter::ParseFunctionName(const string &line, string & needIndentation, StringVector &functionStack, string &functionName, vector<int> &indenStack, int & numWS)$/;"	f	class:CPythonCounter
+ParseFunctionName	CRubyCounter.cpp	/^int CRubyCounter::ParseFunctionName(const string &line, string &\/*lastline*\/,$/;"	f	class:CRubyCounter
+ParseFunctionName	CVHDLCounter.cpp	/^int CVHDLCounter::ParseFunctionName(const string &line, string &lastline, StringVector &functionStack, string &functionName){$/;"	f	class:CVHDLCounter
+ParseFunctionName	CVbCounter.cpp	/^int CVbCounter::ParseFunctionName(const string &line, string &\/*lastline*\/,$/;"	f	class:CVbCounter
+ParseFunctionName	CVerilogCounter.cpp	/^int CVerilogCounter::ParseFunctionName(const string &line, string &lastline, StringVector &functionStack, string &functionName)$/;"	f	class:CVerilogCounter
+PreCountProcess	CBashCounter.cpp	/^int CBashCounter::PreCountProcess(filemap* fmap)$/;"	f	class:CBashCounter
+PreCountProcess	CBatchCounter.cpp	/^int CBatchCounter::PreCountProcess(filemap* fmap)$/;"	f	class:CBatchCounter
+PreCountProcess	CCodeCounter.h	/^	virtual int PreCountProcess(filemap* \/*fmap*\/) { return 0; }$/;"	f	class:CCodeCounter
+PreCountProcess	CColdFusionCounter.cpp	/^int CColdFusionCounter::PreCountProcess(filemap* fmap)$/;"	f	class:CColdFusionCounter
+PreCountProcess	CCshCounter.cpp	/^int CCshCounter::PreCountProcess(filemap* fmap)$/;"	f	class:CCshCounter
+PreCountProcess	CCsharpCounter.cpp	/^int CCsharpCounter::PreCountProcess(filemap* fmap)$/;"	f	class:CCsharpCounter
+PreCountProcess	CFortranCounter.cpp	/^int CFortranCounter::PreCountProcess(filemap* fmap)$/;"	f	class:CFortranCounter
+PreCountProcess	CPerlCounter.cpp	/^int CPerlCounter::PreCountProcess(filemap* fmap)$/;"	f	class:CPerlCounter
+PreCountProcess	CTagCounter.h	/^	virtual int PreCountProcess(filemap* \/*fmap*\/) { return 0; }$/;"	f	class:CTagCounter
+PreCountProcess	CVbscriptCounter.cpp	/^int CVbscriptCounter::PreCountProcess(filemap* fmap)$/;"	f	class:CVbscriptCounter
+PreferenceMapType	DiffTool.h	/^	typedef vector<PreferenceStruct> PreferenceMapType;$/;"	t	class:DiffTool
+PreferenceStruct	DiffTool.h	/^	struct PreferenceStruct$/;"	s	class:DiffTool
+PreviousLanguage	CWebCounter.h	/^	stack<int> PreviousLanguage;				\/\/!< Previous language stack$/;"	m	class:CWebCounter
+PrintComplexityResults	MainObject.cpp	/^int MainObject::PrintComplexityResults(bool useListA, const string &outputFileNamePrePend, bool printDuplicates) $/;"	f	class:MainObject
+PrintCountResults	MainObject.cpp	/^int MainObject::PrintCountResults(bool useListA, const string &outputFileNamePrePend, StringVector *filesToPrint, bool excludeFiles)$/;"	f	class:MainObject
+PrintCountSummary	MainObject.cpp	/^int MainObject::PrintCountSummary(TotalValueMap &total, WebTotalValueMap &webtotal,$/;"	f	class:MainObject
+PrintCyclomaticComplexity	MainObject.cpp	/^int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFileNamePrePend, bool printDuplicates) $/;"	f	class:MainObject
+PrintDiffResults	DiffTool.cpp	/^void DiffTool::PrintDiffResults()$/;"	f	class:DiffTool
+PrintDuplicateList	MainObject.cpp	/^void MainObject::PrintDuplicateList(StringVector &myList1, StringVector &myList2, ofstream &outfile, bool csvFormat)$/;"	f	class:MainObject
+PrintDuplicateSummary	MainObject.cpp	/^void MainObject::PrintDuplicateSummary(bool useListA, const string &outputFileNamePrePend)$/;"	f	class:MainObject
+PrintFileHeader	CUtil.cpp	/^int CUtil::PrintFileHeader(ofstream &pout, const string &title, const string &cmd)$/;"	f	class:CUtil
+PrintFileHeaderLine	CUtil.cpp	/^int CUtil::PrintFileHeaderLine(ofstream &pout, const string &line)$/;"	f	class:CUtil
+PrintFileSetAsHtml	CmpMngrHtml.cpp	/^void CmpMngrHtml::PrintFileSetAsHtml()$/;"	f	class:CmpMngrHtml
+PrintHtmlLine	CmpMngrHtml.cpp	/^void CmpMngrHtml::PrintHtmlLine($/;"	f	class:CmpMngrHtml
+PrintMatchedPairs	DiffTool.cpp	/^void DiffTool::PrintMatchedPairs()$/;"	f	class:DiffTool
+PrintOriginalFileAsHtml	CmpMngrHtml.cpp	/^void CmpMngrHtml::PrintOriginalFileAsHtml(const FilePairComparisonData& file_pair)$/;"	f	class:CmpMngrHtml
+PrintPairedFileAsHtml	CmpMngrHtml.cpp	/^void CmpMngrHtml::PrintPairedFileAsHtml(const FilePairComparisonData& file_pair)$/;"	f	class:CmpMngrHtml
+PrintTotalCountResults	MainObject.cpp	/^int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNamePrePend, StringVector *filesToPrint, bool excludeFiles)$/;"	f	class:MainObject
+ProcessPairs	DiffTool.cpp	/^void DiffTool::ProcessPairs()$/;"	f	class:DiffTool
+ProcessSourceList	MainObject.cpp	/^void MainObject::ProcessSourceList(bool useListA)$/;"	f	class:MainObject
+QuoteEnd	CCodeCounter.h	/^	string QuoteEnd;						\/\/!< Ending quotation mark(s)$/;"	m	class:CCodeCounter
+QuoteEscapeFront	CCodeCounter.h	/^	char QuoteEscapeFront;					\/\/!< Escape character for front quote (ex. '\\' in C++)$/;"	m	class:CCodeCounter
+QuoteEscapeRear	CCodeCounter.h	/^	char QuoteEscapeRear;					\/\/!< Escape character for rear quote$/;"	m	class:CCodeCounter
+QuoteStart	CCodeCounter.h	/^	string QuoteStart;						\/\/!< Starting quotation mark(s)$/;"	m	class:CCodeCounter
+RUBY	cc_main.h	/^	RUBY,					\/\/ Ruby$/;"	e	enum:ClassType
+ReadAllDiffFiles	DiffTool.cpp	/^int DiffTool::ReadAllDiffFiles()$/;"	f	class:DiffTool
+ReadAllFiles	MainObject.cpp	/^int MainObject::ReadAllFiles(StringVector &inputFileVector, string const &inputFileList, bool useListA)$/;"	f	class:MainObject
+ReadUserExtMapping	MainObject.cpp	/^void MainObject::ReadUserExtMapping(const string &extMapFile)$/;"	f	class:MainObject
+ReplaceQuote	CAdaCounter.cpp	/^int CAdaCounter::ReplaceQuote(string &strline, size_t &idx_start, bool &contd, char &CurrentQuoteEnd)$/;"	f	class:CAdaCounter
+ReplaceQuote	CCodeCounter.cpp	/^int CCodeCounter::ReplaceQuote(string &strline, size_t &idx_start, bool &contd, char &CurrentQuoteEnd)$/;"	f	class:CCodeCounter
+ReplaceQuote	CCsharpCounter.cpp	/^int CCsharpCounter::ReplaceQuote(string &strline, size_t &idx_start, bool &contd, char &CurrentQuoteEnd)$/;"	f	class:CCsharpCounter
+ReplaceQuote	CJavascriptCounter.cpp	/^int CJavascriptCounter::ReplaceQuote(string &strline, size_t &idx_start, bool &contd, char &CurrentQuoteEnd) $/;"	f	class:CJavascriptCounter
+ReplaceQuote	CPerlCounter.cpp	/^int CPerlCounter::ReplaceQuote(string &strline, size_t &idx_start, bool &contd, char &CurrentQuoteEnd) $/;"	f	class:CPerlCounter
+ReplaceQuote	CPythonCounter.cpp	/^int CPythonCounter::ReplaceQuote(string &strline, size_t &idx_start, bool &contd, string &CurrentQuoteEnd)$/;"	f	class:CPythonCounter
+ReplaceQuote	CRubyCounter.cpp	/^int CRubyCounter::ReplaceQuote(string &strline, size_t &idx_start, bool &contd, char &CurrentQuoteEnd) $/;"	f	class:CRubyCounter
+ReplaceQuote	CSqlCounter.cpp	/^int CSqlCounter::ReplaceQuote(string &strline, size_t &idx_start, bool &contd, char &CurrentQuoteEnd) $/;"	f	class:CSqlCounter
+ReplaceQuote	CVHDLCounter.cpp	/^int CVHDLCounter::ReplaceQuote(string &strline, size_t &idx_start, bool &contd, char &CurrentQuoteEnd)$/;"	f	class:CVHDLCounter
+ReplaceSmartQuotes	CUtil.cpp	/^string CUtil::ReplaceSmartQuotes(const string &str)$/;"	f	class:CUtil
+ResetCounterCounts	MainObject.cpp	/^void MainObject::ResetCounterCounts()$/;"	f	class:MainObject
+SLOC_lines	cc_main.h	/^	unsigned int SLOC_lines[2];			\/\/!< # of SLOC lines$/;"	m	class:results
+SPECIAL_CHARS	CUtil.cpp	209;"	d	file:
+SPECIAL_CHARS	CUtil.cpp	245;"	d	file:
+SPECIAL_CHARS	CUtil.cpp	812;"	d	file:
+SPECIAL_CHARS	CUtil.cpp	837;"	d	file:
+SQL	cc_main.h	/^	SQL,					\/\/ SQL$/;"	e	enum:ClassType
+SQL_CFM	cc_main.h	/^	SQL_CFM,				\/\/ SQL in ColdFusion$/;"	e	enum:ClassType
+ScriptTable	CWebCounter.h	/^	map<string, int> ScriptTable;				\/\/!< Supported script languages$/;"	m	class:CWebCounter
+SemanticDeduplicate	CUtil.cpp	/^void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)$/;"	f	class:CUtil
+SeparatedLine	CWebCounter.h	/^	map<int, lineElement> SeparatedLine;		\/\/!< Separated line$/;"	m	class:CWebCounter
+Separation	CWebCounter.h	/^	map<int, SourceFileElement> Separation;		\/\/!< Separation file map$/;"	m	class:CWebCounter
+SetCounterOptions	MainObject.cpp	/^void MainObject::SetCounterOptions()$/;"	f	class:MainObject
+SetErrorFile	UserIF.cpp	/^void UserIF::SetErrorFile(const string &outDir)$/;"	f	class:UserIF
+ShowUsage	MainObject.cpp	/^void MainObject::ShowUsage(const string &option, bool do_exit)$/;"	f	class:MainObject
+SimilarLine	CmpMngr.cpp	/^bool CmpMngr::SimilarLine(const string &baseLine, const string &compareLine)$/;"	f	class:CmpMngr
+SortedPreferenceMapType	DiffTool.h	/^	typedef multimap<string, SourceFileElement*> SortedPreferenceMapType;$/;"	t	class:DiffTool
+SourceFileA	MainObject.h	/^	SourceFileList SourceFileA;						\/\/!< List of source files in baseline A$/;"	m	class:MainObject
+SourceFileB	MainObject.h	/^	SourceFileList SourceFileB;						\/\/!< List of source files in baseline B$/;"	m	class:MainObject
+SourceFileElement	cc_main.h	/^typedef pair<filemap, results> SourceFileElement;$/;"	t
+SourceFileList	MainObject.h	/^	typedef list<SourceFileElement> SourceFileList;$/;"	t	class:MainObject
+StringVector	cc_main.h	/^typedef vector<string> StringVector;$/;"	t
+TO_END_OF_STRING	CUtil.h	16;"	d
+TagTable	CWebCounter.h	/^	map<string, int> TagTable;					\/\/!< Script language tags$/;"	m	class:CWebCounter
+ToLower	CUtil.cpp	/^string CUtil::ToLower(const string &string_to_lower)$/;"	f	class:CUtil
+TotalValue	MainObject.h	/^		TotalValue()$/;"	f	struct:MainObject::TotalValue
+TotalValue	MainObject.h	/^	struct TotalValue$/;"	s	class:MainObject
+TotalValueMap	MainObject.h	/^	typedef map<int, TotalValue> TotalValueMap;$/;"	t	class:MainObject
+TrimString	CUtil.cpp	/^string CUtil::TrimString(const string &str, int mode)$/;"	f	class:CUtil
+TruncateLine	CUtil.cpp	/^size_t CUtil::TruncateLine(size_t length, size_t totalLength, size_t truncate, bool &trunc_flag)$/;"	f	class:CUtil
+UIntPair	cc_main.h	/^typedef pair<unsigned int, unsigned int> UIntPair;$/;"	t
+UIntPairVector	cc_main.h	/^typedef vector<UIntPair> UIntPairVector;$/;"	t
+UIntVector	cc_main.h	/^typedef vector<unsigned int> UIntVector;$/;"	t
+UNCOUNTED_FILES	MainObject.h	46;"	d
+UNCOUNTED_FILES_CSV	MainObject.h	47;"	d
+UNIT_INDENT	CmpMngrHtml.h	4;"	d
+UNKNOWN	cc_main.h	/^	UNKNOWN,				\/\/ Unknown file type$/;"	e	enum:ClassType
+UNMODIFIED	CmpMngr.h	/^enum MARKER {MODIFIED, UNMODIFIED, DELETED, ADDED};$/;"	e	enum:MARKER
+USERIF_H	UserIF.h	2;"	d
+UpdateCounterCounts	MainObject.cpp	/^void MainObject::UpdateCounterCounts(bool useListA)$/;"	f	class:MainObject
+UpdateWebFileExt	CWebCounter.cpp	/^void CWebCounter::UpdateWebFileExt()$/;"	f	class:CWebCounter
+UserIF	UserIF.cpp	/^UserIF::UserIF()$/;"	f	class:UserIF
+UserIF	UserIF.cpp	/^UserIF::UserIF(QWidget *parent)$/;"	f	class:UserIF
+UserIF	UserIF.h	/^class UserIF$/;"	c
+VB	cc_main.h	/^	VB,						\/\/ Visual Basic$/;"	e	enum:ClassType
+VBSCRIPT	cc_main.h	/^	VBSCRIPT,				\/\/ VBScript$/;"	e	enum:ClassType
+VBS_ASP_C	cc_main.h	/^	VBS_ASP_C,				\/\/ VBScript client side in ASP$/;"	e	enum:ClassType
+VBS_ASP_S	cc_main.h	/^	VBS_ASP_S,				\/\/ VBScript server side in ASP$/;"	e	enum:ClassType
+VBS_CFM	cc_main.h	/^	VBS_CFM,				\/\/ VBScript in ColdFusion$/;"	e	enum:ClassType
+VBS_HTML	cc_main.h	/^	VBS_HTML,				\/\/ VBScript in HTML$/;"	e	enum:ClassType
+VBS_JSP	cc_main.h	/^	VBS_JSP,				\/\/ VBScript in JSP$/;"	e	enum:ClassType
+VBS_PHP	cc_main.h	/^	VBS_PHP,				\/\/ VBScript in PHP$/;"	e	enum:ClassType
+VBS_XML	cc_main.h	/^	VBS_XML,				\/\/ VBScript in XML$/;"	e	enum:ClassType
+VERILOG	cc_main.h	/^	VERILOG,				\/\/ Verilog$/;"	e	enum:ClassType
+VHDL	cc_main.h	/^	VHDL,					\/\/ VHDL$/;"	e	enum:ClassType
+WEB	cc_main.h	/^	WEB,					\/\/ WebCounter$/;"	e	enum:ClassType
+WEB_ASP	CWebCounter.h	/^enum WebType { WEB_PHP, WEB_ASP, WEB_JSP, WEB_HTM, WEB_XML, WEB_CFM };$/;"	e	enum:WebType
+WEB_ASP_JSP_END	cc_main.h	/^	WEB_ASP_JSP_END,$/;"	e	enum:WebTag
+WEB_ASP_JSP_START	cc_main.h	/^	WEB_ASP_JSP_START,$/;"	e	enum:WebTag
+WEB_CFM	CWebCounter.h	/^enum WebType { WEB_PHP, WEB_ASP, WEB_JSP, WEB_HTM, WEB_XML, WEB_CFM };$/;"	e	enum:WebType
+WEB_CFM_END	cc_main.h	/^	WEB_CFM_END$/;"	e	enum:WebTag
+WEB_CFM_START	cc_main.h	/^	WEB_CFM_START,$/;"	e	enum:WebTag
+WEB_HTM	CWebCounter.h	/^enum WebType { WEB_PHP, WEB_ASP, WEB_JSP, WEB_HTM, WEB_XML, WEB_CFM };$/;"	e	enum:WebType
+WEB_JSP	CWebCounter.h	/^enum WebType { WEB_PHP, WEB_ASP, WEB_JSP, WEB_HTM, WEB_XML, WEB_CFM };$/;"	e	enum:WebType
+WEB_PHP	CWebCounter.h	/^enum WebType { WEB_PHP, WEB_ASP, WEB_JSP, WEB_HTM, WEB_XML, WEB_CFM };$/;"	e	enum:WebType
+WEB_PHP_END	cc_main.h	/^	WEB_PHP_END,$/;"	e	enum:WebTag
+WEB_PHP_START	cc_main.h	/^	WEB_PHP_START,$/;"	e	enum:WebTag
+WEB_PHP_START2	cc_main.h	/^	WEB_PHP_START2,$/;"	e	enum:WebTag
+WEB_SCRIPT_END	cc_main.h	/^	WEB_SCRIPT_END,$/;"	e	enum:WebTag
+WEB_SCRIPT_START	cc_main.h	/^	WEB_SCRIPT_START,$/;"	e	enum:WebTag
+WEB_XML	CWebCounter.h	/^enum WebType { WEB_PHP, WEB_ASP, WEB_JSP, WEB_HTM, WEB_XML, WEB_CFM };$/;"	e	enum:WebType
+WebTag	cc_main.h	/^enum WebTag {$/;"	g
+WebTotalValue	MainObject.h	/^		WebTotalValue()$/;"	f	struct:MainObject::WebTotalValue
+WebTotalValue	MainObject.h	/^	struct WebTotalValue$/;"	s	class:MainObject
+WebTotalValueMap	MainObject.h	/^	typedef map<WebType, WebTotalValue> WebTotalValueMap;$/;"	t	class:MainObject
+WebType	CWebCounter.h	/^enum WebType { WEB_PHP, WEB_ASP, WEB_JSP, WEB_HTM, WEB_XML, WEB_CFM };$/;"	g
+WriteUncountedFile	MainObject.cpp	/^void MainObject::WriteUncountedFile(const string &msg, const string &uncFile, bool useListA, bool csvOutput)$/;"	f	class:MainObject
+XMIDAS	cc_main.h	/^	XMIDAS,					\/\/ X-Midas$/;"	e	enum:ClassType
+XML	cc_main.h	/^	XML						\/\/ XML$/;"	e	enum:ClassType
+addSLOC	cc_main.cpp	/^bool results::addSLOC(const string &line, const size_t line_num, bool &trunc_flag)$/;"	f	class:results
+addedLines	DiffTool.h	/^		unsigned int addedLines;			\/\/!< Lines added$/;"	m	class:DiffTool::resultStruct
+asp_output_file	CWebCounter.h	/^	ofstream asp_output_file;					\/\/!< ASP output file stream$/;"	m	class:CWebCounter
+asp_output_file_csv	CWebCounter.h	/^	ofstream asp_output_file_csv;				\/\/!< ASP output CSV file stream$/;"	m	class:CWebCounter
+base_file	CmpMngr.h	/^	vector<string> base_file;$/;"	m	class:CmpMngr
+base_file_line_num	CmpMngr.h	/^	size_t base_file_line_num;$/;"	m	class:mapping_code
+blank_line	MainObject.h	/^		unsigned int blank_line;					\/\/!< Blank lines$/;"	m	struct:MainObject::AllWebTotalValue
+blank_line	MainObject.h	/^		unsigned int blank_line;					\/\/!< Blank lines$/;"	m	struct:MainObject::TotalValue
+blank_line	MainObject.h	/^		unsigned int blank_line;					\/\/!< Blank lines$/;"	m	struct:MainObject::WebTotalValue
+blank_lines	cc_main.h	/^	unsigned int blank_lines;			\/\/!< # of blank lines$/;"	m	class:results
+c_keywords	CFortranCounter.h	/^	StringVector c_keywords;				\/\/!< List of keywords starting with 'c' with flexible formats$/;"	m	class:CFortranCounter
+cancelExecution	UserIF.cpp	/^void UserIF::cancelExecution()$/;"	f	class:UserIF
+casesensitive	CCodeCounter.h	/^	bool casesensitive;						\/\/!< Is language is case sensitive?$/;"	m	class:CCodeCounter
+cc_main_h	cc_main.h	9;"	d
+cfm_output_file	CWebCounter.h	/^	ofstream cfm_output_file;					\/\/!< ColdFusion output file stream$/;"	m	class:CWebCounter
+cfm_output_file_csv	CWebCounter.h	/^	ofstream cfm_output_file_csv;				\/\/!< ColdFusion output CSV file stream$/;"	m	class:CWebCounter
+class_type	cc_main.h	/^	ClassType class_type;				\/\/!< File class type$/;"	m	class:results
+classtype	CCodeCounter.h	/^	ClassType	  classtype;				\/\/!< Language class type$/;"	m	class:CCodeCounter
+clearCaseFile	MainObject.h	/^	bool clearCaseFile;								\/\/!< Target files are extracted from the ClearCase CM$/;"	m	class:MainObject
+clearSLOC	cc_main.cpp	/^void results::clearSLOC()$/;"	f	class:results
+cmdLine	MainObject.h	/^	string cmdLine;									\/\/!< Executed command line string$/;"	m	class:MainObject
+cmplx_assign_count	CCodeCounter.h	/^	UIntPairVector cmplx_assign_count;		\/\/!< Count of assignments$/;"	m	class:CCodeCounter
+cmplx_assign_count	cc_main.h	/^	UIntVector cmplx_assign_count;		\/\/!< Count of assignments$/;"	m	class:results
+cmplx_assign_lines	cc_main.h	/^	unsigned int cmplx_assign_lines;	\/\/!< # of assignments$/;"	m	class:results
+cmplx_assign_list	CCodeCounter.h	/^	StringVector  cmplx_assign_list;		\/\/!< Assignments (complexity)$/;"	m	class:CCodeCounter
+cmplx_calc_count	CCodeCounter.h	/^	UIntPairVector cmplx_calc_count;		\/\/!< Count of calculations$/;"	m	class:CCodeCounter
+cmplx_calc_count	cc_main.h	/^	UIntVector cmplx_calc_count;		\/\/!< Count of calculations$/;"	m	class:results
+cmplx_calc_lines	cc_main.h	/^	unsigned int cmplx_calc_lines;		\/\/!< # of calculations$/;"	m	class:results
+cmplx_calc_list	CCodeCounter.h	/^	StringVector  cmplx_calc_list;			\/\/!< Calculations (complexity)$/;"	m	class:CCodeCounter
+cmplx_cond_count	CCodeCounter.h	/^	UIntPairVector cmplx_cond_count;		\/\/!< Count of conditionals$/;"	m	class:CCodeCounter
+cmplx_cond_count	cc_main.h	/^	UIntVector cmplx_cond_count;		\/\/!< Count of conditionals$/;"	m	class:results
+cmplx_cond_lines	cc_main.h	/^	unsigned int cmplx_cond_lines;		\/\/!< # of conditionals$/;"	m	class:results
+cmplx_cond_list	CCodeCounter.h	/^	StringVector  cmplx_cond_list;			\/\/!< Conditionals (complexity)$/;"	m	class:CCodeCounter
+cmplx_cycfunct_CC2_count	cc_main.h	/^	filemap cmplx_cycfunct_CC2_count;		\/\/!< Cyclomatic complexity by function$/;"	m	class:results
+cmplx_cycfunct_CC3_count	cc_main.h	/^	filemap cmplx_cycfunct_CC3_count;		\/\/!< Cyclomatic complexity by function$/;"	m	class:results
+cmplx_cycfunct_CC4_count	cc_main.h	/^    filemap cmplx_cycfunct_CC4_count;       \/\/!< Cyclomatic complexity by function$/;"	m	class:results
+cmplx_cycfunct_count	cc_main.h	/^	filemap cmplx_cycfunct_count;		\/\/!< Cyclomatic complexity by function$/;"	m	class:results
+cmplx_cyclomatic_case_list	CCodeCounter.h	/^	StringVector  cmplx_cyclomatic_case_list;	\/\/!< Cyclomatic complexity case keywords (complexity)$/;"	m	class:CCodeCounter
+cmplx_cyclomatic_default_list	CCodeCounter.h	/^	StringVector  cmplx_cyclomatic_default_list;	\/\/!< Cyclomatic complexity case default keywords (complexity)$/;"	m	class:CCodeCounter
+cmplx_cyclomatic_list	CCodeCounter.h	/^	StringVector  cmplx_cyclomatic_list;	\/\/!< Cyclomatic complexity decision keywords (complexity)$/;"	m	class:CCodeCounter
+cmplx_cyclomatic_logic_list	CCodeCounter.h	/^	StringVector  cmplx_cyclomatic_logic_list;	\/\/!< Cyclomatic complexity logical keywords (complexity)$/;"	m	class:CCodeCounter
+cmplx_cyclomatic_switch_list	CCodeCounter.h	/^	StringVector  cmplx_cyclomatic_switch_list;	\/\/!< Cyclomatic complexity case switch keywords (complexity)$/;"	m	class:CCodeCounter
+cmplx_logarithm_lines	cc_main.h	/^	unsigned int cmplx_logarithm_lines;	\/\/!< # of logarithm function call lines$/;"	m	class:results
+cmplx_logic_count	CCodeCounter.h	/^	UIntPairVector cmplx_logic_count;		\/\/!< Count of logicals$/;"	m	class:CCodeCounter
+cmplx_logic_count	cc_main.h	/^	UIntVector cmplx_logic_count;		\/\/!< Count of logicals$/;"	m	class:results
+cmplx_logic_lines	cc_main.h	/^	unsigned int cmplx_logic_lines;		\/\/!< # of logical operations$/;"	m	class:results
+cmplx_logic_list	CCodeCounter.h	/^	StringVector  cmplx_logic_list;			\/\/!< Logicals (complexity)$/;"	m	class:CCodeCounter
+cmplx_math_lines	cc_main.h	/^	unsigned int cmplx_math_lines;		\/\/!< # of math function call lines$/;"	m	class:results
+cmplx_nestloop_count	cc_main.h	/^	UIntVector cmplx_nestloop_count;	\/\/!< Count of nested loop levels$/;"	m	class:results
+cmplx_pointer_count	CCodeCounter.h	/^	UIntPairVector cmplx_pointer_count;		\/\/!< Count of pointers$/;"	m	class:CCodeCounter
+cmplx_pointer_count	cc_main.h	/^	UIntVector cmplx_pointer_count;		\/\/!< Count of pointers$/;"	m	class:results
+cmplx_pointer_lines	cc_main.h	/^	unsigned int cmplx_pointer_lines;	\/\/!< # of pointers$/;"	m	class:results
+cmplx_pointer_list	CCodeCounter.h	/^	StringVector  cmplx_pointer_list;		\/\/!< Pointers (complexity)$/;"	m	class:CCodeCounter
+cmplx_preproc_count	CCodeCounter.h	/^	UIntPairVector cmplx_preproc_count;		\/\/!< Count of preprocessor directives$/;"	m	class:CCodeCounter
+cmplx_preproc_count	cc_main.h	/^	UIntVector cmplx_preproc_count;		\/\/!< Count of preprocessor directives$/;"	m	class:results
+cmplx_preproc_lines	cc_main.h	/^	unsigned int cmplx_preproc_lines;	\/\/!< # of preprocessor directive lines for complexity$/;"	m	class:results
+cmplx_preproc_list	CCodeCounter.h	/^	StringVector  cmplx_preproc_list;		\/\/!< Preprocessor directives (complexity)$/;"	m	class:CCodeCounter
+cmplx_trig_lines	cc_main.h	/^	unsigned int cmplx_trig_lines;		\/\/!< # of trig function call lines$/;"	m	class:results
+code_line_pair	CmpMngr.h	/^typedef pair<const string*, size_t> code_line_pair;$/;"	t
+comment_lines	cc_main.h	/^	unsigned int comment_lines;			\/\/!< # of whole line comment lines$/;"	m	class:results
+comp_file	CmpMngr.h	/^	vector<string> comp_file;$/;"	m	class:CmpMngr
+comp_file_line_num	CmpMngr.h	/^	size_t comp_file_line_num;$/;"	m	class:mapping_code
+compare_code_line_pair	CmpMngr.cpp	/^bool compare_code_line_pair(const code_line_pair &lhs, const code_line_pair &rhs)$/;"	f
+comparison_data	CmpMngrHtml.h	/^    vector<FilePairComparisonData> comparison_data;$/;"	m	class:CmpMngrHtml
+continue_keywords	CBashCounter.h	/^	StringVector continue_keywords;		\/\/!< List of keywords to continue to next line$/;"	m	class:CBashCounter
+continue_keywords	CBatchCounter.h	/^	StringVector continue_keywords;		\/\/!< List of keywords to continue to next line$/;"	m	class:CBatchCounter
+continue_keywords	CCshCounter.h	/^	StringVector continue_keywords;		\/\/!< List of keywords to continue to next line$/;"	m	class:CCshCounter
+counted_dupFiles	CCodeCounter.h	/^	unsigned int  counted_dupFiles;			\/\/!< Number of duplicate files counted$/;"	m	class:CCodeCounter
+counted_files	CCodeCounter.h	/^	unsigned int  counted_files;			\/\/!< Number of files counted$/;"	m	class:CCodeCounter
+counter	MainObject.h	/^	CCodeCounter* counter;							\/\/!< Single language code counter$/;"	m	class:MainObject
+data_lines	cc_main.h	/^	unsigned int data_lines[2];			\/\/!< # of data declaration lines$/;"	m	class:results
+data_name_count	CCodeCounter.h	/^	UIntPairVector data_name_count;			\/\/!< Count of each data statement keyword$/;"	m	class:CCodeCounter
+data_name_count	cc_main.h	/^	UIntVector data_name_count;			\/\/!< Count of each data statement keyword$/;"	m	class:results
+data_name_list	CCodeCounter.h	/^	StringVector  data_name_list;			\/\/!< Data statement keywords$/;"	m	class:CCodeCounter
+deletedLines	DiffTool.h	/^		unsigned int deletedLines;			\/\/!< Lines deleted$/;"	m	class:DiffTool::resultStruct
+delimiter	CRubyCounter.h	/^	string delimiter;	\/\/ used to store delimiter of string literals across lines$/;"	m	class:CRubyCounter
+diffToolProcess	DiffTool.cpp	/^int DiffTool::diffToolProcess(int argc, char *argv[])$/;"	f	class:DiffTool
+directive	CCodeCounter.h	/^	StringVector  directive;				\/\/!< Directive statement keywords$/;"	m	class:CCodeCounter
+directive_count	CCodeCounter.h	/^	UIntPairVector directive_count;			\/\/!< Count of each directive statement keyword$/;"	m	class:CCodeCounter
+directive_count	cc_main.h	/^	UIntVector directive_count;			\/\/!< Count of each directive statement keyword$/;"	m	class:results
+directive_lines	cc_main.h	/^	unsigned int directive_lines[2];	\/\/!< # of compiler directive lines$/;"	m	class:results
+dirnameA	MainObject.h	/^	string dirnameA;								\/\/!< Directory name for baseline A$/;"	m	class:MainObject
+dirnameB	MainObject.h	/^	string dirnameB;								\/\/!< Directory name for baseline B$/;"	m	class:MainObject
+dump_file_stream	CmpMngrHtml.h	/^    ifstream& dump_file_stream;$/;"	m	class:CmpMngrHtml
+dup_addedLines	DiffTool.h	/^	unsigned int dup_addedLines;		\/\/!< Total duplicate lines added$/;"	m	class:DiffTool
+dup_deletedLines	DiffTool.h	/^	unsigned int dup_deletedLines;		\/\/!< Total duplicate lines deleted$/;"	m	class:DiffTool
+dup_modifiedLines	DiffTool.h	/^	unsigned int dup_modifiedLines;		\/\/!< Total duplicate lines modified$/;"	m	class:DiffTool
+dup_outfile_diff_csv	DiffTool.h	/^	ofstream dup_outfile_diff_csv;		\/\/!< Differencing results CSV file stream for duplicates$/;"	m	class:DiffTool
+dup_outfile_diff_results	DiffTool.h	/^	ofstream dup_outfile_diff_results;  \/\/!< Differencing results text file stream for duplicates$/;"	m	class:DiffTool
+dup_unmodifiedLines	DiffTool.h	/^	unsigned int dup_unmodifiedLines;	\/\/!< Total duplicate lines unmodified$/;"	m	class:DiffTool
+duplicate	cc_main.h	/^	bool duplicate;						\/\/!< Is this file a duplicate? (printed in Duplicates counting file)$/;"	m	class:results
+duplicateFilesInA1	MainObject.h	/^	StringVector duplicateFilesInA1;				\/\/!< List of duplicate file sources in baseline A$/;"	m	class:MainObject
+duplicateFilesInA2	MainObject.h	/^	StringVector duplicateFilesInA2;				\/\/!< List of duplicate files in baseline A$/;"	m	class:MainObject
+duplicateFilesInB1	MainObject.h	/^	StringVector duplicateFilesInB1;				\/\/!< List of duplicate file sources in baseline B$/;"	m	class:MainObject
+duplicateFilesInB2	MainObject.h	/^	StringVector duplicateFilesInB2;				\/\/!< List of duplicate files in baseline B$/;"	m	class:MainObject
+duplicate_threshold	MainObject.h	/^	double duplicate_threshold;						\/\/!< % changed threshold for determining duplicate content$/;"	m	class:MainObject
+e_comm_lines	cc_main.h	/^	unsigned int e_comm_lines;			\/\/!< # of embedded comment lines$/;"	m	class:results
+e_flag	cc_main.h	/^	bool      e_flag;					\/\/!< Set to true if error occurs during processing$/;"	m	class:results
+echoHelper	CCshCounter.cpp	/^string CCshCounter::echoHelper(string line){$/;"	f	class:CCshCounter
+embed_comment	MainObject.h	/^		unsigned int embed_comment;					\/\/!< Embedded comments$/;"	m	struct:MainObject::AllWebTotalValue
+embed_comment	MainObject.h	/^		unsigned int embed_comment;					\/\/!< Embedded comments$/;"	m	struct:MainObject::TotalValue
+embed_comment	MainObject.h	/^		unsigned int embed_comment;					\/\/!< Embedded comments$/;"	m	struct:MainObject::WebTotalValue
+errFile	UserIF.h	/^	ofstream errFile;			\/\/!< Stream for logging errors$/;"	m	class:UserIF
+errPath	UserIF.h	/^	string errPath;				\/\/!< Error log file path$/;"	m	class:UserIF
+error_code	cc_main.h	/^	string error_code;					\/\/!< Error string$/;"	m	class:results
+exclude_keywords	CCodeCounter.h	/^	StringVector  exclude_keywords;			\/\/!< List of keywords to exclude from counts$/;"	m	class:CCodeCounter
+exclude_loop	CPhpCounter.h	/^	StringVector exclude_loop;				\/\/!< List of keywords to exclude for loops$/;"	m	class:CPhpCounter
+exclude_start_keywords	CVbCounter.h	/^	StringVector exclude_start_keywords;		\/\/!< SLOC lines excluded from counts starting with keywords$/;"	m	class:CVbCounter
+execCanceled	UserIF.h	/^	bool execCanceled;			\/\/!< Flag indicating canceled execution$/;"	m	class:UserIF
+exec_lines	cc_main.h	/^	unsigned int exec_lines[2];			\/\/!< # of executable lines$/;"	m	class:results
+exec_name_count	CCodeCounter.h	/^	UIntPairVector exec_name_count;			\/\/!< Count of each executable statement keyword$/;"	m	class:CCodeCounter
+exec_name_count	cc_main.h	/^	UIntVector exec_name_count;			\/\/!< Count of each executable statement keyword$/;"	m	class:results
+exec_name_list	CCodeCounter.h	/^	StringVector  exec_name_list;			\/\/!< Executable statement keywords$/;"	m	class:CCodeCounter
+fileElement	DiffTool.h	/^		SourceFileElement *fileElement;	\/\/!< File element$/;"	m	struct:DiffTool::PreferenceStruct
+file_dump_stream	CmpMngr.h	/^    ofstream *file_dump_stream;$/;"	m	class:CmpMngr
+file_exten_asp	CWebCounter.h	/^	StringVector file_exten_asp;				\/\/!< File extensions for ASP$/;"	m	class:CWebCounter
+file_exten_cfm	CWebCounter.h	/^	StringVector file_exten_cfm;				\/\/!< File extensions for ColdFusion$/;"	m	class:CWebCounter
+file_exten_htm	CWebCounter.h	/^	StringVector file_exten_htm;				\/\/!< File extensions for HTML$/;"	m	class:CWebCounter
+file_exten_jsp	CWebCounter.h	/^	StringVector file_exten_jsp;				\/\/!< File extensions for JSP$/;"	m	class:CWebCounter
+file_exten_php	CWebCounter.h	/^	StringVector file_exten_php;				\/\/!< File extensions for PHP$/;"	m	class:CWebCounter
+file_exten_xml	CWebCounter.h	/^	StringVector file_exten_xml;				\/\/!< File extensions for XML$/;"	m	class:CWebCounter
+file_extension	CCodeCounter.h	/^	StringVector  file_extension;			\/\/!< File extension$/;"	m	class:CCodeCounter
+file_name	cc_main.h	/^	string    file_name;				\/\/!< File name$/;"	m	class:results
+file_type	cc_main.h	/^	int       file_type;				\/\/!< File type (DATA, CODE)$/;"	m	class:results
+filemap	cc_main.h	/^typedef vector<lineElement> filemap;$/;"	t
+fill_source_code_vec	CmpMngr.cpp	/^void CmpMngr::fill_source_code_vec(const srcLineVector *file_map, vector<string> &source_code_vec)$/;"	f	class:CmpMngr
+firstDuplicate	cc_main.h	/^	bool firstDuplicate;				\/\/!< Is this file the first (source) duplicate? (printed in main counting file)$/;"	m	class:results
+followSymLinks	MainObject.h	/^	bool followSymLinks;							\/\/!< Unix symbolic links are followed to their linked files\/dirs$/;"	m	class:MainObject
+html_diff_stream	DiffTool.h	/^    ofstream html_diff_stream;          \/\/!< HTML file stram for highlighted diff output$/;"	m	class:DiffTool
+html_output_file	CWebCounter.h	/^	ofstream html_output_file;					\/\/!< HTML output file stream$/;"	m	class:CWebCounter
+html_output_file_csv	CWebCounter.h	/^	ofstream html_output_file_csv;				\/\/!< HTML output CSV file stream$/;"	m	class:CWebCounter
+html_stream	CmpMngrHtml.h	/^    ofstream& html_stream;$/;"	m	class:CmpMngrHtml
+ignore_cmplx_cyclomatic_list	CCodeCounter.h	/^	StringVector  ignore_cmplx_cyclomatic_list;	\/\/!< Cyclomatic complexity decision keywords to ignore (for example End If)$/;"	m	class:CCodeCounter
+infile_file_dump	DiffTool.h	/^    ifstream infile_file_dump;          \/\/!< instream for dump_file eval. fstream is included in CmpMngrHtml.h$/;"	m	class:DiffTool
+isCanceled	UserIF.cpp	/^bool UserIF::isCanceled()$/;"	f	class:UserIF
+isDiff	MainObject.h	/^	bool isDiff;									\/\/!< Has differencing been requested (-d)?$/;"	m	class:MainObject
+isVerbatim	CCsharpCounter.h	/^	bool isVerbatim;$/;"	m	class:CCsharpCounter
+jsp_output_file	CWebCounter.h	/^	ofstream jsp_output_file;					\/\/!< JSP output file stream$/;"	m	class:CWebCounter
+jsp_output_file_csv	CWebCounter.h	/^	ofstream jsp_output_file_csv;				\/\/!< JSP output CSV file stream$/;"	m	class:CWebCounter
+language_name	CCodeCounter.h	/^	string        language_name;			\/\/!< Counter language name$/;"	m	class:CCodeCounter
+line	cc_main.h	/^	string line;				\/\/!< Line text$/;"	m	struct:lineElement
+lineElement	cc_main.h	/^	lineElement()$/;"	f	struct:lineElement
+lineElement	cc_main.h	/^	lineElement(unsigned int num, string str)$/;"	f	struct:lineElement
+lineElement	cc_main.h	/^struct lineElement$/;"	s
+lineNumber	CVHDLCounter.h	/^	int	lineNumber;$/;"	m	class:tokenLocation
+lineNumber	cc_main.h	/^	unsigned int lineNumber;	\/\/!< Line number$/;"	m	struct:lineElement
+line_ty_to_css_class	CmpMngrHtml.cpp	/^string line_ty_to_css_class[] = {$/;"	v
+listFilesToBeSearched	MainObject.h	/^	StringVector listFilesToBeSearched;				\/\/!< List of options for files to be searched$/;"	m	class:MainObject
+log_decl	MainObject.h	/^		unsigned int log_decl;						\/\/!< Logical data declaration SLOC$/;"	m	struct:MainObject::TotalValue
+log_decl	MainObject.h	/^		unsigned int log_decl[13];					\/\/!< Logical data declaration SLOC$/;"	m	struct:MainObject::AllWebTotalValue
+log_decl	MainObject.h	/^		unsigned int log_decl[6];					\/\/!< Logical data declaration SLOC$/;"	m	struct:MainObject::WebTotalValue
+log_direct	MainObject.h	/^		unsigned int log_direct;					\/\/!< Logical directive SLOC$/;"	m	struct:MainObject::TotalValue
+log_direct	MainObject.h	/^		unsigned int log_direct[13];				\/\/!< Logical directive SLOC$/;"	m	struct:MainObject::AllWebTotalValue
+log_direct	MainObject.h	/^		unsigned int log_direct[6];					\/\/!< Logical directive SLOC$/;"	m	struct:MainObject::WebTotalValue
+log_func_count	CCodeCounter.h	/^	UIntPairVector log_func_count;			\/\/!< Count of logarithmic functions$/;"	m	class:CCodeCounter
+log_func_count	cc_main.h	/^	UIntVector log_func_count;			\/\/!< Count of logarithmic functions$/;"	m	class:results
+log_func_list	CCodeCounter.h	/^	StringVector  log_func_list;			\/\/!< Logarithmic functions$/;"	m	class:CCodeCounter
+log_instr	MainObject.h	/^		unsigned int log_instr;						\/\/!< Logical executable instruction SLOC$/;"	m	struct:MainObject::TotalValue
+log_instr	MainObject.h	/^		unsigned int log_instr[13];					\/\/!< Logical executable instruction SLOC$/;"	m	struct:MainObject::AllWebTotalValue
+log_instr	MainObject.h	/^		unsigned int log_instr[6];					\/\/!< Logical executable instruction SLOC$/;"	m	struct:MainObject::WebTotalValue
+loop_keywords	CPythonCounter.h	/^	StringVector loop_keywords;		\/\/!< List of keywords to indicate the beginning of a loop$/;"	m	class:CPythonCounter
+lsloc_truncate	CCodeCounter.h	/^	size_t        lsloc_truncate;			\/\/!< # of characters allowed in LSLOC for differencing (0=no truncation)$/;"	m	class:CCodeCounter
+lsloc_truncate	MainObject.h	/^	size_t lsloc_truncate;							\/\/!< # of characters allowed in LSLOC for differencing (0=no truncation)$/;"	m	class:MainObject
+m_line_no	CmpMngrHtml.h	/^    int m_line_no;$/;"	m	class:LinesPairOriginalComparator
+m_line_no	CmpMngrHtml.h	/^    int m_line_no;$/;"	m	class:LinesPairPairedComparator
+main	main.cpp	/^int main(int argc, char *argv[])$/;"	f
+mapped_lines	CmpMngrHtml.h	/^    vector<LinesPair> mapped_lines;$/;"	m	class:FilePairComparisonData
+mapping_code	CmpMngr.cpp	/^mapping_code::mapping_code(const mapping_code &rhs) : base_file_line_num(rhs.base_file_line_num),$/;"	f	class:mapping_code
+mapping_code	CmpMngr.cpp	/^mapping_code::mapping_code(const size_t base_file, const size_t comp_file, const MARKER mk) :$/;"	f	class:mapping_code
+mapping_code	CmpMngr.h	/^class mapping_code$/;"	c
+mapping_list	CmpMngr.h	/^	vector<mapping_code> mapping_list;$/;"	m	class:CmpMngr
+marker	CmpMngr.h	/^	MARKER marker;$/;"	m	class:mapping_code
+match_threshold	MainObject.h	/^	double match_threshold;							\/\/!< % threshold for matching, if greater then added\/deleted instead of modified$/;"	m	class:MainObject
+matched	cc_main.h	/^	bool matched;						\/\/!< Has matching file been found for differencing?$/;"	m	class:results
+matchedFilesList	DiffTool.h	/^	MatchingType matchedFilesList;		\/\/!< List of matching file pairs and differencing results$/;"	m	class:DiffTool
+math_func_count	CCodeCounter.h	/^	UIntPairVector math_func_count;			\/\/!< Count of math functions$/;"	m	class:CCodeCounter
+math_func_count	cc_main.h	/^	UIntVector math_func_count;			\/\/!< Count of math functions$/;"	m	class:results
+math_func_list	CCodeCounter.h	/^	StringVector  math_func_list;			\/\/!< Math functions$/;"	m	class:CCodeCounter
+modifiedLines	DiffTool.h	/^		unsigned int modifiedLines;			\/\/!< Lines modified$/;"	m	class:DiffTool::resultStruct
+mySLOCLines	cc_main.h	/^	srcLineVector mySLOCLines;			\/\/!< Contains the actual logical lines of code for differencing$/;"	m	class:results
+nAddedLines	CmpMngr.h	/^	unsigned int nAddedLines;		\/\/!< Number of lines added$/;"	m	class:CmpMngr
+nChangedLines	CmpMngr.h	/^	unsigned int nChangedLines;		\/\/!< Number of lines changed$/;"	m	class:CmpMngr
+nDeletedLines	CmpMngr.h	/^	unsigned int nDeletedLines;		\/\/!< Number of lines deleted$/;"	m	class:CmpMngr
+nNochangedLines	CmpMngr.h	/^	unsigned int nNochangedLines;	\/\/!< Number of lines unchanged$/;"	m	class:CmpMngr
+num_of_file	MainObject.h	/^		unsigned int num_of_file;					\/\/!< Number of files$/;"	m	struct:MainObject::AllWebTotalValue
+num_of_file	MainObject.h	/^		unsigned int num_of_file;					\/\/!< Number of files$/;"	m	struct:MainObject::TotalValue
+num_of_file	MainObject.h	/^		unsigned int num_of_file;					\/\/!< Number of files$/;"	m	struct:MainObject::WebTotalValue
+operator ()	CmpMngrHtml.h	/^    bool operator()(const LinesPair& pair)$/;"	f	class:LinesPairOriginalComparator
+operator ()	CmpMngrHtml.h	/^    bool operator()(const LinesPair& pair)$/;"	f	class:LinesPairPairedComparator
+operator ()	DiffTool.h	/^		bool operator() (const PreferenceStruct &a, const PreferenceStruct &b) const$/;"	f	struct:DiffTool::CustomCMP
+operator =	cc_main.cpp	/^results& results::operator= (const results& obj)$/;"	f	class:results
+original_filename	CmpMngrHtml.h	/^    string original_filename;$/;"	m	class:FilePairComparisonData
+original_line_number	CmpMngrHtml.h	/^    int original_line_number;$/;"	m	class:LinesPair
+outDir	MainObject.h	/^	string outDir;									\/\/!< Output directory$/;"	m	class:MainObject
+outfile_diff_csv	DiffTool.h	/^	ofstream outfile_diff_csv;			\/\/!< Differencing results CSV file stream$/;"	m	class:DiffTool
+outfile_diff_results	DiffTool.h	/^	ofstream outfile_diff_results;		\/\/!< Differencing results text file stream$/;"	m	class:DiffTool
+outfile_file_dump	DiffTool.h	/^    ofstream outfile_file_dump;         \/\/!< Differencing results text file stream for paired lines info$/;"	m	class:DiffTool
+output_file	CCodeCounter.h	/^	ofstream output_file;					\/\/!< Output file stream$/;"	m	class:CCodeCounter
+output_file	MainObject.h	/^	ofstream output_file;							\/\/!< Total output file stream$/;"	m	class:MainObject
+output_file_csv	CCodeCounter.h	/^	ofstream output_file_csv;				\/\/!< Output CSV file stream$/;"	m	class:CCodeCounter
+output_file_csv	MainObject.h	/^	ofstream output_file_csv;						\/\/!< Total output CSV file stream$/;"	m	class:MainObject
+output_summary	MainObject.h	/^	ofstream output_summary;						\/\/!< Output summary file stream$/;"	m	class:MainObject
+output_summary_csv	MainObject.h	/^	ofstream output_summary_csv;					\/\/!< Output summary CSV file stream$/;"	m	class:MainObject
+paired_filename	CmpMngrHtml.h	/^    string paired_filename;$/;"	m	class:FilePairComparisonData
+paired_line_number	CmpMngrHtml.h	/^    int paired_line_number;$/;"	m	class:LinesPair
+php_output_file	CWebCounter.h	/^	ofstream php_output_file;					\/\/!< PHP output file stream$/;"	m	class:CWebCounter
+php_output_file_csv	CWebCounter.h	/^	ofstream php_output_file_csv;				\/\/!< PHP output CSV file stream$/;"	m	class:CWebCounter
+phy_decl	MainObject.h	/^		unsigned int phy_decl;						\/\/!< Physical data declaration SLOC$/;"	m	struct:MainObject::TotalValue
+phy_decl	MainObject.h	/^		unsigned int phy_decl[13];					\/\/!< Physical data declaration SLOC$/;"	m	struct:MainObject::AllWebTotalValue
+phy_decl	MainObject.h	/^		unsigned int phy_decl[6];					\/\/!< Physical data declaration SLOC$/;"	m	struct:MainObject::WebTotalValue
+phy_direct	MainObject.h	/^		unsigned int phy_direct;					\/\/!< Physical directive SLOC$/;"	m	struct:MainObject::TotalValue
+phy_direct	MainObject.h	/^		unsigned int phy_direct[13];				\/\/!< Physical directive SLOC$/;"	m	struct:MainObject::AllWebTotalValue
+phy_direct	MainObject.h	/^		unsigned int phy_direct[6];					\/\/!< Physical directive SLOC$/;"	m	struct:MainObject::WebTotalValue
+phy_instr	MainObject.h	/^		unsigned int phy_instr;						\/\/!< Physical executable instruction SLOC$/;"	m	struct:MainObject::TotalValue
+phy_instr	MainObject.h	/^		unsigned int phy_instr[13];					\/\/!< Physical executable instruction SLOC$/;"	m	struct:MainObject::AllWebTotalValue
+phy_instr	MainObject.h	/^		unsigned int phy_instr[6];					\/\/!< Physical executable instruction SLOC$/;"	m	struct:MainObject::WebTotalValue
+position	CVHDLCounter.h	/^	int position;$/;"	m	class:tokenLocation
+printDup	DiffTool.h	/^	bool printDup;						\/\/!< Print duplicates (only true if unmatched duplicates exist)$/;"	m	class:DiffTool
+print_ascii	MainObject.h	/^	bool print_ascii;								\/\/!< Print ASCII text report files$/;"	m	class:MainObject
+print_cmplx	CCodeCounter.h	/^	bool          print_cmplx;				\/\/!< Print complexity and keyword counts$/;"	m	class:CCodeCounter
+print_cmplx	MainObject.h	/^	bool print_cmplx;								\/\/!< Print complexity and keyword counts$/;"	m	class:MainObject
+print_csv	MainObject.h	/^	bool print_csv;									\/\/!< Print CSV report files$/;"	m	class:MainObject
+print_info	CmpMngr.cpp	/^void CmpMngr::print_info(ofstream *file_dump_stream) const$/;"	f	class:CmpMngr
+print_legacy	MainObject.h	/^	bool print_legacy;								\/\/!< Print legacy formatted ASCII text report files$/;"	m	class:MainObject
+print_unified	MainObject.h	/^	bool print_unified;								\/\/!< Print all counting files in a single unified file$/;"	m	class:MainObject
+reset	cc_main.cpp	/^void results::reset()$/;"	f	class:results
+resultStruct	DiffTool.h	/^		resultStruct() { addedLines = deletedLines = modifiedLines = unmodifiedLines = 0; }$/;"	f	class:DiffTool::resultStruct
+resultStruct	DiffTool.h	/^	class resultStruct$/;"	c	class:DiffTool
+results	cc_main.h	/^	results() { reset(); }				\/\/!< Constructor$/;"	f	class:results
+results	cc_main.h	/^class results$/;"	c
+skip_cmplx_cyclomatic_file_extension_list	CCodeCounter.h	/^	StringVector  skip_cmplx_cyclomatic_file_extension_list;	\/\/!< Cyclomatic complexity file extensions to skip$/;"	m	class:CCodeCounter
+srcLineVector	cc_main.h	/^typedef map<string, vector<size_t> > srcLineVector;$/;"	t
+stringList	CmpMngr.h	/^typedef list<string> stringList;$/;"	t
+stringSizeMap	CmpMngr.h	/^typedef map<size_t, stringList> stringSizeMap;$/;"	t
+tokLocVect	CVHDLCounter.h	/^typedef vector<tokenLocation> tokLocVect;$/;"	t
+token	CVHDLCounter.h	/^	string token;$/;"	m	class:tokenLocation
+tokenLocation	CVHDLCounter.h	/^class tokenLocation$/;"	c
+total_addedLines	DiffTool.h	/^	unsigned int total_addedLines;		\/\/!< Total lines added$/;"	m	class:DiffTool
+total_asp_dupFilesA	CWebCounter.h	/^	unsigned int total_asp_dupFilesA;			\/\/!< Total duplicate ASP files in baseline A$/;"	m	class:CWebCounter
+total_asp_dupFilesB	CWebCounter.h	/^	unsigned int total_asp_dupFilesB;			\/\/!< Total duplicate ASP files in baseline B$/;"	m	class:CWebCounter
+total_asp_filesA	CWebCounter.h	/^	unsigned int total_asp_filesA;				\/\/!< Total ASP files in baseline A$/;"	m	class:CWebCounter
+total_asp_filesB	CWebCounter.h	/^	unsigned int total_asp_filesB;				\/\/!< Total ASP files in baseline B$/;"	m	class:CWebCounter
+total_cfm_dupFilesA	CWebCounter.h	/^	unsigned int total_cfm_dupFilesA;			\/\/!< Total duplicate ColdFusion files in baseline A$/;"	m	class:CWebCounter
+total_cfm_dupFilesB	CWebCounter.h	/^	unsigned int total_cfm_dupFilesB;			\/\/!< Total duplicate ColdFusion files in baseline B$/;"	m	class:CWebCounter
+total_cfm_filesA	CWebCounter.h	/^	unsigned int total_cfm_filesA;				\/\/!< Total ColdFusion files in baseline A$/;"	m	class:CWebCounter
+total_cfm_filesB	CWebCounter.h	/^	unsigned int total_cfm_filesB;				\/\/!< Total ColdFusion files in baseline B$/;"	m	class:CWebCounter
+total_deletedLines	DiffTool.h	/^	unsigned int total_deletedLines;	\/\/!< Total lines deleted$/;"	m	class:DiffTool
+total_dupFilesA	CCodeCounter.h	/^	unsigned int  total_dupFilesA;			\/\/!< Total number of files in baseline A$/;"	m	class:CCodeCounter
+total_dupFilesB	CCodeCounter.h	/^	unsigned int  total_dupFilesB;			\/\/!< Total number of duplicate files in baseline B$/;"	m	class:CCodeCounter
+total_filesA	CCodeCounter.h	/^	unsigned int  total_filesA;				\/\/!< Total number of files in baseline A$/;"	m	class:CCodeCounter
+total_filesB	CCodeCounter.h	/^	unsigned int  total_filesB;				\/\/!< Total number of duplicate files in baseline B$/;"	m	class:CCodeCounter
+total_htm_dupFilesA	CWebCounter.h	/^	unsigned int total_htm_dupFilesA;			\/\/!< Total duplicate HTML files in baseline A$/;"	m	class:CWebCounter
+total_htm_dupFilesB	CWebCounter.h	/^	unsigned int total_htm_dupFilesB;			\/\/!< Total duplicate HTML files in baseline B$/;"	m	class:CWebCounter
+total_htm_filesA	CWebCounter.h	/^	unsigned int total_htm_filesA;				\/\/!< Total HTML files in baseline A$/;"	m	class:CWebCounter
+total_htm_filesB	CWebCounter.h	/^	unsigned int total_htm_filesB;				\/\/!< Total HTML files in baseline B$/;"	m	class:CWebCounter
+total_jsp_dupFilesA	CWebCounter.h	/^	unsigned int total_jsp_dupFilesA;			\/\/!< Total duplicate JSP files in baseline A$/;"	m	class:CWebCounter
+total_jsp_dupFilesB	CWebCounter.h	/^	unsigned int total_jsp_dupFilesB;			\/\/!< Total duplicate JSP files in baseline B$/;"	m	class:CWebCounter
+total_jsp_filesA	CWebCounter.h	/^	unsigned int total_jsp_filesA;				\/\/!< Total JSP files in baseline A$/;"	m	class:CWebCounter
+total_jsp_filesB	CWebCounter.h	/^	unsigned int total_jsp_filesB;				\/\/!< Total JSP files in baseline B$/;"	m	class:CWebCounter
+total_line	MainObject.h	/^		unsigned int total_line;					\/\/!< Total lines$/;"	m	struct:MainObject::AllWebTotalValue
+total_line	MainObject.h	/^		unsigned int total_line;					\/\/!< Total lines$/;"	m	struct:MainObject::TotalValue
+total_line	MainObject.h	/^		unsigned int total_line;					\/\/!< Total lines$/;"	m	struct:MainObject::WebTotalValue
+total_lines	cc_main.h	/^	unsigned int total_lines;			\/\/!< # of total lines$/;"	m	class:results
+total_modifiedLines	DiffTool.h	/^	unsigned int total_modifiedLines;	\/\/!< Total lines modified$/;"	m	class:DiffTool
+total_php_dupFilesA	CWebCounter.h	/^	unsigned int total_php_dupFilesA;			\/\/!< Total duplicate PHP files in baseline A$/;"	m	class:CWebCounter
+total_php_dupFilesB	CWebCounter.h	/^	unsigned int total_php_dupFilesB;			\/\/!< Total duplicate PHP files in baseline B$/;"	m	class:CWebCounter
+total_php_filesA	CWebCounter.h	/^	unsigned int total_php_filesA;				\/\/!< Total PHP files in baseline A$/;"	m	class:CWebCounter
+total_php_filesB	CWebCounter.h	/^	unsigned int total_php_filesB;				\/\/!< Total PHP files in baseline B$/;"	m	class:CWebCounter
+total_unmodifiedLines	DiffTool.h	/^	unsigned int total_unmodifiedLines;	\/\/!< Total lines unmodified$/;"	m	class:DiffTool
+total_xml_dupFilesA	CWebCounter.h	/^	unsigned int total_xml_dupFilesA;			\/\/!< Total duplicate XML files in baseline A$/;"	m	class:CWebCounter
+total_xml_dupFilesB	CWebCounter.h	/^	unsigned int total_xml_dupFilesB;			\/\/!< Total duplicate XML files in baseline B$/;"	m	class:CWebCounter
+total_xml_filesA	CWebCounter.h	/^	unsigned int total_xml_filesA;				\/\/!< Total XML files in baseline A$/;"	m	class:CWebCounter
+total_xml_filesB	CWebCounter.h	/^	unsigned int total_xml_filesB;				\/\/!< Total XML files in baseline B$/;"	m	class:CWebCounter
+trig_func_count	CCodeCounter.h	/^	UIntPairVector trig_func_count;			\/\/!< Count of trigonometric functions$/;"	m	class:CCodeCounter
+trig_func_count	cc_main.h	/^	UIntVector trig_func_count;			\/\/!< Count of trigonometric functions$/;"	m	class:results
+trig_func_list	CCodeCounter.h	/^	StringVector  trig_func_list;			\/\/!< Trigonometric functions$/;"	m	class:CCodeCounter
+trunc_lines	cc_main.h	/^	unsigned int trunc_lines;			\/\/!< # of truncated logical lines$/;"	m	class:results
+type	CmpMngrHtml.h	/^    int type;$/;"	m	class:LinesPair
+unmodifiedLines	DiffTool.h	/^		unsigned int unmodifiedLines;		\/\/!< Lines unmodified$/;"	m	class:DiffTool::resultStruct
+updateProgress	UserIF.cpp	/^void UserIF::updateProgress(const string &msg, bool \/*postNL*\/,$/;"	f	class:UserIF
+updateProgress	UserIF.cpp	/^void UserIF::updateProgress(const string &msg, bool postNL,$/;"	f	class:UserIF
+use_CommandLine	MainObject.h	/^	bool use_CommandLine;							\/\/!< Read file names from command line specifications or from input files$/;"	m	class:MainObject
+userExtMapFile	MainObject.h	/^	string userExtMapFile;							\/\/!< User extension map file$/;"	m	class:MainObject
+userIF	MainObject.h	/^	UserIF *userIF;									\/\/!< User interface for presenting messages\/progress to user$/;"	m	class:MainObject
+value	DiffTool.h	/^		int value;						\/\/!< File preference value$/;"	m	struct:DiffTool::PreferenceStruct
+vectorString	CUtil.h	/^typedef vector<string> vectorString;$/;"	t
+web_lang_names	CWebCounter.h	/^	StringVector web_lang_names;				\/\/!< List of web language names;$/;"	m	class:CWebCounter
+whole_comment	MainObject.h	/^		unsigned int whole_comment;					\/\/!< Whole line comments$/;"	m	struct:MainObject::AllWebTotalValue
+whole_comment	MainObject.h	/^		unsigned int whole_comment;					\/\/!< Whole line comments$/;"	m	struct:MainObject::TotalValue
+whole_comment	MainObject.h	/^		unsigned int whole_comment;					\/\/!< Whole line comments$/;"	m	struct:MainObject::WebTotalValue
+xml_output_file	CWebCounter.h	/^	ofstream xml_output_file;					\/\/!< XML output file stream$/;"	m	class:CWebCounter
+xml_output_file_csv	CWebCounter.h	/^	ofstream xml_output_file_csv;				\/\/!< XML output CSV file stream$/;"	m	class:CWebCounter
+~CCodeCounter	CCodeCounter.cpp	/^CCodeCounter::~CCodeCounter()$/;"	f	class:CCodeCounter
+~DiffTool	DiffTool.h	/^	~DiffTool(){}$/;"	f	class:DiffTool
+~MainObject	MainObject.cpp	/^MainObject::~MainObject()$/;"	f	class:MainObject
+~UserIF	UserIF.h	/^	~UserIF(){}$/;"	f	class:UserIF
