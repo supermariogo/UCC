@@ -870,41 +870,46 @@ void CUtil::SemanticFormat(string &statement)
 
     statement.erase(remove_if(statement.begin(), statement.end(), ::isspace), statement.end());
 
-    if(statement[0]=='!'){
-        statement = statement.substr(1, string::npos)+="==0";
+    if(statement.find("&&") == string::npos){
+        if(statement[0]=='!'){
+            statement = statement.substr(1, string::npos)+="==0";
+            return;
+        }
+        if (statement.find("==") == string::npos && statement.find("!=")==string::npos){
+            statement = statement + "==1";
+            return ;
+        }
+
+        if (statement.find("==") != string::npos){
+            idx =statement.find("==");
+            if(statement.substr(idx+2, string::npos)=="true" || statement.substr(idx+2, string::npos)=="1"){
+                statement = statement.substr(0, idx) + "==1";
+                return ;
+            }else if(statement.substr(idx+2, string::npos)=="false" || statement.substr(idx+2, string::npos)=="0"){
+                statement = statement.substr(0, idx) + "==0";
+                return ;
+            }else{
+                return ;
+            }
+
+        }
+
+        if (statement.find("!=") != string::npos){
+            idx =statement.find("!=");
+            if(statement.substr(idx+2, string::npos)=="true" || statement.substr(idx+2, string::npos)=="1"){
+                statement = statement.substr(0, idx) + "==0";
+                return ;
+            }else if(statement.substr(idx+2, string::npos)=="false" || statement.substr(idx+2, string::npos)=="0"){
+                statement = statement.substr(0, idx) + "==1";
+                return;
+            }else{
+                return;
+            }
+
+        }
+    }else{
+        //TODO
         return;
-    }
-    if (statement.find("==") == string::npos && statement.find("!=")==string::npos){
-        statement = statement + "==1";
-        return ;
-    }
-
-    if (statement.find("==") != string::npos){
-        idx =statement.find("==");
-        if(statement.substr(idx+2, string::npos)=="true" || statement.substr(idx+2, string::npos)=="1"){
-            statement = statement.substr(0, idx) + "==1";
-            return ;
-        }else if(statement.substr(idx+2, string::npos)=="false" || statement.substr(idx+2, string::npos)=="0"){
-            statement = statement.substr(0, idx) + "==0";
-            return ;
-        }else{
-            return ;
-        }
-
-    }
-
-    if (statement.find("!=") != string::npos){
-        idx =statement.find("!=");
-        if(statement.substr(idx+2, string::npos)=="true" || statement.substr(idx+2, string::npos)=="1"){
-            statement = statement.substr(0, idx) + "==0";
-            return ;
-        }else if(statement.substr(idx+2, string::npos)=="false" || statement.substr(idx+2, string::npos)=="0"){
-            statement = statement.substr(0, idx) + "==1";
-            return;
-        }else{
-            return;
-        }
-
     }
 }
 
