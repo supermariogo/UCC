@@ -888,7 +888,7 @@ void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
         // remove all white space and '('  ')'
         temp = *it;
         temp.erase(remove_if(temp.begin(), temp.end(), ::isspace), temp.end());
-        temp=temp.substr(1, temp.length()-2); // remove ()
+        //temp=temp.substr(1, temp.length()-2); // remove ()
         cout << "temp is: " << temp<<endl;
 
 
@@ -899,9 +899,9 @@ void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
 
         if (temp.find("==") != string::npos){
             idx =temp.find("==");
-            if(temp.substr(idx+2, string::npos)=="true" || temp.substr(idx+2, string::npos)=="1"){
+            if(temp.substr(idx+2, string::npos)=="true)" || temp.substr(idx+2, string::npos)=="1)"){
                 var_value_pos[temp.substr(0, idx)] = "1";
-            }else if(temp.substr(idx+2, string::npos)=="false" || temp.substr(idx+2, string::npos)=="0"){
+            }else if(temp.substr(idx+2, string::npos)=="false)" || temp.substr(idx+2, string::npos)=="0)"){
                 var_value_pos[temp.substr(0, idx)] = "0";
             }else{
                 var_value_pos[temp.substr(0, idx)] = temp.substr(idx+2, string::npos);

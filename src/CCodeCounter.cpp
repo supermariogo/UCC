@@ -851,11 +851,18 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 			}
 
 
+			set<string>::iterator itr = cyclomatic_distinct_cond_set.begin();
+
 			cout << line << endl;
 			cout << "before deduplacation, distinct set size :: " << cyclomatic_distinct_cond_set.size() << endl;
+			while(itr != cyclomatic_distinct_cond_set.end())
+            {
+                cout << (*itr) << endl;
+                itr++;
+            }
 			CUtil::SemanticDeduplicate(cyclomatic_distinct_cond_set);
             cout << "after deduplacation, distinct set size :: " << cyclomatic_distinct_cond_set.size() << endl;
-            set<string>::iterator itr = cyclomatic_distinct_cond_set.begin();
+            itr = cyclomatic_distinct_cond_set.begin();
             while(itr != cyclomatic_distinct_cond_set.end())
             {
                 cout << (*itr) << endl;
