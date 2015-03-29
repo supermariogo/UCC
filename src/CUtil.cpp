@@ -866,7 +866,7 @@ Shoule be same
 void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
 {
     set<string>::iterator it;
-    map<string, string>::iterator it2;
+    map<string, string>::iterator map_itr;
     int idx;
     string temp;
     map<string, string> var_value_pos;
@@ -884,25 +884,22 @@ void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
 
     // set to map
     for(it=distinct_cond_set.begin(); it!=distinct_cond_set.end(); ++it){
-
-        // remove all white space and '('  ')'
         temp = *it;
-        temp.erase(remove_if(temp.begin(), temp.end(), ::isspace), temp.end());
-        //temp=temp.substr(1, temp.length()-2); // remove ()
         cout << "temp is: " << temp<<endl;
 
 
         if (temp.find("==") == string::npos && temp.find("!=")==string::npos){
             var_value_pos[temp] ="1";
+            cout << "return here ?"<<endl;
             continue;
         }
 
         if (temp.find("==") != string::npos){
             idx =temp.find("==");
-            if(temp.substr(idx+2, string::npos)=="true)" || temp.substr(idx+2, string::npos)=="1)"){
+            if(temp.substr(idx+2, string::npos)=="true" || temp.substr(idx+2, string::npos)=="1"){
                 var_value_pos[temp.substr(0, idx)] = "1";
-            }else if(temp.substr(idx+2, string::npos)=="false)" || temp.substr(idx+2, string::npos)=="0)"){
-                var_value_pos[temp.substr(0, idx)] = "0";
+            }else if(temp.substr(idx+2, string::npos)=="false" || temp.substr(idx+2, string::npos)=="0"){
+                var_value_neg[temp.substr(0, idx)] = "0";
             }else{
                 var_value_pos[temp.substr(0, idx)] = temp.substr(idx+2, string::npos);
             }
@@ -915,7 +912,7 @@ void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
             if(temp.substr(idx+2, string::npos)=="true" || temp.substr(idx+2, string::npos)=="1"){
                 var_value_neg[temp.substr(0, idx)] = "0";
             }else if(temp.substr(idx+2, string::npos)=="false" || temp.substr(idx+2, string::npos)=="0"){
-                var_value_neg[temp.substr(0, idx)] = "1";
+                var_value_pos[temp.substr(0, idx)] = "1";
             }else{
                 var_value_neg[temp.substr(0, idx)] = temp.substr(idx+2, string::npos);
             }
@@ -928,12 +925,12 @@ void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
 
 
     // map to set
-    for(it2=var_value_pos.begin(); it2!=var_value_pos.end(); ++it2){
-        distinct_cond_set.insert(it2->first + "==" + it2->second);
+    for(map_itr=var_value_pos.begin(); map_itr!=var_value_pos.end(); ++map_itr){
+        distinct_cond_set.insert(map_itr->first + "==" + map_itr->second);
     }
 
-    for(it2=var_value_neg.begin(); it2!=var_value_neg.end(); ++it2){
-        distinct_cond_set.insert(it2->first + "!=" + it2->second);
+    for(map_itr=var_value_neg.begin(); map_itr!=var_value_neg.end(); ++map_itr){
+        distinct_cond_set.insert(map_itr->first + "==" + map_itr->second);
     }
 
 }
@@ -982,8 +979,13 @@ void CUtil::CountDistinctCond(const string &base, StringVector &container, unsig
                             if (base1[index] == ')') --level;
                             index++;
                         }
-                        if (index < base1.length())
-                            distinct_cond_set.insert(base1.substr(left_bracket_idx, index - left_bracket_idx));
+                        if (index < base1.length()){
+                            //distinct_cond_set.insert(base1.substr(left_bracket_idx, index - left_bracket_idx));
+                            // remove () and whitespace
+                            string temp = base1.substr(left_bracket_idx+1, index - left_bracket_idx-2);
+                            temp.erase(remove_if(temp.begin(), temp.end(), ::isspace), temp.end());
+                            distinct_cond_set.insert(temp);
+                        }
                     }
                     else
                     {
