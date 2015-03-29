@@ -43,6 +43,7 @@ public:
 	static void CountTally(const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,
 		const string &include1, const string &include2, UIntVector *counter_container = 0, bool case_sensitive = true);
 	static void SemanticDeduplicate(set<string> &distinct_cond_set);
+	static void SemanticFormat(string &statement);
     static void CountDistinctCond(const string &base, StringVector &constainer, unsigned int &count, int mode, const string &exclude, const string &include1, const string &include2, set<string> &set, UIntVector *counter_container = 0, bool case_sensitive = true);
     static string ExtractFilename(const string &filepath);
 	static bool ListAllFiles(string &folder, StringVector &fileExtList, StringVector &fileList, bool symLinks);

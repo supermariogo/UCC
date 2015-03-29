@@ -701,7 +701,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 			CUtil::CountTally(line, cmplx_cyclomatic_switch_list, cyclomatic_switch_cnt, 1, exclude, "", "", 0, casesensitive);
 
-
+			cout << line << endl;
 			CUtil::CountDistinctCond(line, cmplx_cyclomatic_list,cyclomatic_repeated_cond_cnt , 1, exclude, "", "", cyclomatic_distinct_cond_set, 0, casesensitive);
 
 
@@ -850,7 +850,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
                 }
 			}
 
-
+/*
 			set<string>::iterator itr = cyclomatic_distinct_cond_set.begin();
 
 			cout << line << endl;
@@ -870,6 +870,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
             }
 
             cout << "-----------------------------------------------------" <<endl;
+*/
 		}
 	}
 

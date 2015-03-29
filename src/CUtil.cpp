@@ -863,6 +863,47 @@ string CUtil::ReplaceSmartQuotes(const string &str)
 (flag==true)
 Shoule be same
 */
+
+void CUtil::SemanticFormat(string &statement)
+{
+    size_t idx;
+
+    statement.erase(remove_if(statement.begin(), statement.end(), ::isspace), statement.end());
+
+    if (statement.find("==") == string::npos && statement.find("!=")==string::npos){
+        statement = statement + "==1";
+        return ;
+    }
+
+    if (statement.find("==") != string::npos){
+        idx =statement.find("==");
+        if(statement.substr(idx+2, string::npos)=="true" || statement.substr(idx+2, string::npos)=="1"){
+            statement = statement.substr(0, idx) + "==1";
+            return ;
+        }else if(statement.substr(idx+2, string::npos)=="false" || statement.substr(idx+2, string::npos)=="0"){
+            statement = statement.substr(0, idx) + "==0";
+            return ;
+        }else{
+            return ;
+        }
+
+    }
+
+    if (statement.find("!=") != string::npos){
+        idx =statement.find("!=");
+        if(statement.substr(idx+2, string::npos)=="true" || statement.substr(idx+2, string::npos)=="1"){
+            statement = statement.substr(0, idx) + "==0";
+            return ;
+        }else if(statement.substr(idx+2, string::npos)=="false" || statement.substr(idx+2, string::npos)=="0"){
+            statement = statement.substr(0, idx) + "==1";
+            return;
+        }else{
+            return;
+        }
+
+    }
+}
+
 void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
 {
     set<string>::iterator it;
@@ -945,6 +986,8 @@ void CUtil::CountDistinctCond(const string &base, StringVector &container, unsig
     unsigned int single_count = 0;
     base1 = " " + base + " ";
 
+
+
     if (counter_container)
         cit = counter_container->begin();
 
@@ -982,9 +1025,30 @@ void CUtil::CountDistinctCond(const string &base, StringVector &container, unsig
                         if (index < base1.length()){
                             //distinct_cond_set.insert(base1.substr(left_bracket_idx, index - left_bracket_idx));
                             // remove () and whitespace
+                            set<string>::iterator itr = distinct_cond_set.begin();
+                            cout << "before deduplacation, distinct set size :: " << distinct_cond_set.size() << endl;
+                            while(itr != distinct_cond_set.end())
+                            {
+                                cout << (*itr) << endl;
+                                itr++;
+                            }
+                            cout << base1 << "---------->>";
+
                             string temp = base1.substr(left_bracket_idx+1, index - left_bracket_idx-2);
-                            temp.erase(remove_if(temp.begin(), temp.end(), ::isspace), temp.end());
+                            CUtil::SemanticFormat(temp);
                             distinct_cond_set.insert(temp);
+
+                            cout << temp << endl;
+                            cout << "after deduplacation, distinct set size :: " << distinct_cond_set.size() << endl;
+                            itr = distinct_cond_set.begin();
+                            while(itr != distinct_cond_set.end())
+                            {
+                                cout << (*itr) << endl;
+                                itr++;
+                            }
+
+                            cout << "-----------------------------------------------------" <<endl;
+
                         }
                     }
                     else
