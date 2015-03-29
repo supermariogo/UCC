@@ -704,17 +704,6 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 			CUtil::CountDistinctCond(line, cmplx_cyclomatic_list,cyclomatic_repeated_cond_cnt , 1, exclude, "", "", cyclomatic_distinct_cond_set, 0, casesensitive);
 
-			CUtil::SemanticDeduplicate(cyclomatic_distinct_cond_set);
-		    // fill the distinct_CC4_cond_set in this function
-            cout << "<<<<<<<<<" << line << endl;
-            cout << "distinct set size :: " << cyclomatic_distinct_cond_set.size() << endl;
-            set<string>::iterator itr = cyclomatic_distinct_cond_set.begin();
-            while(itr != cyclomatic_distinct_cond_set.end())
-            {
-                cout << (*itr) << endl;
-                itr++;
-            }
-
 
 			// search for keywords to exclude
 			if (ignore_cmplx_cyclomatic_list.size() > 0)
@@ -860,6 +849,20 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
                     cyclomatic_distinct_cond_set.clear();
                 }
 			}
+
+
+			cout << line << endl;
+			cout << "before deduplacation, distinct set size :: " << cyclomatic_distinct_cond_set.size() << endl;
+			CUtil::SemanticDeduplicate(cyclomatic_distinct_cond_set);
+            cout << "after deduplacation, distinct set size :: " << cyclomatic_distinct_cond_set.size() << endl;
+            set<string>::iterator itr = cyclomatic_distinct_cond_set.begin();
+            while(itr != cyclomatic_distinct_cond_set.end())
+            {
+                cout << (*itr) << endl;
+                itr++;
+            }
+
+            cout << "-----------------------------------------------------" <<endl;
 		}
 	}
 
