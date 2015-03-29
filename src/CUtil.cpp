@@ -870,6 +870,10 @@ void CUtil::SemanticFormat(string &statement)
 
     statement.erase(remove_if(statement.begin(), statement.end(), ::isspace), statement.end());
 
+    if(statement[0]=='!'){
+        statement = statement.substr(1, string::npos)+="==0";
+        return;
+    }
     if (statement.find("==") == string::npos && statement.find("!=")==string::npos){
         statement = statement + "==1";
         return ;
@@ -1032,9 +1036,9 @@ void CUtil::CountDistinctCond(const string &base, StringVector &container, unsig
                                 cout << (*itr) << endl;
                                 itr++;
                             }
-                            cout << base1 << "---------->>";
 
                             string temp = base1.substr(left_bracket_idx+1, index - left_bracket_idx-2);
+                            cout << temp << ">>>>>>>>>>>>>>>>>";
                             CUtil::SemanticFormat(temp);
                             distinct_cond_set.insert(temp);
 

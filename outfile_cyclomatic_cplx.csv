@@ -9,15 +9,15 @@
 
 Cyclomatic Complexity
 Total(CC1),Total(CC2),Total(CC3),Total(CC4),Average(CC1),Risk,File Name
-5,5,5,2,5,Low,Test_Cases/test2.cpp
+12,12,12,4,12,Medium,Test_Cases/test2.cpp
 
-5,5,5,2,5
+12,12,12,4,12
 
                                         RESULTS BY FUNCTION                                        
 
 Cyclomatic Complexity
 CC1,CC2,CC3,CC4,Risk,Function Name,File Name
-5,5,5,2,Low,int main,Test_Cases/test2.cpp
+12,12,12,4,Medium,int main,Test_Cases/test2.cpp
 
-5,Total(CC1)
-      5.00,Average(CC1)
+12,Total(CC1)
+     12.00,Average(CC1)
