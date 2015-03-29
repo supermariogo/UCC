@@ -887,9 +887,9 @@ void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
 
         // remove all white space and '('  ')'
         temp = *it;
-        distinct_cond_set.erase(it);
         temp.erase(remove_if(temp.begin(), temp.end(), ::isspace), temp.end());
         temp=temp.substr(1, temp.length()-2); // remove ()
+        cout << "temp is: " << temp<<endl;
 
 
         if (temp.find("==") == string::npos && temp.find("!=")==string::npos){
@@ -924,6 +924,8 @@ void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
         }
 
     }
+    distinct_cond_set.clear();
+
 
     // map to set
     for(it2=var_value_pos.begin(); it2!=var_value_pos.end(); ++it2){

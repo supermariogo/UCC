@@ -1,6 +1,6 @@
 all:
 	mkdir -p bin
-	g++ -Wall -o bin/UCC -DUNIX src/*.cpp
+	g++ -o bin/UCC -DUNIX src/*.cpp
 
 clean:
 	rm -f bin/UCC bin/UCC.exe
