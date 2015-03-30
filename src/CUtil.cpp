@@ -1066,11 +1066,12 @@ void CUtil::CountDistinctCond(const string &base, StringVector &container, unsig
                             */
 
                             string temp = base1.substr(left_bracket_idx+1, index - left_bracket_idx-2);
-                            cout << temp << " >>>>>>>>>>>>>>>>> ";
+                            cout << base << " -------------------> " ;
+                            //<< temp << " | ";
                             CUtil::SemanticFormat(temp);
                             distinct_cond_set.insert(temp);
 
-                            cout << temp << " set size: "<< distinct_cond_set.size()<< endl;
+                            cout << temp << " | set size: "<< distinct_cond_set.size()<< endl;
                             /*
                             cout << "after deduplacation, distinct set size :: " << distinct_cond_set.size() << endl;
                             itr = distinct_cond_set.begin();
