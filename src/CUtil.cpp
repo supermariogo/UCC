@@ -867,14 +867,19 @@ Shoule be same
 void CUtil::SemanticFormat(string &statement)
 {
     size_t idx;
+    string left;
+    string right;
 
     statement.erase(remove_if(statement.begin(), statement.end(), ::isspace), statement.end());
 
     if(statement.find("&&") == string::npos){
+
         if(statement[0]=='!'){
             statement = statement.substr(1, string::npos)+="==0";
             return;
         }
+
+
         if (statement.find("==") == string::npos && statement.find("!=")==string::npos){
             statement = statement + "==1";
             return ;
@@ -882,11 +887,19 @@ void CUtil::SemanticFormat(string &statement)
 
         if (statement.find("==") != string::npos){
             idx =statement.find("==");
-            if(statement.substr(idx+2, string::npos)=="true" || statement.substr(idx+2, string::npos)=="1"){
-                statement = statement.substr(0, idx) + "==1";
+            left = statement.substr(0, idx);
+            right = statement.substr(idx+2, string::npos);
+
+            if(left=="true" || left=="1"){
+                statement = right + "==1";
+                return;
+            }else if(left=="false" || left=="0"){
+                statement = right + "==0";
+            }else if(right=="true" || right=="1"){
+                statement = left + "==1";
                 return ;
-            }else if(statement.substr(idx+2, string::npos)=="false" || statement.substr(idx+2, string::npos)=="0"){
-                statement = statement.substr(0, idx) + "==0";
+            }else if(right=="false" || right=="0"){
+                statement = left + "==0";
                 return ;
             }else{
                 return ;
@@ -896,14 +909,22 @@ void CUtil::SemanticFormat(string &statement)
 
         if (statement.find("!=") != string::npos){
             idx =statement.find("!=");
-            if(statement.substr(idx+2, string::npos)=="true" || statement.substr(idx+2, string::npos)=="1"){
-                statement = statement.substr(0, idx) + "==0";
+            left = statement.substr(0, idx);
+            right = statement.substr(idx+2, string::npos);
+
+            if(left=="true" || left=="1"){
+                statement = right + "==0";
+                return;
+            }else if(left=="false" || left=="0"){
+                statement = right + "==1";
+            }else if(right=="true" || right=="1"){
+                statement = left + "==0";
                 return ;
-            }else if(statement.substr(idx+2, string::npos)=="false" || statement.substr(idx+2, string::npos)=="0"){
-                statement = statement.substr(0, idx) + "==1";
-                return;
+            }else if(right=="false" || right=="0"){
+                statement = left + "==1";
+                return ;
             }else{
-                return;
+                return ;
             }
 
         }
@@ -1033,7 +1054,8 @@ void CUtil::CountDistinctCond(const string &base, StringVector &container, unsig
                         }
                         if (index < base1.length()){
                             //distinct_cond_set.insert(base1.substr(left_bracket_idx, index - left_bracket_idx));
-                            // remove () and whitespace
+
+                            /*
                             set<string>::iterator itr = distinct_cond_set.begin();
                             cout << "before deduplacation, distinct set size :: " << distinct_cond_set.size() << endl;
                             while(itr != distinct_cond_set.end())
@@ -1041,13 +1063,15 @@ void CUtil::CountDistinctCond(const string &base, StringVector &container, unsig
                                 cout << (*itr) << endl;
                                 itr++;
                             }
+                            */
 
                             string temp = base1.substr(left_bracket_idx+1, index - left_bracket_idx-2);
-                            cout << temp << ">>>>>>>>>>>>>>>>>";
+                            cout << temp << " >>>>>>>>>>>>>>>>> ";
                             CUtil::SemanticFormat(temp);
                             distinct_cond_set.insert(temp);
 
-                            cout << temp << endl;
+                            cout << temp << " set size: "<< distinct_cond_set.size()<< endl;
+                            /*
                             cout << "after deduplacation, distinct set size :: " << distinct_cond_set.size() << endl;
                             itr = distinct_cond_set.begin();
                             while(itr != distinct_cond_set.end())
@@ -1055,8 +1079,9 @@ void CUtil::CountDistinctCond(const string &base, StringVector &container, unsig
                                 cout << (*itr) << endl;
                                 itr++;
                             }
+                            */
 
-                            cout << "-----------------------------------------------------" <<endl;
+                            //cout << "-----------------------------------------------------" <<endl;
 
                         }
                     }

@@ -191,7 +191,7 @@ MainObject::MainObject()
 
 	tmp = new CVHDLCounter;
 	CounterForEachLanguage.insert(map<int, CCodeCounter*>::value_type(VHDL			,tmp));
-	
+
 	tmp = new CXmlCounter;
 	CounterForEachLanguage.insert(map<int, CCodeCounter*>::value_type(XML			,tmp));
 
@@ -220,9 +220,9 @@ void MainObject::SetCounterOptions()
 {
 	if (lsloc_truncate != DEFAULT_TRUNCATE)
 	{
-		for (map<int, CCodeCounter*>::iterator iter = CounterForEachLanguage.begin(); iter != CounterForEachLanguage.end(); iter++)		
+		for (map<int, CCodeCounter*>::iterator iter = CounterForEachLanguage.begin(); iter != CounterForEachLanguage.end(); iter++)
 			iter->second->lsloc_truncate = lsloc_truncate;
-	}	
+	}
 }
 
 /*!
@@ -440,7 +440,7 @@ int MainObject::MainProcess(int argc, char *argv[])
 	// handle input file list
 	vector<string> listFileNames;
 	BaselineFileName1 = INPUT_FILE_LIST_NAME;
-        
+
         //Handle the input list file name in Baseline A
         string inputListFileName1 = BaselineFileName1;
 #ifdef QTGUI
@@ -457,9 +457,9 @@ int MainObject::MainProcess(int argc, char *argv[])
 	// read the source files
 	if (listFilesToBeSearched.size() != 0)
 		CUtil::ListAllFiles(dirnameA, listFilesToBeSearched, listFileNames, followSymLinks);
-	
+
 	userIF->updateProgress("Reading source files...", false);
-        
+
         //Get complete path of the file from the command arguments
         for(int i =0;i< argc;i++) {
             string arg = argv[i];
@@ -473,7 +473,7 @@ int MainObject::MainProcess(int argc, char *argv[])
 				return 0;
 			}
 			i++;
-                        
+
 			ifstream infile;
 			infile.open(argv[i], ifstream::in);
 			infile.close();
@@ -489,8 +489,8 @@ int MainObject::MainProcess(int argc, char *argv[])
 			inputListFileName1 = string(argv[i]);
                         break;
 		}
-        } 
-        
+        }
+
         for(std::vector<int>::size_type i = 0; i != listFileNames.size(); i++) {
             cout<<listFileNames[i]<<endl;
         }
@@ -844,7 +844,7 @@ void MainObject::ShowUsage(const string &option, bool do_exit)
 	if (option == "-v")
 	{
 		cout << "Usage: ucc -v" << endl << endl;
-		cout << " -v: Displays the current version of UCC being executed" << endl;		
+		cout << " -v: Displays the current version of UCC being executed" << endl;
 	}
 	else if (option == "-d" || option == "-i1" || option == "-i2" || option == "-t")
 	{
@@ -903,7 +903,7 @@ void MainObject::ShowUsage(const string &option, bool do_exit)
 	}
 	else if (option == "-dir")
 	{
-		cout << "Usage: ucc -dir <dirA> [<dirB>] <fileSpecs>" << endl << endl; 
+		cout << "Usage: ucc -dir <dirA> [<dirB>] <fileSpecs>" << endl << endl;
 		cout << " -dir: Specifies the directories and file types to be searched for files" << endl;
 		cout << "       to be counted or compared. The directories dirA and dirB indicate" << endl;
 		cout << "       the directories to be searched for each baseline. The fileSpecs indicate" << endl;
@@ -1132,7 +1132,7 @@ void MainObject::ReadUserExtMapping(const string &extMapFile)
 			if (!readFile.good())
 				break;
 		}
-	}	
+	}
 	readFile.close();
 	CreateExtMap();
 }
@@ -1319,7 +1319,7 @@ int MainObject::ReadAllFiles(StringVector &inputFileVector, string const &inputF
 				counter->total_filesA++;
 			else
 				counter->total_filesB++;
-			
+
 			if (fileclass == WEB)
 			{
 				// get web file class
@@ -1437,7 +1437,7 @@ int MainObject::ReadAllFiles(StringVector &inputFileVector, string const &inputF
 					}
 					else
 						userIF->AddError(err);
-					fmap.clear();  // don't bother processing the file if an error is just going to be reported.				
+					fmap.clear();  // don't bother processing the file if an error is just going to be reported.
 					WriteUncountedFile("Excessive Line Length", fileName, useListA, print_csv);
 				}
 				else if (fmap.size() == 0)
@@ -1462,7 +1462,7 @@ int MainObject::ReadAllFiles(StringVector &inputFileVector, string const &inputF
 
 			// depending on which source file we are on...
 			SourceFileElement s_element(fmap, r);
-			(useListA) ? SourceFileA.push_back(s_element) : SourceFileB.push_back(s_element);			
+			(useListA) ? SourceFileA.push_back(s_element) : SourceFileB.push_back(s_element);
 		}
 	}
 	return 1;
@@ -1695,7 +1695,7 @@ ClassType MainObject::DecideLanguage(const string &file_name, bool setCounter)
 *
 * \return supported file extension?
 */
-bool MainObject::IsSupportedFileExtension(const string &file_name) 
+bool MainObject::IsSupportedFileExtension(const string &file_name)
 {
 	for (map<int,CCodeCounter*>::iterator iter = CounterForEachLanguage.begin(); iter != CounterForEachLanguage.end(); iter++)
 	{
@@ -1713,7 +1713,7 @@ bool MainObject::IsSupportedFileExtension(const string &file_name)
 *
 * \return language name
 */
-string MainObject::GetLanguageName(ClassType class_type, const string &file_name) 
+string MainObject::GetLanguageName(ClassType class_type, const string &file_name)
 {
 	if (class_type == WEB && file_name.length() > 0)
 	{
@@ -1737,7 +1737,7 @@ void MainObject::GetLanguageExtensionMap(multimap<const string, string> *lang_ex
 	CWebCounter *webCounter = (CWebCounter *)CounterForEachLanguage[WEB];
 	StringVector *ext_list;
 	string lang_name;
-	
+
 	lang_ext_map->clear();
 	for (map<int,CCodeCounter*>::iterator iter = CounterForEachLanguage.begin(); iter != CounterForEachLanguage.end(); iter++)
 	{
@@ -2006,7 +2006,7 @@ int MainObject::PrintCountResults(bool useListA, const string &outputFileNamePre
 				webtotal[webType].blank_line += (r_htm.blank_lines + r_js.blank_lines + r_vbs.blank_lines + r_php.blank_lines);
 				webtotal[webType].whole_comment += (r_htm.comment_lines + r_js.comment_lines + r_vbs.comment_lines + r_php.comment_lines);
 				webtotal[webType].embed_comment += (r_htm.e_comm_lines + r_js.e_comm_lines + r_vbs.e_comm_lines + r_php.e_comm_lines);
-				
+
 				//0:htm 1:js 2:vbs 3:php
 				webtotal[webType].phy_decl[0] += r_htm.data_lines[PHY];
 				webtotal[webType].phy_instr[0] += r_htm.exec_lines[PHY];
@@ -2154,7 +2154,7 @@ int MainObject::PrintCountResults(bool useListA, const string &outputFileNamePre
 				webtotal[webType].blank_line += (r_htm.blank_lines + r_js.blank_lines + r_vbs.blank_lines + r_java.blank_lines);
 				webtotal[webType].whole_comment += (r_htm.comment_lines + r_js.comment_lines + r_vbs.comment_lines + r_java.comment_lines);
 				webtotal[webType].embed_comment += (r_htm.e_comm_lines + r_js.e_comm_lines + r_vbs.e_comm_lines + r_java.e_comm_lines);
-				
+
 				//0:htm 1:js 2:vbs 3:java
 				webtotal[webType].phy_decl[0] += r_htm.data_lines[PHY];
 				webtotal[webType].phy_instr[0] += r_htm.exec_lines[PHY];
@@ -2333,7 +2333,7 @@ int MainObject::PrintCountResults(bool useListA, const string &outputFileNamePre
 				webtotal[webType].blank_line += (r_htm.blank_lines + r_jsc.blank_lines + r_vbsc.blank_lines + r_jss.blank_lines + r_vbss.blank_lines + r_css.blank_lines);
 				webtotal[webType].whole_comment += (r_htm.comment_lines + r_jsc.comment_lines + r_vbsc.comment_lines + r_jss.comment_lines + r_vbss.comment_lines + r_css.comment_lines);
 				webtotal[webType].embed_comment += (r_htm.e_comm_lines + r_jsc.e_comm_lines + r_vbsc.e_comm_lines + r_jss.e_comm_lines + r_vbss.e_comm_lines + r_css.e_comm_lines);
-				
+
 				//0:htm 1:jsc 2:vbsc 3:jss 4:vbss 5:csharps
 				webtotal[webType].phy_decl[0] += r_htm.data_lines[PHY];
 				webtotal[webType].phy_instr[0] += r_htm.exec_lines[PHY];
@@ -2817,7 +2817,7 @@ int MainObject::PrintCountResults(bool useListA, const string &outputFileNamePre
 				webtotal[webType].blank_line += (r_htm.blank_lines + r_js.blank_lines + r_vbs.blank_lines + r_cs.blank_lines);
 				webtotal[webType].whole_comment += (r_htm.comment_lines + r_js.comment_lines + r_vbs.comment_lines + r_cs.comment_lines);
 				webtotal[webType].embed_comment += (r_htm.e_comm_lines + r_js.e_comm_lines + r_vbs.e_comm_lines + r_cs.e_comm_lines);
-				
+
 				//0:htm 1:js 2:vbs 3:csharp
 				webtotal[webType].phy_decl[0] += r_htm.data_lines[PHY];
 				webtotal[webType].phy_instr[0] += r_htm.exec_lines[PHY];
@@ -2849,7 +2849,7 @@ int MainObject::PrintCountResults(bool useListA, const string &outputFileNamePre
 			file_type = (class_type != UNKNOWN && class_type != DATAFILE ? "CODE" : "DATA");
 
 			// do not print temp files that are created to represent embedded code
-			if (its->second.file_name.find(EMBEDDED_FILE_PREFIX) != string::npos) 
+			if (its->second.file_name.find(EMBEDDED_FILE_PREFIX) != string::npos)
 				continue;
 
 			if (print_ascii || print_legacy)
@@ -4579,7 +4579,7 @@ int MainObject::PrintCountResults(bool useListA, const string &outputFileNamePre
 
 			(*pout_csv) << endl << "Ratio of Physical to Logical SLOC,";
 		}
-		
+
 		unsigned int tlsloc = itto->second.log_direct + itto->second.log_decl + itto->second.log_instr;
 		if (tlsloc > 0)
 		{
@@ -4941,7 +4941,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 			file_type = (class_type != UNKNOWN && class_type != DATAFILE ? "CODE" : "DATA");
 
 			// do not print temp files that are created to represent embedded code
-			if (its->second.file_name.find(EMBEDDED_FILE_PREFIX) != string::npos) 
+			if (its->second.file_name.find(EMBEDDED_FILE_PREFIX) != string::npos)
 				continue;
 
 			if (total.count(class_type) == 0)
@@ -5503,7 +5503,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout).width(8);		(*pout) << "0";
 					(*pout) << " ";
 					(*pout).width(7);		(*pout) << "0";
-					(*pout) << " |";					
+					(*pout) << " |";
 					(*pout).width(8);		(*pout) << "0";
 					(*pout) << " ";
 					(*pout).width(7);		(*pout) << "0";
@@ -5596,7 +5596,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << r_vbs.data_lines[LOG] << ",";
 					(*pout_csv) << r_vbs.exec_lines[LOG] << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
+					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
@@ -5840,7 +5840,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					}
 					(*pout) << " | CODE  ";
 					(*pout) << its->second.file_name << endl;
-					(*pout).unsetf(ios::right);				
+					(*pout).unsetf(ios::right);
 				}
 				if (print_csv)
 				{
@@ -6012,7 +6012,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 				r_css.total_lines = r_css.SLOC_lines[PHY] +	r_css.blank_lines + r_css.comment_lines;
 
 				if (print_ascii || print_legacy)
-				{										
+				{
 					(*pout).setf(ios::right);
 					(*pout).width(8);		(*pout) << (r_htm.total_lines + r_jsc.total_lines + r_vbsc.total_lines + r_jss.total_lines + r_vbss.total_lines + r_css.total_lines);
 					(*pout) << " ";
@@ -6041,7 +6041,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout).width(8);		(*pout) << "0";
 					(*pout) << " ";
 					(*pout).width(7);		(*pout) << "0";
-					(*pout) << " |";					
+					(*pout) << " |";
 					(*pout).width(8);		(*pout) << r_jss.data_lines[LOG];
 					(*pout) << " ";
 					(*pout).width(7);		(*pout) << r_jss.exec_lines[LOG];
@@ -6134,7 +6134,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << r_vbsc.data_lines[LOG] << ",";
 					(*pout_csv) << r_vbsc.exec_lines[LOG] << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
+					(*pout_csv) << "0" << ",";
 					(*pout_csv) << r_jss.data_lines[LOG] << ",";
 					(*pout_csv) << r_jss.exec_lines[LOG] << ",";
 					(*pout_csv) << r_vbss.data_lines[LOG] << ",";
@@ -6152,7 +6152,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
+					(*pout_csv) << "0" << ",";
 					(*pout_csv) << r_htm.SLOC_lines[LOG] << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << r_jsc.SLOC_lines[LOG] << ",";
@@ -6289,7 +6289,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 				r_cs.total_lines = r_cs.SLOC_lines[PHY] +	r_cs.blank_lines + r_cs.comment_lines;
 
 				if (print_ascii || print_legacy)
-				{		
+				{
 					(*pout).setf(ios::right);
 					(*pout).width(8);		(*pout) << (r_xml.total_lines + r_js.total_lines + r_vbs.total_lines + r_cs.total_lines);
 					(*pout) << " ";
@@ -6411,11 +6411,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << r_vbs.data_lines[LOG] << ",";
 					(*pout_csv) << r_vbs.exec_lines[LOG] << ",";
 					(*pout_csv) << r_cs.data_lines[LOG] << ",";
-					(*pout_csv) << r_cs.exec_lines[LOG] << ",";					
-					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
+					(*pout_csv) << r_cs.exec_lines[LOG] << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
@@ -6429,7 +6425,11 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << r_xml.SLOC_lines[LOG] << ",";
 					(*pout_csv) << r_js.SLOC_lines[LOG] << ",";
@@ -6438,7 +6438,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";	
+					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
@@ -6595,7 +6595,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout).width(8);		(*pout) << "0";
 					(*pout) << " ";
 					(*pout).width(7);		(*pout) << "0";
-					(*pout) << " |";					
+					(*pout) << " |";
 					(*pout).width(8);		(*pout) << "0";
 					(*pout) << " ";
 					(*pout).width(7);		(*pout) << "0";
@@ -6629,7 +6629,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout).width(7);		(*pout) << r_cfs.exec_lines[LOG];
 					if (print_legacy)
 					{
-						(*pout) << " |";					
+						(*pout) << " |";
 						(*pout).width(8);	(*pout) << (r_htm.SLOC_lines[LOG] + r_js.SLOC_lines[LOG] + r_vbs.SLOC_lines[LOG] + r_sql.SLOC_lines[LOG] + r_cfm.SLOC_lines[LOG] + r_cfs.SLOC_lines[LOG]);
 					}
 					(*pout) << " |";
@@ -6660,7 +6660,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout).width(8);		(*pout) << r_cfs.SLOC_lines[LOG];
 					if (!print_legacy)
 					{
-						(*pout) << " |";					
+						(*pout) << " |";
 						(*pout).width(8);	(*pout) << (r_htm.SLOC_lines[LOG] + r_js.SLOC_lines[LOG] + r_vbs.SLOC_lines[LOG] + r_sql.SLOC_lines[LOG] + r_cfm.SLOC_lines[LOG] + r_cfs.SLOC_lines[LOG]);
 						(*pout) << " |";
 						(*pout).width(9);	(*pout) << (r_htm.SLOC_lines[PHY] + r_js.SLOC_lines[PHY] + r_vbs.SLOC_lines[PHY] + r_sql.SLOC_lines[PHY] + r_cfm.SLOC_lines[PHY] + r_cfs.SLOC_lines[PHY]);
@@ -6684,13 +6684,13 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << r_vbs.data_lines[LOG] << ",";
 					(*pout_csv) << r_vbs.exec_lines[LOG] << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
@@ -6702,7 +6702,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << r_cfm.data_lines[LOG] << ",";
 					(*pout_csv) << r_cfm.exec_lines[LOG] << ",";
 					(*pout_csv) << r_cfs.data_lines[LOG] << ",";
-					(*pout_csv) << r_cfs.exec_lines[LOG] << ",";					
+					(*pout_csv) << r_cfs.exec_lines[LOG] << ",";
 					(*pout_csv) << r_htm.SLOC_lines[LOG] << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << r_js.SLOC_lines[LOG] << ",";
@@ -6710,7 +6710,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
+					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << r_sql.SLOC_lines[LOG] << ",";
@@ -6840,7 +6840,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 				r_cs.total_lines = r_cs.SLOC_lines[PHY] +	r_cs.blank_lines + r_cs.comment_lines;
 
 				if (print_ascii || print_legacy)
-				{		
+				{
 					(*pout).setf(ios::right);
 					(*pout).width(8);		(*pout) << (r_htm.total_lines + r_js.total_lines + r_vbs.total_lines + r_cs.total_lines);
 					(*pout) << " ";
@@ -6907,7 +6907,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout).width(7);		(*pout) << "0";
 					if (print_legacy)
 					{
-						(*pout) << " |";					
+						(*pout) << " |";
 						(*pout).width(8);	(*pout) << (r_htm.SLOC_lines[LOG] + r_js.SLOC_lines[LOG] + r_vbs.SLOC_lines[LOG] + r_cs.SLOC_lines[LOG]);
 					}
 					(*pout) << " |";
@@ -6938,7 +6938,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout).width(8);		(*pout) << "0";
 					if (!print_legacy)
 					{
-						(*pout) << " |";					
+						(*pout) << " |";
 						(*pout).width(8);	(*pout) << (r_htm.SLOC_lines[LOG] + r_js.SLOC_lines[LOG] + r_vbs.SLOC_lines[LOG] + r_cs.SLOC_lines[LOG]);
 						(*pout) << " |";
 						(*pout).width(9);	(*pout) << (r_htm.SLOC_lines[PHY] + r_js.SLOC_lines[PHY] + r_vbs.SLOC_lines[PHY] + r_cs.SLOC_lines[PHY]);
@@ -6962,13 +6962,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << r_vbs.data_lines[LOG] << ",";
 					(*pout_csv) << r_vbs.exec_lines[LOG] << ",";
 					(*pout_csv) << r_cs.data_lines[LOG] << ",";
-					(*pout_csv) << r_cs.exec_lines[LOG] << ",";					
-					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
+					(*pout_csv) << r_cs.exec_lines[LOG] << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
@@ -6980,7 +6974,13 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";					
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
+					(*pout_csv) << "0" << ",";
 					(*pout_csv) << r_htm.SLOC_lines[LOG] << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << r_js.SLOC_lines[LOG] << ",";
@@ -6988,7 +6988,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					(*pout_csv) << r_cs.SLOC_lines[LOG] << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
-					(*pout_csv) << "0" << ",";	
+					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
 					(*pout_csv) << "0" << ",";
@@ -7182,7 +7182,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 			itto->second.phy_decl[5] + itto->second.phy_instr[5];
 	}
 
-	if (webtotal.size() > 0) 
+	if (webtotal.size() > 0)
 	{
 		if (print_ascii || print_legacy)
 		{
@@ -7274,7 +7274,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					allWebLang.phy_decl[1] + allWebLang.phy_instr[1] +
 					allWebLang.phy_decl[2] + allWebLang.phy_instr[2] +
 					allWebLang.phy_decl[3] + allWebLang.phy_instr[3] +
-					allWebLang.phy_decl[4] + allWebLang.phy_instr[4] + 
+					allWebLang.phy_decl[4] + allWebLang.phy_instr[4] +
 					allWebLang.phy_decl[5] + allWebLang.phy_instr[5] +
 					allWebLang.phy_decl[6] + allWebLang.phy_instr[6] +
 					allWebLang.phy_decl[7] + allWebLang.phy_instr[7] +
@@ -7317,7 +7317,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					allWebLang.phy_decl[1] + allWebLang.phy_instr[1] +
 					allWebLang.phy_decl[2] + allWebLang.phy_instr[2] +
 					allWebLang.phy_decl[3] + allWebLang.phy_instr[3] +
-					allWebLang.phy_decl[4] + allWebLang.phy_instr[4] + 
+					allWebLang.phy_decl[4] + allWebLang.phy_instr[4] +
 					allWebLang.phy_decl[5] + allWebLang.phy_instr[5] +
 					allWebLang.phy_decl[6] + allWebLang.phy_instr[6] +
 					allWebLang.phy_decl[7] + allWebLang.phy_instr[7] +
@@ -7400,7 +7400,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					allWebLang.log_decl[1] + allWebLang.log_instr[1] +
 					allWebLang.log_decl[2] + allWebLang.log_instr[2] +
 					allWebLang.log_decl[3] + allWebLang.log_instr[3] +
-					allWebLang.log_decl[4] + allWebLang.log_instr[4] + 
+					allWebLang.log_decl[4] + allWebLang.log_instr[4] +
 					allWebLang.log_decl[5] + allWebLang.log_instr[5] +
 					allWebLang.log_decl[6] + allWebLang.log_instr[6] +
 					allWebLang.log_decl[7] + allWebLang.log_instr[7] +
@@ -7443,7 +7443,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 					allWebLang.log_decl[1] + allWebLang.log_instr[1] +
 					allWebLang.log_decl[2] + allWebLang.log_instr[2] +
 					allWebLang.log_decl[3] + allWebLang.log_instr[3] +
-					allWebLang.log_decl[4] + allWebLang.log_instr[4] + 
+					allWebLang.log_decl[4] + allWebLang.log_instr[4] +
 					allWebLang.log_decl[5] + allWebLang.log_instr[5] +
 					allWebLang.log_decl[6] + allWebLang.log_instr[6] +
 					allWebLang.log_decl[7] + allWebLang.log_instr[7] +
@@ -7542,7 +7542,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 				allWebLang.phy_decl[1] + allWebLang.phy_instr[1] +
 				allWebLang.phy_decl[2] + allWebLang.phy_instr[2] +
 				allWebLang.phy_decl[3] + allWebLang.phy_instr[3] +
-				allWebLang.phy_decl[4] + allWebLang.phy_instr[4] + 
+				allWebLang.phy_decl[4] + allWebLang.phy_instr[4] +
 				allWebLang.phy_decl[5] + allWebLang.phy_instr[5] +
 				allWebLang.phy_decl[6] + allWebLang.phy_instr[6] +
 				allWebLang.phy_decl[7] + allWebLang.phy_instr[7] +
@@ -7602,7 +7602,7 @@ int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNa
 				allWebLang.log_decl[1] + allWebLang.log_instr[1] +
 				allWebLang.log_decl[2] + allWebLang.log_instr[2] +
 				allWebLang.log_decl[3] + allWebLang.log_instr[3] +
-				allWebLang.log_decl[4] + allWebLang.log_instr[4] + 
+				allWebLang.log_decl[4] + allWebLang.log_instr[4] +
 				allWebLang.log_decl[5] + allWebLang.log_instr[5] +
 				allWebLang.log_decl[6] + allWebLang.log_instr[6] +
 				allWebLang.log_decl[7] + allWebLang.log_instr[7] +
@@ -8108,7 +8108,7 @@ int MainObject::PrintCountSummary(TotalValueMap &total, WebTotalValueMap &webtot
 *
 * \return method status
 */
-int MainObject::PrintComplexityResults(bool useListA, const string &outputFileNamePrePend, bool printDuplicates) 
+int MainObject::PrintComplexityResults(bool useListA, const string &outputFileNamePrePend, bool printDuplicates)
 {
 	if (useListA)
 	{
@@ -8769,7 +8769,7 @@ int MainObject::PrintComplexityResults(bool useListA, const string &outputFileNa
 *
 * \return method status
 */
-int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFileNamePrePend, bool printDuplicates) 
+int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFileNamePrePend, bool printDuplicates)
 {
 	if (useListA)
 	{
@@ -8787,7 +8787,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 	bool CC2_found = false;
 	bool CC3_found = false;
     bool CC4_found = false;
-    
+
 	// check for counts
 	for (SourceFileList::iterator itt2 = mySourceFile->begin(); itt2 != mySourceFile->end(); itt2++)
 	{
@@ -8797,11 +8797,11 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 			{
 				found = true;
 			}
-			if (itt2->second.cmplx_cycfunct_CC2_count.size() > 0) 
+			if (itt2->second.cmplx_cycfunct_CC2_count.size() > 0)
 			{
 				CC2_found = true;
 			}
-			if (itt2->second.cmplx_cycfunct_CC3_count.size() > 0) 
+			if (itt2->second.cmplx_cycfunct_CC3_count.size() > 0)
 			{
 				CC3_found = true;
 			}
@@ -8837,18 +8837,18 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 		cycCplxOutputFile << "Cyclomatic Complexity" << endl;
 		cycCplxOutputFile << " Total_CC1";
 		if (CC2_found)
-			cycCplxOutputFile << " Total_CC2";   
+			cycCplxOutputFile << " Total_CC2";
 		if (CC3_found)
 			cycCplxOutputFile << " Total_CC3";
 		if (CC4_found)
-			cycCplxOutputFile << " Total_CC4";      
+			cycCplxOutputFile << " Total_CC4";
 		cycCplxOutputFile << " Average_CC1  Risk        |   Name" << endl;
 		if (CC2_found)
-			cycCplxOutputFile << "----------";   
+			cycCplxOutputFile << "----------";
 		if (CC3_found)
-			cycCplxOutputFile << "----------"; 
+			cycCplxOutputFile << "----------";
 		if (CC4_found)
-			cycCplxOutputFile << "----------"; 
+			cycCplxOutputFile << "----------";
 		cycCplxOutputFile << "------------------------------------+-----------------------" << endl;
 	}
 	if (print_csv)
@@ -8871,15 +8871,15 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 		cycCplxOutputFileCSV << endl;
 		cycCplxOutputFileCSV << "Cyclomatic Complexity" << endl;
 		cycCplxOutputFileCSV << "Total(CC1),";
-		if (CC2_found) 
+		if (CC2_found)
 		{
 			cycCplxOutputFileCSV << "Total(CC2),";
 		}
-		if (CC3_found) 
+		if (CC3_found)
 		{
 			cycCplxOutputFileCSV << "Total(CC3),";
 		}
-		if (CC4_found) 
+		if (CC4_found)
 		{
 			cycCplxOutputFileCSV << "Total(CC4),";
 		}
@@ -9073,11 +9073,11 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 	if (print_ascii || print_legacy)
 	{
 		if (CC2_found)
-			cycCplxOutputFile << "----------";   
+			cycCplxOutputFile << "----------";
 		if (CC3_found)
-			cycCplxOutputFile << "----------"; 
+			cycCplxOutputFile << "----------";
 		if (CC4_found)
-			cycCplxOutputFile << "----------"; 
+			cycCplxOutputFile << "----------";
 		cycCplxOutputFile << "------------------------------------+-----------------------" << endl;
 		cycCplxOutputFile.setf(ofstream::right);
 		cycCplxOutputFile.width(10);
@@ -9123,7 +9123,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 		}
 		cycCplxOutputFileCSV << "," << atcc << endl << endl;
 	}
-	
+
 	if (print_ascii || print_legacy)
 	{
 		CUtil::PrintFileHeaderLine(cycCplxOutputFile, "RESULTS BY FUNCTION");
@@ -9131,18 +9131,18 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 		cycCplxOutputFile << "Cyclomatic Complexity" << endl;
 		cycCplxOutputFile << "       CC1";
 		if (CC2_found)
-			cycCplxOutputFile << "          CC2";   
+			cycCplxOutputFile << "          CC2";
 		if (CC3_found)
-			cycCplxOutputFile << "          CC3"; 
+			cycCplxOutputFile << "          CC3";
 		if (CC4_found)
-			cycCplxOutputFile << "          CC4"; 
+			cycCplxOutputFile << "          CC4";
 		cycCplxOutputFile << "   Risk        Function Name                                                  |   File Name" << endl;
 		if (CC2_found)
-			cycCplxOutputFile << "-------------";   
+			cycCplxOutputFile << "-------------";
 		if (CC3_found)
-			cycCplxOutputFile << "-------------"; 
+			cycCplxOutputFile << "-------------";
 		if (CC4_found)
-			cycCplxOutputFile << "-------------"; 
+			cycCplxOutputFile << "-------------";
 		cycCplxOutputFile << "----------------------------------------------------------------------------------------+-----------------------" << endl;
 	}
 	if (print_csv)
@@ -9151,15 +9151,15 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 		cycCplxOutputFileCSV << endl;
 		cycCplxOutputFileCSV << "Cyclomatic Complexity" << endl;
 		cycCplxOutputFileCSV << "CC1,";
-		if (CC2_found) 
+		if (CC2_found)
 		{
 			cycCplxOutputFileCSV << "CC2,";
 		}
-		if (CC3_found) 
+		if (CC3_found)
 		{
 			cycCplxOutputFileCSV << "CC3,";
 		}
-		if (CC4_found) 
+		if (CC4_found)
 		{
 			cycCplxOutputFileCSV << "CC4,";
 		}
@@ -9204,7 +9204,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 							{
 								cycCplxOutputFile.setf(ofstream::right);
 								cycCplxOutputFile.width(10);
-								if (it2 != endpos->second.cmplx_cycfunct_CC2_count.end())							
+								if (it2 != endpos->second.cmplx_cycfunct_CC2_count.end())
 								{
 									cycCplxOutputFile << (*it2).lineNumber;
 									it2++;
@@ -9221,7 +9221,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 							{
 								cycCplxOutputFile.setf(ofstream::right);
 								cycCplxOutputFile.width(10);
-								if (it3 != endpos->second.cmplx_cycfunct_CC3_count.end())							
+								if (it3 != endpos->second.cmplx_cycfunct_CC3_count.end())
 								{
 									cycCplxOutputFile << (*it3).lineNumber;
 									it3++;
@@ -9238,7 +9238,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 							{
 								cycCplxOutputFile.setf(ofstream::right);
 								cycCplxOutputFile.width(10);
-								if (it4 != endpos->second.cmplx_cycfunct_CC4_count.end())							
+								if (it4 != endpos->second.cmplx_cycfunct_CC4_count.end())
 								{
 									cycCplxOutputFile << (*it4).lineNumber;
 									it4++;
@@ -9285,7 +9285,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 							cycCplxOutputFileCSV << (*it).lineNumber << ",";
 							if (CC2_found)
 							{
-								if (it2 != endpos->second.cmplx_cycfunct_CC2_count.end())							
+								if (it2 != endpos->second.cmplx_cycfunct_CC2_count.end())
 								{
 									cycCplxOutputFileCSV << (*it2).lineNumber << ",";
 									it2++;
@@ -9296,7 +9296,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 							}
 							if (CC3_found)
 							{
-								if (it3 != endpos->second.cmplx_cycfunct_CC3_count.end())							
+								if (it3 != endpos->second.cmplx_cycfunct_CC3_count.end())
 								{
 									cycCplxOutputFileCSV << (*it3).lineNumber << ",";
 									it3++;
@@ -9307,7 +9307,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 							}
 							if (CC4_found)
 							{
-								if (it4 != endpos->second.cmplx_cycfunct_CC4_count.end())							
+								if (it4 != endpos->second.cmplx_cycfunct_CC4_count.end())
 								{
 									cycCplxOutputFileCSV << (*it4).lineNumber << ",";
 									it4++;
@@ -9352,7 +9352,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 						{
 							cycCplxOutputFile.setf(ofstream::right);
 							cycCplxOutputFile.width(10);
-							if (it2 != itt2->second.cmplx_cycfunct_CC2_count.end())							
+							if (it2 != itt2->second.cmplx_cycfunct_CC2_count.end())
 							{
 								cycCplxOutputFile << (*it2).lineNumber;
 								it2++;
@@ -9369,7 +9369,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 						{
 							cycCplxOutputFile.setf(ofstream::right);
 							cycCplxOutputFile.width(10);
-							if (it3 != itt2->second.cmplx_cycfunct_CC3_count.end())							
+							if (it3 != itt2->second.cmplx_cycfunct_CC3_count.end())
 							{
 								cycCplxOutputFile << (*it3).lineNumber;
 								it3++;
@@ -9386,7 +9386,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 						{
 							cycCplxOutputFile.setf(ofstream::right);
 							cycCplxOutputFile.width(10);
-							if (it4 != itt2->second.cmplx_cycfunct_CC4_count.end())							
+							if (it4 != itt2->second.cmplx_cycfunct_CC4_count.end())
 							{
 								cycCplxOutputFile << (*it4).lineNumber;
 								it4++;
@@ -9428,7 +9428,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 						cycCplxOutputFileCSV << (*it).lineNumber << ",";
 						if (CC2_found)
 						{
-							if (it2 != itt2->second.cmplx_cycfunct_CC2_count.end())							
+							if (it2 != itt2->second.cmplx_cycfunct_CC2_count.end())
 							{
 								cycCplxOutputFileCSV << (*it2).lineNumber << ",";
 								it2++;
@@ -9439,9 +9439,10 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 						}
 						if (CC3_found)
 						{
-							if (it3 != itt2->second.cmplx_cycfunct_CC3_count.end())							
+							if (it3 != itt2->second.cmplx_cycfunct_CC3_count.end())
 							{
 								cycCplxOutputFileCSV << (*it3).lineNumber << ",";
+								cout << endl<<"CC3: "<<(*it3).lineNumber << endl;
 								it3++;
 							}
 							else {
@@ -9450,9 +9451,10 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 						}
 						if (CC4_found)
 						{
-							if (it4 != itt2->second.cmplx_cycfunct_CC4_count.end())							
+							if (it4 != itt2->second.cmplx_cycfunct_CC4_count.end())
 							{
 								cycCplxOutputFileCSV << (*it4).lineNumber << ",";
+								cout << "CC4: "<<(*it4).lineNumber << endl;
 								it4++;
 							}
 							else {
@@ -9478,11 +9480,11 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 	if (print_ascii || print_legacy)
 	{
 		if (CC2_found)
-			cycCplxOutputFile << "-------------";   
+			cycCplxOutputFile << "-------------";
 		if (CC3_found)
-			cycCplxOutputFile << "-------------"; 
+			cycCplxOutputFile << "-------------";
 		if (CC4_found)
-			cycCplxOutputFile << "-------------"; 
+			cycCplxOutputFile << "-------------";
 		cycCplxOutputFile << "----------------------------------------------------------------------------------------+-----------------------" << endl;
 		cycCplxOutputFile.setf(ofstream::right);
 		cycCplxOutputFile.width(10);
@@ -9500,7 +9502,7 @@ int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFil
 	if (print_csv)
 	{
 		cycCplxOutputFileCSV << endl;
-		cycCplxOutputFileCSV << tcc << ",Total(CC1)" << endl;		
+		cycCplxOutputFileCSV << tcc << ",Total(CC1)" << endl;
 		cycCplxOutputFileCSV.setf(ios::fixed,ios::floatfield);
 		cycCplxOutputFileCSV.width(10);
 		cycCplxOutputFileCSV.precision(2);
@@ -9673,7 +9675,7 @@ void MainObject::FindDuplicateFiles(SourceFileList &fileList, StringVector &dupL
 					break;
 			}
 		}
-	}	
+	}
 }
 
 /*!
@@ -9701,7 +9703,7 @@ bool MainObject::FindDuplicateFor(SourceFileList &compareList, SourceFileList::i
 	double pctcheck, changed_lines, total_lines, pct_change;
 	bool found;
 	srcLineVector emptyFile;
-	
+
 	if (j == compareList.end())
 		return false;
 
@@ -9780,7 +9782,7 @@ bool MainObject::FindDuplicateFor(SourceFileList &compareList, SourceFileList::i
 						{
 							if (i1->second.file_name.find(EMBEDDED_FILE_PREFIX) == string::npos)
 								break;
-							if (CUtil::ExtractFilename(i1->second.file_name).compare(CUtil::ExtractFilename(j1->second.file_name)) == 0) 
+							if (CUtil::ExtractFilename(i1->second.file_name).compare(CUtil::ExtractFilename(j1->second.file_name)) == 0)
 							{
 								found = true;
 								break;
@@ -9792,7 +9794,7 @@ bool MainObject::FindDuplicateFor(SourceFileList &compareList, SourceFileList::i
 							matchedFiles.push_back(make_pair(nullElement, &(*j1)));
 						}
 					}
-					
+
 					if (sizeF1 > sizeF2)
 						pctcheck = 100 * (double)(sizeF1 - sizeF2) / sizeF1;
 					else
@@ -9805,16 +9807,16 @@ bool MainObject::FindDuplicateFor(SourceFileList &compareList, SourceFileList::i
 						while (ii != matchedFiles.end())
 						{
 							if (ii->first == nullElement)
-							{								
+							{
 								// don't need to compare the empty file to compute the information
 								changed_lines += ii->second->second.mySLOCLines.size(); // all lines deleted
-							} 
+							}
 							else if (ii->second == nullElement)
 							{
 								// don't need to compare the empty file to compute the information
 								changed_lines += ii->first->second.mySLOCLines.size();
-								total_lines += ii->first->second.mySLOCLines.size();								
-							} 
+								total_lines += ii->first->second.mySLOCLines.size();
+							}
 							else
 								CompareForDuplicate(ii->first->second.mySLOCLines, ii->second->second.mySLOCLines, changed_lines, total_lines);
 
@@ -9836,7 +9838,7 @@ bool MainObject::FindDuplicateFor(SourceFileList &compareList, SourceFileList::i
 
 					// perform comparison only if the change percent (pctcheck) is not greater than threshold
 					if (pctcheck <= duplicate_threshold)
-						CompareForDuplicate((*i).second.mySLOCLines, (*j).second.mySLOCLines, changed_lines, total_lines); 
+						CompareForDuplicate((*i).second.mySLOCLines, (*j).second.mySLOCLines, changed_lines, total_lines);
 					else
 						continue;
 				}
