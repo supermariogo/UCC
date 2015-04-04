@@ -1006,7 +1006,7 @@ void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
 
 }
 
-void CUtil::CountDistinctCond(const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,
+void CUtil::CountDistinctCond(string &valid_statement, const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,
                               const string &include1, const string &include2, set<string> &distinct_cond_set, UIntVector* counter_container, bool case_sensitive)
 {
     string::size_type idx, left_bracket_idx, right_bracket_idx;
@@ -1064,14 +1064,14 @@ void CUtil::CountDistinctCond(const string &base, StringVector &container, unsig
                                 itr++;
                             }
                             */
+                            //cout << base << " -------------------> " ;
 
                             string temp = base1.substr(left_bracket_idx+1, index - left_bracket_idx-2);
-                            cout << base << " -------------------> " ;
-                            //<< temp << " | ";
                             CUtil::SemanticFormat(temp);
                             distinct_cond_set.insert(temp);
-
-                            cout << temp << " | set size: "<< distinct_cond_set.size()<< endl;
+                            valid_statement=temp;
+                            cout << "-------insert performed, set size=" << distinct_cond_set.size() <<endl;
+                            //cout << temp << " | set size: "<< distinct_cond_set.size()<< endl;
                             /*
                             cout << "after deduplacation, distinct set size :: " << distinct_cond_set.size() << endl;
                             itr = distinct_cond_set.begin();

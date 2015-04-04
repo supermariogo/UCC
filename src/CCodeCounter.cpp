@@ -613,7 +613,9 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 	stack<set<string> > cyclomatic_distinct_cond_stack; // at the end of a function, the size of this stack is CC4 value of this function
 
 	set<string> cyclomatic_distinct_cond_set;
-
+	string cc4_valid_if;  // the vaild if get from current line
+	stack<string> cc4_parent_stack;
+	map<string, string> cc4_parent_map; //key is child, value if parent
 
 	map<unsigned int, lineElement> cond_CC4_map;
 	map<unsigned int, lineElement> function_map;
@@ -701,8 +703,11 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 			CUtil::CountTally(line, cmplx_cyclomatic_switch_list, cyclomatic_switch_cnt, 1, exclude, "", "", 0, casesensitive);
 
-			//cout << line << endl;
-			CUtil::CountDistinctCond(line, cmplx_cyclomatic_list,cyclomatic_repeated_cond_cnt , 1, exclude, "", "", cyclomatic_distinct_cond_set, 0, casesensitive);
+			cout << line <<endl;
+
+
+			cc4_valid_if="";
+			CUtil::CountDistinctCond(cc4_valid_if, line, cmplx_cyclomatic_list,cyclomatic_repeated_cond_cnt , 1, exclude, "", "", cyclomatic_distinct_cond_set, 0, casesensitive);
 
 
 			// search for keywords to exclude
@@ -754,10 +759,22 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 			if (ret != 1 && !cyclomatic_distinct_cond_stack.empty() && cyclomatic_distinct_cond_stack.size() == function_stack.size())
             {
                 // remove count stack entry for non-function names
-                set<string> temp_set = cyclomatic_distinct_cond_stack.top();
+                // continue if same leavl
+                //cc4_nest_dep_counter += nested_if_dedup(cc4_valid_if, cc4_parent_stack, cc4_parent_map, cyclomatic_distinct_cond_stack);
+
+               	set<string> temp_set = cyclomatic_distinct_cond_stack.top();
                 if (temp_set.size() > 0)
                     cyclomatic_distinct_cond_set.insert(temp_set.begin(), temp_set.end());
                 cyclomatic_distinct_cond_stack.pop();
+
+
+                cc4_parent_stack.pop();
+                cout << "------safe to combine if in same level. ready to accept a new same level"<<endl;
+                cout << "------stack size="<<cyclomatic_distinct_cond_stack.size()<<endl;
+                cout << "------set size="<< cyclomatic_distinct_cond_set.size()<<endl;
+
+
+
             }
 
 			if (ret == 1)
@@ -795,6 +812,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 					}
                     if (!cyclomatic_distinct_cond_stack.empty())
                     {
+                    	cout << "go back to a leavl" <<endl;
                         cyclomatic_distinct_cond_set = cyclomatic_distinct_cond_stack.top();
                         cyclomatic_distinct_cond_stack.pop();
                     }
@@ -803,6 +821,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 					cyclomatic_cnt = 0;
 					cyclomatic_logic_cnt = 0;
 					cyclomatic_case_cnt = 0;
+					cout << "clear" <<endl;
                     cyclomatic_distinct_cond_set.clear();
 				}
 				function_name = "";
@@ -821,6 +840,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
                 cyclomatic_cnt = ignore_cyclomatic_cnt = cyclomatic_logic_cnt = cyclomatic_case_cnt = cyclomatic_switch_cnt = 0;
 			    cyclomatic_distinct_cond_set.clear();
+			    cout << "clear()" <<endl;
             }
 			else {
 				if (!function_stack.empty() && (function_stack.size() > cyclomatic_stack.size() + 1 || (cyclomatic_stack.empty() && function_stack.size() > 1)))
@@ -847,6 +867,13 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
                     // capture previous complexity count from open function
                     cyclomatic_distinct_cond_stack.push(cyclomatic_distinct_cond_set);
                     cyclomatic_distinct_cond_set.clear();
+
+                    cc4_parent_map[cc4_valid_if]=cc4_parent_stack.size()==0 ? "" :cc4_parent_stack.top();
+                    cc4_parent_stack.push(cc4_valid_if);
+
+                    cout << "------push into stack, clear set, may start a nested if{}" <<endl;
+                    cout << "------stack size="<<cyclomatic_distinct_cond_stack.size()<<endl;
+                	cout << "------set size="<< cyclomatic_distinct_cond_set.size()<<endl;
                 }
 			}
 
