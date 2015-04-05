@@ -499,6 +499,7 @@ SQL	cc_main.h	/^	SQL,					\/\/ SQL$/;"	e	enum:ClassType
 SQL_CFM	cc_main.h	/^	SQL_CFM,				\/\/ SQL in ColdFusion$/;"	e	enum:ClassType
 ScriptTable	CWebCounter.h	/^	map<string, int> ScriptTable;				\/\/!< Supported script languages$/;"	m	class:CWebCounter
 SemanticDeduplicate	CUtil.cpp	/^void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)$/;"	f	class:CUtil
+SemanticFormat	CUtil.cpp	/^void CUtil::SemanticFormat(string &statement)$/;"	f	class:CUtil
 SeparatedLine	CWebCounter.h	/^	map<int, lineElement> SeparatedLine;		\/\/!< Separated line$/;"	m	class:CWebCounter
 Separation	CWebCounter.h	/^	map<int, SourceFileElement> Separation;		\/\/!< Separation file map$/;"	m	class:CWebCounter
 SetCounterOptions	MainObject.cpp	/^void MainObject::SetCounterOptions()$/;"	f	class:MainObject

@@ -306,6 +306,7 @@ SPECIAL_CHARS	CUtil.cpp	245;"	d	file:
 SPECIAL_CHARS	CUtil.cpp	812;"	d	file:
 SPECIAL_CHARS	CUtil.cpp	837;"	d	file:
 SemanticDeduplicate	CUtil.cpp	/^void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)$/;"	f	class:CUtil
+SemanticFormat	CUtil.cpp	/^void CUtil::SemanticFormat(string &statement)$/;"	f	class:CUtil
 ToLower	CUtil.cpp	/^string CUtil::ToLower(const string &string_to_lower)$/;"	f	class:CUtil
 TrimString	CUtil.cpp	/^string CUtil::TrimString(const string &str, int mode)$/;"	f	class:CUtil
 TruncateLine	CUtil.cpp	/^size_t CUtil::TruncateLine(size_t length, size_t totalLength, size_t truncate, bool &trunc_flag)$/;"	f	class:CUtil

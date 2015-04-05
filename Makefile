@@ -8,5 +8,4 @@ obj/%.o: src/%.cpp
 	g++ -DUNIX -c -o $@ $<
 
 clean:
-	rm -f bin/UCC bin/UCC.exe
-	rmdir --ignore-fail-on-non-empty bin
+	rm -f UCC bin/UCC bin/UCC.exe

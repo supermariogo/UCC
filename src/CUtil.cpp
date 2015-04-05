@@ -935,7 +935,19 @@ void CUtil::SemanticFormat(string &statement)
 
         }
     }else{
-        //TODO
+
+        string temp_statement=statement;
+        statement="";
+        while(temp_statement.find("&&") != string::npos){
+            idx =temp_statement.find("&&");
+            left = temp_statement.substr(0, idx);
+            right = temp_statement.substr(idx+2, string::npos);
+            SemanticFormat(left);
+            statement= statement +left +"&&";
+            temp_statement = temp_statement.substr(idx+2, string::npos);
+        }
+        statement = statement + right;
+        cout << "get a && statement: "<< statement<<endl;
         return;
     }
 }
