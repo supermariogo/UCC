@@ -610,12 +610,18 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 	stack<unsigned int> cyclomatic_stack;
 	stack<unsigned int> cyclomatic_logic_stack;
 	stack<unsigned int> cyclomatic_case_stack;
-	stack<set<string> > cyclomatic_distinct_cond_stack; // at the end of a function, the size of this stack is CC4 value of this function
 
+	stack<set<string> > cyclomatic_distinct_cond_stack; // at the end of a function, the size of this stack is CC4 value of this function
 	set<string> cyclomatic_distinct_cond_set;
+
+
 	string cc4_valid_if;  // the vaild if get from current line
 	stack<string> cc4_parent_stack;
 	map<string, string> cc4_parent_map; //key is child, value if parent
+	stack<map<string, string> > cc4_parent_map_stack;
+
+	int cc4_nested_dup=0; // in a function
+
 
 	map<unsigned int, lineElement> cond_CC4_map;
 	map<unsigned int, lineElement> function_map;
@@ -708,7 +714,11 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 			cc4_valid_if="";
 			CUtil::CountDistinctCond(cc4_valid_if, line, cmplx_cyclomatic_list,cyclomatic_repeated_cond_cnt , 1, exclude, "", "", cyclomatic_distinct_cond_set, 0, casesensitive);
-
+			if(cc4_valid_if!=""){
+				cc4_parent_map[cc4_valid_if]=cc4_parent_stack.size()==0 ? "" :cc4_parent_stack.top();
+				cout << cc4_valid_if << " parent is " <<cc4_parent_map[cc4_valid_if]<<endl;
+			}
+			cc4_nested_dup += CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cc4_parent_map, cyclomatic_distinct_cond_stack);
 
 			// search for keywords to exclude
 			if (ignore_cmplx_cyclomatic_list.size() > 0)
@@ -769,6 +779,10 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 
                 cc4_parent_stack.pop();
+                if(cc4_parent_stack.size()==0)
+                	cout<<cout << "------pop: parent is empty"<<endl;
+                else
+                	cout << "------pop: parent is" << cc4_parent_stack.top()<<endl;
                 cout << "------safe to combine if in same level. ready to accept a new same level"<<endl;
                 cout << "------stack size="<<cyclomatic_distinct_cond_stack.size()<<endl;
                 cout << "------set size="<< cyclomatic_distinct_cond_set.size()<<endl;
@@ -790,6 +804,8 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 				case_map[function_count] = c_element;
 
                 lineElement cc4_element(cyclomatic_distinct_cond_set.size() - ignore_cyclomatic_cnt + 1, function_name);
+                cout << "XXXXX798 fuction name is "<<function_name<< " set size is "<<cyclomatic_distinct_cond_set.size()<<endl;
+
                 cond_CC4_map[function_count] = cc4_element;
 
 				if (!function_stack.empty())
@@ -821,7 +837,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 					cyclomatic_cnt = 0;
 					cyclomatic_logic_cnt = 0;
 					cyclomatic_case_cnt = 0;
-					cout << "clear" <<endl;
+					cout << "XXXXXXXXXXXXXXXXXXXclear" <<endl;
                     cyclomatic_distinct_cond_set.clear();
 				}
 				function_name = "";
@@ -840,7 +856,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
                 cyclomatic_cnt = ignore_cyclomatic_cnt = cyclomatic_logic_cnt = cyclomatic_case_cnt = cyclomatic_switch_cnt = 0;
 			    cyclomatic_distinct_cond_set.clear();
-			    cout << "clear()" <<endl;
+			    cout << "XXXXXXXXXXclear()" <<endl;
             }
 			else {
 				if (!function_stack.empty() && (function_stack.size() > cyclomatic_stack.size() + 1 || (cyclomatic_stack.empty() && function_stack.size() > 1)))
@@ -868,9 +884,9 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
                     cyclomatic_distinct_cond_stack.push(cyclomatic_distinct_cond_set);
                     cyclomatic_distinct_cond_set.clear();
 
-                    cc4_parent_map[cc4_valid_if]=cc4_parent_stack.size()==0 ? "" :cc4_parent_stack.top();
                     cc4_parent_stack.push(cc4_valid_if);
 
+                    cout << "------parent is "<<cc4_parent_stack.top()<<endl;
                     cout << "------push into stack, clear set, may start a nested if{}" <<endl;
                     cout << "------stack size="<<cyclomatic_distinct_cond_stack.size()<<endl;
                 	cout << "------set size="<< cyclomatic_distinct_cond_set.size()<<endl;
@@ -945,6 +961,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 				lineElement n_element(cyclomatic_cnt - ignore_cyclomatic_cnt + cyclomatic_logic_cnt + 1, function_name);
 				lineElement c_element(cyclomatic_cnt - ignore_cyclomatic_cnt - cyclomatic_case_cnt + cyclomatic_switch_cnt + 1, function_name);
 				lineElement cc4_element(cyclomatic_distinct_cond_set.size() - ignore_cyclomatic_cnt + 1, function_name);
+				cout << "XXXXX fuction name is "<<function_name<< " set size is "<<cyclomatic_distinct_cond_set.size()<<endl;
                 function_map[function_count] = element;
 				logical_map[function_count] = n_element;
 				case_map[function_count] = c_element;
@@ -973,6 +990,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
         {
             //cout << it->second.line << endl << it->second.lineNumber<<endl;
             result->cmplx_cycfunct_CC4_count.push_back(it->second);
+            cout<< "push into result" <<endl;
         }
     }
 	return 1;

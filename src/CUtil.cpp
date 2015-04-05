@@ -854,6 +854,12 @@ string CUtil::ReplaceSmartQuotes(const string &str)
     return str1;
 }
 
+size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, map<string, string> &cc4_parent_map, stack<set<string> > &cyclomatic_distinct_cond_stack){
+
+    return 0;
+}
+
+
 //CUtil::CountDistinctCond(line, cmplx_cyclomatic_list,cyclomatic_repeated_cond_cnt , 1, exclude, "", "", cyclomatic_distinct_cond_set, 0, casesensitive);
 
 /*
