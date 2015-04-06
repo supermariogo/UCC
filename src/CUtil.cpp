@@ -861,7 +861,7 @@ size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack,
     set<string> temp_set = cyclomatic_distinct_cond_stack.top();
     set<string>::iterator it;
     string parent = cc4_parent_stack.top();
-    size_t current=0, next=0;
+    size_t dup_counter=0;
 
     if(cyclomatic_distinct_cond_stack.size()==1){
 
@@ -874,9 +874,9 @@ size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack,
                 {
                     for(int i=0;i<(*it).size();i++){
                         if((*it)[i]=='&')
-                            current++;
+                            dup_counter++;
                     }
-                    return current/2+1;
+                    return dup_counter/2+1;
                 }
             }
 
@@ -888,32 +888,11 @@ size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack,
     cyclomatic_distinct_cond_stack.pop();
     cc4_parent_stack.pop();
     string new_cc4_valid_if = parent+"&&"+cc4_valid_if;
-    next = NestedIfDup(new_cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack);
+    dup_counter = NestedIfDup(new_cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack);
     cyclomatic_distinct_cond_stack.push(temp_set);
     cc4_parent_stack.push(parent);
 
-    /*
-    for(it=temp_set.begin(); it!=temp_set.end();it++){
-        if(*it == cc4_parent_stack.top())
-            continue;
-        else{
-            cout << "----------------------" << parent + "&&" + cc4_valid_if << " VS " << *it <<endl;
-            if( parent + "&&" + cc4_valid_if == *it)
-            {
-                for(int i=0; i<(*it).size();i++){
-                        if((*it)[i]=='&')
-                            current++;
-                }
-                current=current/2;
-            }
-        }
-
-    }
-
-
-    return max(next, current);
-    */
-    return next;
+    return dup_counter;
 }
 
 
