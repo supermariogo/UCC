@@ -44,7 +44,7 @@ public:
 		const string &include1, const string &include2, UIntVector *counter_container = 0, bool case_sensitive = true);
 	static void SemanticDeduplicate(set<string> &distinct_cond_set);
 	static void SemanticFormat(string &statement);
-	static size_t NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, map<string, string> &cc4_parent_map, stack<set<string> > &cyclomatic_distinct_cond_stack);
+	static size_t NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack);
     static void CountDistinctCond(string &valid_statement, const string &base, StringVector &constainer, unsigned int &count, int mode, const string &exclude, const string &include1, const string &include2, set<string> &set, UIntVector *counter_container = 0, bool case_sensitive = true);
     static string ExtractFilename(const string &filepath);
 	static bool ListAllFiles(string &folder, StringVector &fileExtList, StringVector &fileList, bool symLinks);

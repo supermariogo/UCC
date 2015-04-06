@@ -718,7 +718,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 				cc4_parent_map[cc4_valid_if]=cc4_parent_stack.size()==0 ? "" :cc4_parent_stack.top();
 				cout << "--------"<<cc4_valid_if << " parent is " <<cc4_parent_map[cc4_valid_if]<< "  cc4_parent_stack size= "<<cc4_parent_stack.size() <<endl;
 				if(cc4_parent_stack.size()!=0){
-					cc4_nested_dup = CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cc4_parent_map, cyclomatic_distinct_cond_stack);
+					cc4_nested_dup = CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack);
                 	cout<<cout << "------cc4_nested_dup = "<< cc4_nested_dup<<endl;
 				}
 			}

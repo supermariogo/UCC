@@ -854,7 +854,7 @@ string CUtil::ReplaceSmartQuotes(const string &str)
     return str1;
 }
 
-size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, map<string, string> &cc4_parent_map, stack<set<string> > &cyclomatic_distinct_cond_stack){
+size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack){
 
 
     //cc4_valid_if && cc4_parent_stack.top()
@@ -888,7 +888,7 @@ size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack,
     cyclomatic_distinct_cond_stack.pop();
     cc4_parent_stack.pop();
     string new_cc4_valid_if = parent+"&&"+cc4_valid_if;
-    next = NestedIfDup(new_cc4_valid_if, cc4_parent_stack, cc4_parent_map, cyclomatic_distinct_cond_stack);
+    next = NestedIfDup(new_cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack);
     cyclomatic_distinct_cond_stack.push(temp_set);
     cc4_parent_stack.push(parent);
 
