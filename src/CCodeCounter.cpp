@@ -617,10 +617,9 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 	string cc4_valid_if;  // the vaild if get from current line
 	stack<string> cc4_parent_stack;
-	map<string, string> cc4_parent_map; //key is child, value if parent
-	stack<map<string, string> > cc4_parent_map_stack;
 
 	int cc4_nested_dup=0; // in a function
+	stack<int> cc4_nested_dup_stack;
 
 
 	map<unsigned int, lineElement> cond_CC4_map;
@@ -716,10 +715,9 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 			CUtil::CountDistinctCond(cc4_valid_if, line, cmplx_cyclomatic_list,cyclomatic_repeated_cond_cnt , 1, exclude, "", "", cyclomatic_distinct_cond_set, 0, casesensitive);
 
 			if(cc4_valid_if!=""){
-				cc4_parent_map[cc4_valid_if]=cc4_parent_stack.size()==0 ? "" :cc4_parent_stack.top();
 				if(cc4_parent_stack.size()!=0){
-					cc4_nested_dup += CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack);
-                	cout<<cout << "------cc4_nested_dup = "<< cc4_nested_dup<<endl;
+					cc4_nested_dup=(CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack));
+                	cout << "------cc4_nested_dup = "<< cc4_nested_dup<<endl;
 				}
 			}
 
