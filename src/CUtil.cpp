@@ -856,7 +856,64 @@ string CUtil::ReplaceSmartQuotes(const string &str)
 
 size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, map<string, string> &cc4_parent_map, stack<set<string> > &cyclomatic_distinct_cond_stack){
 
-    return 0;
+
+    //cc4_valid_if && cc4_parent_stack.top()
+    set<string> temp_set = cyclomatic_distinct_cond_stack.top();
+    set<string>::iterator it;
+    string parent = cc4_parent_stack.top();
+    size_t current=0, next=0;
+
+    if(cyclomatic_distinct_cond_stack.size()==1){
+
+        for(it=temp_set.begin(); it!=temp_set.end();it++){
+            if(*it == cc4_parent_stack.top())
+                continue;
+            else{
+                //cout << "x----------------------" << parent + "&&" + cc4_valid_if << " VS " << *it <<endl;
+                if( parent + "&&" + cc4_valid_if == *it)
+                {
+                    for(int i=0;i<(*it).size();i++){
+                        if((*it)[i]=='&')
+                            current++;
+                    }
+                    return current/2+1;
+                }
+            }
+
+        }
+        return 0;
+
+    }
+
+    cyclomatic_distinct_cond_stack.pop();
+    cc4_parent_stack.pop();
+    string new_cc4_valid_if = parent+"&&"+cc4_valid_if;
+    next = NestedIfDup(new_cc4_valid_if, cc4_parent_stack, cc4_parent_map, cyclomatic_distinct_cond_stack);
+    cyclomatic_distinct_cond_stack.push(temp_set);
+    cc4_parent_stack.push(parent);
+
+    /*
+    for(it=temp_set.begin(); it!=temp_set.end();it++){
+        if(*it == cc4_parent_stack.top())
+            continue;
+        else{
+            cout << "----------------------" << parent + "&&" + cc4_valid_if << " VS " << *it <<endl;
+            if( parent + "&&" + cc4_valid_if == *it)
+            {
+                for(int i=0; i<(*it).size();i++){
+                        if((*it)[i]=='&')
+                            current++;
+                }
+                current=current/2;
+            }
+        }
+
+    }
+
+
+    return max(next, current);
+    */
+    return next;
 }
 
 
@@ -1088,7 +1145,7 @@ void CUtil::CountDistinctCond(string &valid_statement, const string &base, Strin
                             CUtil::SemanticFormat(temp);
                             distinct_cond_set.insert(temp);
                             valid_statement=temp;
-                            cout << "-------insert performed, set size=" << distinct_cond_set.size() <<endl;
+                            //cout << "-------insert performed, set size=" << distinct_cond_set.size() <<endl;
                             //cout << temp << " | set size: "<< distinct_cond_set.size()<< endl;
                             /*
                             cout << "after deduplacation, distinct set size :: " << distinct_cond_set.size() << endl;
