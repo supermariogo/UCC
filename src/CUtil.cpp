@@ -854,7 +854,7 @@ string CUtil::ReplaceSmartQuotes(const string &str)
     return str1;
 }
 
-size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack){
+size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set){
 
 
     //cc4_valid_if && cc4_parent_stack.top()
@@ -864,31 +864,31 @@ size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack,
     size_t dup_counter=0;
 
     if(cyclomatic_distinct_cond_stack.size()==1){
+        string combine = parent + "&&" + cc4_valid_if;
+        if(nested_set.find(combine)!=nested_set.end()){
+            cout << "already counted the dup" << endl;
+            return 0;
 
-        for(it=temp_set.begin(); it!=temp_set.end();it++){
-            if(*it == cc4_parent_stack.top())
-                continue;
-            else{
-                //cout << "x----------------------" << parent + "&&" + cc4_valid_if << " VS " << *it <<endl;
-                if( parent + "&&" + cc4_valid_if == *it)
-                {
-                    for(int i=0;i<(*it).size();i++){
-                        if((*it)[i]=='&')
-                            dup_counter++;
-                    }
-                    return dup_counter/2+1;
-                }
+        }
+        if(temp_set.find(combine)!=temp_set.end()){
+            //can find a && dup, counter && number
+            for(int i=0;i<combine.size();i++){
+                if(combine[i]=='&')
+                    dup_counter++;
             }
+            nested_set.insert(combine);
+            return dup_counter/2+1;
 
         }
         return 0;
+
 
     }
 
     cyclomatic_distinct_cond_stack.pop();
     cc4_parent_stack.pop();
     string new_cc4_valid_if = parent+"&&"+cc4_valid_if;
-    dup_counter = NestedIfDup(new_cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack);
+    dup_counter = NestedIfDup(new_cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack, nested_set);
     cyclomatic_distinct_cond_stack.push(temp_set);
     cc4_parent_stack.push(parent);
 

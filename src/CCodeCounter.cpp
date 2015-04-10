@@ -620,6 +620,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 	int cc4_nested_dup=0; // in a function
 	stack<int> cc4_nested_dup_stack;
+	set<string> nested_set;
 
 
 	map<unsigned int, lineElement> cond_CC4_map;
@@ -715,9 +716,18 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 			CUtil::CountDistinctCond(cc4_valid_if, line, cmplx_cyclomatic_list,cyclomatic_repeated_cond_cnt , 1, exclude, "", "", cyclomatic_distinct_cond_set, 0, casesensitive);
 
 			if(cc4_valid_if!=""){
-				if(cc4_parent_stack.size()!=0){
-					cc4_nested_dup=(CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack));
-                	cout << "------cc4_nested_dup = "<< cc4_nested_dup<<endl;
+
+				if(cc4_valid_if.find("&&") == string::npos){
+					// may be a nested if
+					if(cc4_parent_stack.size()!=0){
+						cc4_nested_dup+=CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack, nested_set);
+						cout << "------cc4_nested_dup = "<< cc4_nested_dup<<endl;
+					}
+				}else{
+					// it's && may dup with previous nested.
+					//nested_set.insert(parent + "&&" + cc4_valid_if);
+                	// need to record all nested and && cases
+					cout << "-------TODO: may dup with previous nested" << endl;
 				}
 			}
 
@@ -805,6 +815,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 				case_map[function_count] = c_element;
 
                 lineElement cc4_element(cyclomatic_distinct_cond_set.size() -cc4_nested_dup -ignore_cyclomatic_cnt + 1, function_name);
+                nested_set.clear();
                 cout << "XXXXX798 fuction name is "<<function_name<< " set size is "<<cyclomatic_distinct_cond_set.size()<<endl;
 
                 cond_CC4_map[function_count] = cc4_element;
