@@ -1,3 +1,6 @@
 .DS_Store
-*.csv
+*.csv*
 *.o
+*.tags
+UCC
+*.tags_sorted_by_file

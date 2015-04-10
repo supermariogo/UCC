@@ -286,7 +286,7 @@ PreCountProcess	CTagCounter.h	/^	virtual int PreCountProcess(filemap* \/*fmap*\/
 CheckBlank	CUtil.cpp	/^bool CUtil::CheckBlank(const string &str)$/;"	f	class:CUtil
 ClearRedundantSpaces	CUtil.cpp	/^string CUtil::ClearRedundantSpaces(const string &str)$/;"	f	class:CUtil
 ConvertClearCaseFile	CUtil.cpp	/^string CUtil::ConvertClearCaseFile(const string &fileName)$/;"	f	class:CUtil
-CountDistinctCond	CUtil.cpp	/^void CUtil::CountDistinctCond(const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
+CountDistinctCond	CUtil.cpp	/^void CUtil::CountDistinctCond(string &valid_statement, const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
 CountTally	CUtil.cpp	/^void CUtil::CountTally(const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
 EraseString	CUtil.cpp	/^string CUtil::EraseString(const string &srcstr, const string &erasedstr)$/;"	f	class:CUtil
 ExtractFilename	CUtil.cpp	/^string CUtil::ExtractFilename(const string &filepath)$/;"	f	class:CUtil
@@ -298,6 +298,7 @@ IsInteger	CUtil.cpp	/^bool CUtil::IsInteger(const string &str)$/;"	f	class:CUtil
 ListAllFiles	CUtil.cpp	/^bool CUtil::ListAllFiles(string &folder, StringVector &fileExtList, StringVector &fileList, bool symLinks)$/;"	f	class:CUtil
 MatchFilename	CUtil.cpp	/^bool CUtil::MatchFilename(const string &filename, const string &matchstr)$/;"	f	class:CUtil
 MkPath	CUtil.cpp	/^int CUtil::MkPath(const string &path)$/;"	f	class:CUtil
+NestedIfDup	CUtil.cpp	/^size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack){$/;"	f	class:CUtil
 PrintFileHeader	CUtil.cpp	/^int CUtil::PrintFileHeader(ofstream &pout, const string &title, const string &cmd)$/;"	f	class:CUtil
 PrintFileHeaderLine	CUtil.cpp	/^int CUtil::PrintFileHeaderLine(ofstream &pout, const string &line)$/;"	f	class:CUtil
 ReplaceSmartQuotes	CUtil.cpp	/^string CUtil::ReplaceSmartQuotes(const string &str)$/;"	f	class:CUtil
@@ -595,17 +596,17 @@ DecideLanguage	MainObject.cpp	/^ClassType MainObject::DecideLanguage(const strin
 FindDuplicateFiles	MainObject.cpp	/^void MainObject::FindDuplicateFiles(SourceFileList &fileList, StringVector &dupList1, StringVector &dupList2, bool checkMatch)$/;"	f	class:MainObject
 FindDuplicateFor	MainObject.cpp	/^bool MainObject::FindDuplicateFor(SourceFileList &compareList, SourceFileList::iterator &sfi,$/;"	f	class:MainObject
 GetLanguageExtensionMap	MainObject.cpp	/^void MainObject::GetLanguageExtensionMap(multimap<const string, string> *lang_ext_map)$/;"	f	class:MainObject
-GetLanguageName	MainObject.cpp	/^string MainObject::GetLanguageName(ClassType class_type, const string &file_name) $/;"	f	class:MainObject
+GetLanguageName	MainObject.cpp	/^string MainObject::GetLanguageName(ClassType class_type, const string &file_name)$/;"	f	class:MainObject
 GetOutputSummaryStream	MainObject.cpp	/^ofstream* MainObject::GetOutputSummaryStream(const string &outputFileNamePrePend, bool csvOutput)$/;"	f	class:MainObject
 GetTotalOutputStream	MainObject.cpp	/^ofstream* MainObject::GetTotalOutputStream(const string &outputFileNamePrePend, bool csvOutput)$/;"	f	class:MainObject
-IsSupportedFileExtension	MainObject.cpp	/^bool MainObject::IsSupportedFileExtension(const string &file_name) $/;"	f	class:MainObject
+IsSupportedFileExtension	MainObject.cpp	/^bool MainObject::IsSupportedFileExtension(const string &file_name)$/;"	f	class:MainObject
 MainObject	MainObject.cpp	/^MainObject::MainObject()$/;"	f	class:MainObject
 MainProcess	MainObject.cpp	/^int MainObject::MainProcess(int argc, char *argv[])$/;"	f	class:MainObject
 ParseCommandLine	MainObject.cpp	/^int MainObject::ParseCommandLine(int argc, char *argv[])$/;"	f	class:MainObject
-PrintComplexityResults	MainObject.cpp	/^int MainObject::PrintComplexityResults(bool useListA, const string &outputFileNamePrePend, bool printDuplicates) $/;"	f	class:MainObject
+PrintComplexityResults	MainObject.cpp	/^int MainObject::PrintComplexityResults(bool useListA, const string &outputFileNamePrePend, bool printDuplicates)$/;"	f	class:MainObject
 PrintCountResults	MainObject.cpp	/^int MainObject::PrintCountResults(bool useListA, const string &outputFileNamePrePend, StringVector *filesToPrint, bool excludeFiles)$/;"	f	class:MainObject
 PrintCountSummary	MainObject.cpp	/^int MainObject::PrintCountSummary(TotalValueMap &total, WebTotalValueMap &webtotal,$/;"	f	class:MainObject
-PrintCyclomaticComplexity	MainObject.cpp	/^int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFileNamePrePend, bool printDuplicates) $/;"	f	class:MainObject
+PrintCyclomaticComplexity	MainObject.cpp	/^int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFileNamePrePend, bool printDuplicates)$/;"	f	class:MainObject
 PrintDuplicateList	MainObject.cpp	/^void MainObject::PrintDuplicateList(StringVector &myList1, StringVector &myList2, ofstream &outfile, bool csvFormat)$/;"	f	class:MainObject
 PrintDuplicateSummary	MainObject.cpp	/^void MainObject::PrintDuplicateSummary(bool useListA, const string &outputFileNamePrePend)$/;"	f	class:MainObject
 PrintTotalCountResults	MainObject.cpp	/^int MainObject::PrintTotalCountResults(bool useListA, const string &outputFileNamePrePend, StringVector *filesToPrint, bool excludeFiles)$/;"	f	class:MainObject

@@ -234,7 +234,7 @@ CountDirectiveSLOC	CPythonCounter.cpp	/^int CPythonCounter::CountDirectiveSLOC(f
 CountDirectiveSLOC	CVHDLCounter.cpp	/^int CVHDLCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CVHDLCounter
 CountDirectiveSLOC	CVbCounter.cpp	/^int CVbCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* \/*fmapBak*\/)$/;"	f	class:CVbCounter
 CountDirectiveSLOC	CVerilogCounter.cpp	/^int CVerilogCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CVerilogCounter
-CountDistinctCond	CUtil.cpp	/^void CUtil::CountDistinctCond(const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
+CountDistinctCond	CUtil.cpp	/^void CUtil::CountDistinctCond(string &valid_statement, const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
 CountSLOC	CCodeCounter.cpp	/^int CCodeCounter::CountSLOC(filemap* fmap, results* result)$/;"	f	class:CCodeCounter
 CountSLOC	CWebCounter.cpp	/^int CWebCounter::CountSLOC(filemap* fmap, results* result)$/;"	f	class:CWebCounter
 CountTagTally	CTagCounter.cpp	/^void CTagCounter::CountTagTally(string base, StringVector& container, unsigned int &count, int mode, string exclude,$/;"	f	class:CTagCounter
@@ -287,7 +287,7 @@ FoundSLOC	CPascalCounter.cpp	/^void CPascalCounter::FoundSLOC(results* result, s
 FoundSLOC	CVHDLCounter.cpp	/^void CVHDLCounter::FoundSLOC(results* result, size_t lineNumber, string &strLSLOC, string &strLSLOCBak, bool &found_block, $/;"	f	class:CVHDLCounter
 GetFileList	CUtil.cpp	/^bool CUtil::GetFileList(StringVector &fileList, const string &path, bool symLinks)$/;"	f	class:CUtil
 GetLanguageExtensionMap	MainObject.cpp	/^void MainObject::GetLanguageExtensionMap(multimap<const string, string> *lang_ext_map)$/;"	f	class:MainObject
-GetLanguageName	MainObject.cpp	/^string MainObject::GetLanguageName(ClassType class_type, const string &file_name) $/;"	f	class:MainObject
+GetLanguageName	MainObject.cpp	/^string MainObject::GetLanguageName(ClassType class_type, const string &file_name)$/;"	f	class:MainObject
 GetOutputStream	CCodeCounter.cpp	/^ofstream* CCodeCounter::GetOutputStream(const string &outputFileNamePrePend, const string &cmd, bool csvOutput, bool legacyOutput)$/;"	f	class:CCodeCounter
 GetOutputStream	CWebCounter.cpp	/^ofstream* CWebCounter::GetOutputStream(WebType webType, const string &outputFileNamePrePend, const string &cmd, bool csvOutput, bool legacyOutput)$/;"	f	class:CWebCounter
 GetOutputSummaryStream	MainObject.cpp	/^ofstream* MainObject::GetOutputSummaryStream(const string &outputFileNamePrePend, bool csvOutput)$/;"	f	class:MainObject
@@ -310,7 +310,7 @@ InitializeCounts	CCodeCounter.cpp	/^void CCodeCounter::InitializeCounts()$/;"	f	
 InitializeResultsCounts	CCodeCounter.cpp	/^void CCodeCounter::InitializeResultsCounts(results* result)$/;"	f	class:CCodeCounter
 IsInteger	CUtil.cpp	/^bool CUtil::IsInteger(const string &str)$/;"	f	class:CUtil
 IsSupportedFileExtension	CCodeCounter.cpp	/^bool CCodeCounter::IsSupportedFileExtension(const string &file_name)$/;"	f	class:CCodeCounter
-IsSupportedFileExtension	MainObject.cpp	/^bool MainObject::IsSupportedFileExtension(const string &file_name) $/;"	f	class:MainObject
+IsSupportedFileExtension	MainObject.cpp	/^bool MainObject::IsSupportedFileExtension(const string &file_name)$/;"	f	class:MainObject
 JAVA	cc_main.h	/^	JAVA,					\/\/ Java$/;"	e	enum:ClassType
 JAVASCRIPT	cc_main.h	/^	JAVASCRIPT,				\/\/ JavaScript$/;"	e	enum:ClassType
 JAVASCRIPT_ASP_C	cc_main.h	/^	JAVASCRIPT_ASP_C,		\/\/ JavaScript client side in ASP$/;"	e	enum:ClassType
@@ -403,6 +403,7 @@ MatchedFilePair	DiffTool.h	/^	typedef pair<SourceFileElement *, SourceFileElemen
 MatchingType	DiffTool.h	/^	typedef vector<pair<resultStruct, MatchedFilePair> > MatchingType;$/;"	t	class:DiffTool
 MkPath	CUtil.cpp	/^int CUtil::MkPath(const string &path)$/;"	f	class:CUtil
 NEXTMIDAS	cc_main.h	/^	NEXTMIDAS,				\/\/ NeXtMidas$/;"	e	enum:ClassType
+NestedIfDup	CUtil.cpp	/^size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack){$/;"	f	class:CUtil
 OUTPUT_FILE_CPLX	cc_main.h	102;"	d
 OUTPUT_FILE_CPLX_CSV	cc_main.h	103;"	d
 OUTPUT_FILE_CYC_CPLX	cc_main.h	106;"	d
@@ -454,10 +455,10 @@ PreCountProcess	CVbscriptCounter.cpp	/^int CVbscriptCounter::PreCountProcess(fil
 PreferenceMapType	DiffTool.h	/^	typedef vector<PreferenceStruct> PreferenceMapType;$/;"	t	class:DiffTool
 PreferenceStruct	DiffTool.h	/^	struct PreferenceStruct$/;"	s	class:DiffTool
 PreviousLanguage	CWebCounter.h	/^	stack<int> PreviousLanguage;				\/\/!< Previous language stack$/;"	m	class:CWebCounter
-PrintComplexityResults	MainObject.cpp	/^int MainObject::PrintComplexityResults(bool useListA, const string &outputFileNamePrePend, bool printDuplicates) $/;"	f	class:MainObject
+PrintComplexityResults	MainObject.cpp	/^int MainObject::PrintComplexityResults(bool useListA, const string &outputFileNamePrePend, bool printDuplicates)$/;"	f	class:MainObject
 PrintCountResults	MainObject.cpp	/^int MainObject::PrintCountResults(bool useListA, const string &outputFileNamePrePend, StringVector *filesToPrint, bool excludeFiles)$/;"	f	class:MainObject
 PrintCountSummary	MainObject.cpp	/^int MainObject::PrintCountSummary(TotalValueMap &total, WebTotalValueMap &webtotal,$/;"	f	class:MainObject
-PrintCyclomaticComplexity	MainObject.cpp	/^int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFileNamePrePend, bool printDuplicates) $/;"	f	class:MainObject
+PrintCyclomaticComplexity	MainObject.cpp	/^int MainObject::PrintCyclomaticComplexity(bool useListA, const string &outputFileNamePrePend, bool printDuplicates)$/;"	f	class:MainObject
 PrintDiffResults	DiffTool.cpp	/^void DiffTool::PrintDiffResults()$/;"	f	class:DiffTool
 PrintDuplicateList	MainObject.cpp	/^void MainObject::PrintDuplicateList(StringVector &myList1, StringVector &myList2, ofstream &outfile, bool csvFormat)$/;"	f	class:MainObject
 PrintDuplicateSummary	MainObject.cpp	/^void MainObject::PrintDuplicateSummary(bool useListA, const string &outputFileNamePrePend)$/;"	f	class:MainObject
