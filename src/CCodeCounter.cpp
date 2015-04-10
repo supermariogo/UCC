@@ -724,10 +724,13 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 						cout << "------cc4_nested_dup = "<< cc4_nested_dup<<endl;
 					}
 				}else{
-					// it's && may dup with previous nested.
-					//nested_set.insert(parent + "&&" + cc4_valid_if);
-                	// need to record all nested and && cases
-					cout << "-------TODO: may dup with previous nested" << endl;
+					cout << "--------get &&:" <<cc4_valid_if<<endl;
+
+                	if(nested_set.find(cc4_valid_if) != nested_set.end()){
+                		// this is the case that nested comes first and && comes later
+                		cyclomatic_distinct_cond_set.erase(cc4_valid_if);
+                	}
+
 				}
 			}
 

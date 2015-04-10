@@ -875,17 +875,17 @@ size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack,
 
     if(cyclomatic_distinct_cond_stack.size()==1){
         string combine = parent + "&&" + cc4_valid_if;
+
         if(nested_set.find(combine)!=nested_set.end()){
             cout << "already counted the dup" << endl;
             return 0;
 
         }
+        nested_set.insert(combine);
+        cout << "-----insest " << combine << " to nested_set"<<endl;
         if(temp_set.find(combine)!=temp_set.end()){
             //can find a && dup, counter && number
-            nested_set.insert(combine);
             return CountNestedNum(combine);
-
-
         }
         return 0;
 
