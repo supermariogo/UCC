@@ -814,7 +814,19 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 				lineElement c_element(cyclomatic_cnt - ignore_cyclomatic_cnt - cyclomatic_case_cnt + cyclomatic_switch_cnt + 1, function_name);
 				case_map[function_count] = c_element;
 
-                lineElement cc4_element(cyclomatic_distinct_cond_set.size() -cc4_nested_dup -ignore_cyclomatic_cnt + 1, function_name);
+				int cc4_counter=0;
+				set<string>::iterator it;
+				string temp;
+				for(it=cyclomatic_distinct_cond_set.begin(); it!=cyclomatic_distinct_cond_set.end(); it++){
+					temp = *it;
+					if(temp.find("&&")==string::npos){
+						cc4_counter++;
+					}else{
+						cc4_counter+=CUtil::CountNestedNum(temp);
+					}
+				}
+
+                lineElement cc4_element(cc4_counter -cc4_nested_dup -ignore_cyclomatic_cnt + 1, function_name);
                 nested_set.clear();
                 cout << "XXXXX798 fuction name is "<<function_name<< " set size is "<<cyclomatic_distinct_cond_set.size()<<endl;
 

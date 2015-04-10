@@ -854,6 +854,16 @@ string CUtil::ReplaceSmartQuotes(const string &str)
     return str1;
 }
 
+int CUtil::CountNestedNum(string &combine){
+    //"a==1&&b==1 return 2"
+    int res=0;
+    for(int i=0;i<combine.size();i++){
+        if(combine[i]=='&')
+            res++;
+    }
+    return res/2+1;
+}
+
 size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set){
 
 
@@ -872,12 +882,9 @@ size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack,
         }
         if(temp_set.find(combine)!=temp_set.end()){
             //can find a && dup, counter && number
-            for(int i=0;i<combine.size();i++){
-                if(combine[i]=='&')
-                    dup_counter++;
-            }
             nested_set.insert(combine);
-            return dup_counter/2+1;
+            return CountNestedNum(combine);
+
 
         }
         return 0;

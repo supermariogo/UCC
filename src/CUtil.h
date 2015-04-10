@@ -42,6 +42,7 @@ public:
 	static size_t FindKeyword(const string &str, const string &keyword, size_t start = 0, size_t end = TO_END_OF_STRING, bool case_sensitive = true);
 	static void CountTally(const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,
 		const string &include1, const string &include2, UIntVector *counter_container = 0, bool case_sensitive = true);
+	static int CountNestedNum(string &combine);
 	static void SemanticDeduplicate(set<string> &distinct_cond_set);
 	static void SemanticFormat(string &statement);
 	static size_t NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set);
