@@ -931,7 +931,7 @@ void CUtil::SemanticFormat(string &statement)
     statement.erase(remove_if(statement.begin(), statement.end(), ::isspace), statement.end());
 
     // For loop handling: Currently "for" keyword is searched and upon encounter, is stripped from the statement
-    // and the rest of the statement is recorded as a condition. We need to record specific condition within a 
+    // and the rest of the statement is recorded as a condition. We need to record specific condition within a
     // for loop, not the entire statement.
     if(statement.find(";", 0) != string::npos) {
     	int firstSC = statement.find(";", 0);
@@ -977,7 +977,7 @@ void CUtil::SemanticFormat(string &statement)
 
         idx = statement.find(eq);
         if (idx != string::npos){
-            
+
             left = statement.substr(0, idx);
             right = statement.substr(idx + eq_len, string::npos);
 
@@ -996,7 +996,7 @@ void CUtil::SemanticFormat(string &statement)
 
         idx = statement.find(ne);
         if (idx != string::npos){
-            
+
             left = statement.substr(0, idx);
             right = statement.substr(idx + ne_len, string::npos);
 
@@ -1007,12 +1007,12 @@ void CUtil::SemanticFormat(string &statement)
             }
             if(left=="false" || left=="0") {
                 statement = right + eqT;
-            } else if (right=="false" || right=="0")){
+            } else if (right=="false" || right=="0"){
                 statement = left + eqT;
             }
             return;
         }
-        
+
     }else{
 
         string temp_statement = statement;
