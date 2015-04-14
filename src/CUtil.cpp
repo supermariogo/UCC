@@ -981,10 +981,15 @@ void CUtil::SemanticFormat(string &statement)
             left = statement.substr(0, idx);
             right = statement.substr(idx + eq_len, string::npos);
 
-            if((left=="true" || left=="1") || (right=="true" || right=="1")){
+            if(left=="true" || left=="1") {
                 statement = right + eqT;
-            }else if((left=="false" || left=="0") || (right=="false" || right=="0")){
+            } else if(right=="true" || right=="1") {
+                statement = left + eqT;
+            }
+            if(left=="false" || left=="0") {
                 statement = right + eqF;
+            } else if(right=="false" || right=="0"){
+                statement = left + eqF;
             }
             return;
         }
@@ -995,10 +1000,15 @@ void CUtil::SemanticFormat(string &statement)
             left = statement.substr(0, idx);
             right = statement.substr(idx + ne_len, string::npos);
 
-            if((left=="true" || left=="1") || (right=="true" || right=="1")){
+            if(left=="true" || left=="1") {
                 statement = right + eqF;
-            }else if((left=="false" || left=="0") || (right=="false" || right=="0")){
+            } else if (right=="true" || right=="1") {
+                statement = left + eqF;
+            }
+            if(left=="false" || left=="0") {
                 statement = right + eqT;
+            } else if (right=="false" || right=="0")){
+                statement = left + eqT;
             }
             return;
         }
