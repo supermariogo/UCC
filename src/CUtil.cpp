@@ -918,76 +918,102 @@ void CUtil::SemanticFormat(string &statement)
     size_t idx;
     string left;
     string right;
+    string eq = "==", ne = "!=", eqT = "==1", eqF = "==0", concat_op = "&&";
+
+    int eq_len = eq.length();
+    int ne_len = ne.length();
+    int eq_pos = -1, ne_pos = -1;
+    int tnum_len = string("1").length();
+    int tstr_len = string("true").length();
+    int fnum_len = string("0").length();
+    int fstr_len = string("false").length();
 
     statement.erase(remove_if(statement.begin(), statement.end(), ::isspace), statement.end());
 
-    if(statement.find("&&") == string::npos){
+    // For loop handling: Currently "for" keyword is searched and upon encounter, is stripped from the statement
+    // and the rest of the statement is recorded as a condition. We need to record specific condition within a 
+    // for loop, not the entire statement.
+    if(statement.find(";", 0) != string::npos) {
+    	int firstSC = statement.find(";", 0);
+    	if(statement.find(";", firstSC + 1) != string::npos) {
+    		int secondSC = statement.find(";", firstSC + 1);
+    		if(firstSC != secondSC + 1) {
+    			string condFOR = statement.substr(firstSC + 1, secondSC - firstSC - 1);
+    			//distinct_cond_set.erase(it);
+    			//it = distinct_cond_set.find(temp);
+    			statement = condFOR;
+    			//distinct_cond_set.insert(condFOR);
+    		}
+    	}
+    }
+
+    if(statement.find("concat_op") == string::npos){
 
         if(statement[0]=='!'){
-            statement = statement.substr(1, string::npos)+="==0";
+            eq_pos = statement.find(eq);
+            ne_pos = statement.find(ne);
+            if(eq_pos != string::npos) {
+                if(statement.substr(eq_pos + eq_len, tnum_len) == "1" || statement.substr(eq_pos + eq_len, tstr_len) == "true") {
+                    statement = statement.substr(1, string::npos) += eqF;
+                } else if(statement.substr(eq_pos + eq_len, fnum_len) == "0" || statement.substr(eq_pos + eq_len, fstr_len) == "false") {
+                    statement = statement.substr(1, string::npos) += eqT;
+                }
+            } else if(ne_pos != string::npos) {
+                if(statement.substr(ne_pos + ne_len, tnum_len) == "1" || statement.substr(ne_pos + ne_len, tstr_len) == "true") {
+                    statement = statement.substr(1, string::npos) += eqT;
+                } else if(statement.substr(ne_pos + ne_len, fnum_len) == "0" || statement.substr(ne_pos + ne_len, fstr_len) == "false") {
+                    statement = statement.substr(1, string::npos) += eqF;
+                }
+            } else {
+                statement = statement.substr(1, string::npos) += eqF;
+            }
             return;
         }
 
-
-        if (statement.find("==") == string::npos && statement.find("!=")==string::npos){
-            statement = statement + "==1";
+        if (statement.find(eq) == string::npos && statement.find(ne) == string::npos){
+            statement = statement + eqT;
             return ;
         }
 
-        if (statement.find("==") != string::npos){
-            idx =statement.find("==");
+        idx = statement.find(eq);
+        if (idx != string::npos){
+            
             left = statement.substr(0, idx);
-            right = statement.substr(idx+2, string::npos);
+            right = statement.substr(idx + eq_len, string::npos);
 
-            if(left=="true" || left=="1"){
-                statement = right + "==1";
-                return;
-            }else if(left=="false" || left=="0"){
-                statement = right + "==0";
-            }else if(right=="true" || right=="1"){
-                statement = left + "==1";
-                return ;
-            }else if(right=="false" || right=="0"){
-                statement = left + "==0";
-                return ;
-            }else{
-                return ;
+            if((left=="true" || left=="1") || (right=="true" || right=="1")){
+                statement = right + eqT;
+            }else if((left=="false" || left=="0") || (right=="false" || right=="0")){
+                statement = right + eqF;
             }
-
+            return;
         }
 
-        if (statement.find("!=") != string::npos){
-            idx =statement.find("!=");
+        idx = statement.find(ne);
+        if (idx != string::npos){
+            
             left = statement.substr(0, idx);
-            right = statement.substr(idx+2, string::npos);
+            right = statement.substr(idx + ne_len, string::npos);
 
-            if(left=="true" || left=="1"){
-                statement = right + "==0";
-                return;
-            }else if(left=="false" || left=="0"){
-                statement = right + "==1";
-            }else if(right=="true" || right=="1"){
-                statement = left + "==0";
-                return ;
-            }else if(right=="false" || right=="0"){
-                statement = left + "==1";
-                return ;
-            }else{
-                return ;
+            if((left=="true" || left=="1") || (right=="true" || right=="1")){
+                statement = right + eqF;
+            }else if((left=="false" || left=="0") || (right=="false" || right=="0")){
+                statement = right + eqT;
             }
-
+            return;
         }
+        
     }else{
 
-        string temp_statement=statement;
-        statement="";
-        while(temp_statement.find("&&") != string::npos){
-            idx =temp_statement.find("&&");
+        string temp_statement = statement;
+        statement = "";
+        while(temp_statement.find(concat_op) != string::npos){
+            idx = temp_statement.find(concat_op);
             left = temp_statement.substr(0, idx);
-            right = temp_statement.substr(idx+2, string::npos);
+            right = temp_statement.substr(idx + concat_op.length(), string::npos);
             SemanticFormat(left);
-            statement= statement +left +"&&";
-            temp_statement = temp_statement.substr(idx+2, string::npos);
+            statement= statement + left + concat_op;
+            temp_statement = temp_statement.substr(idx + concat_op.length(), string::npos);
         }
         statement = statement + right;
         cout << "get a && statement: "<< statement<<endl;
