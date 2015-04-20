@@ -1025,6 +1025,7 @@ void CUtil::SemanticFormat(string &statement)
             statement= statement + left + concat_op;
             temp_statement = temp_statement.substr(idx + concat_op.length(), string::npos);
         }
+        SemanticFormat(right);
         statement = statement + right;
         cout << "get a && statement: "<< statement<<endl;
         return;
