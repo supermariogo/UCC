@@ -1,0 +1,5 @@
+Generating results to files...
+CC3: 4
+CC4: 5
+
+Fail
