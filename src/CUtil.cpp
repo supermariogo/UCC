@@ -947,7 +947,7 @@ void CUtil::SemanticFormat(string &statement)
     	}
     }
 
-    if(statement.find("concat_op") == string::npos){
+    if(statement.find(concat_op) == string::npos){
 
         if(statement[0]=='!'){
             eq_pos = statement.find(eq);
