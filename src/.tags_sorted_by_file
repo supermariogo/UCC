@@ -287,6 +287,7 @@ CheckBlank	CUtil.cpp	/^bool CUtil::CheckBlank(const string &str)$/;"	f	class:CUt
 ClearRedundantSpaces	CUtil.cpp	/^string CUtil::ClearRedundantSpaces(const string &str)$/;"	f	class:CUtil
 ConvertClearCaseFile	CUtil.cpp	/^string CUtil::ConvertClearCaseFile(const string &fileName)$/;"	f	class:CUtil
 CountDistinctCond	CUtil.cpp	/^void CUtil::CountDistinctCond(string &valid_statement, const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
+CountNestedNum	CUtil.cpp	/^int CUtil::CountNestedNum(string &combine){$/;"	f	class:CUtil
 CountTally	CUtil.cpp	/^void CUtil::CountTally(const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
 EraseString	CUtil.cpp	/^string CUtil::EraseString(const string &srcstr, const string &erasedstr)$/;"	f	class:CUtil
 ExtractFilename	CUtil.cpp	/^string CUtil::ExtractFilename(const string &filepath)$/;"	f	class:CUtil
@@ -298,7 +299,7 @@ IsInteger	CUtil.cpp	/^bool CUtil::IsInteger(const string &str)$/;"	f	class:CUtil
 ListAllFiles	CUtil.cpp	/^bool CUtil::ListAllFiles(string &folder, StringVector &fileExtList, StringVector &fileList, bool symLinks)$/;"	f	class:CUtil
 MatchFilename	CUtil.cpp	/^bool CUtil::MatchFilename(const string &filename, const string &matchstr)$/;"	f	class:CUtil
 MkPath	CUtil.cpp	/^int CUtil::MkPath(const string &path)$/;"	f	class:CUtil
-NestedIfDup	CUtil.cpp	/^size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack){$/;"	f	class:CUtil
+NestedIfDup	CUtil.cpp	/^size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set){$/;"	f	class:CUtil
 PrintFileHeader	CUtil.cpp	/^int CUtil::PrintFileHeader(ofstream &pout, const string &title, const string &cmd)$/;"	f	class:CUtil
 PrintFileHeaderLine	CUtil.cpp	/^int CUtil::PrintFileHeaderLine(ofstream &pout, const string &line)$/;"	f	class:CUtil
 ReplaceSmartQuotes	CUtil.cpp	/^string CUtil::ReplaceSmartQuotes(const string &str)$/;"	f	class:CUtil

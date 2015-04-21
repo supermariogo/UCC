@@ -826,12 +826,18 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 						cc4_counter++;
 					}else{
 						cc4_counter+=CUtil::CountNestedNum(temp);
+
 					}
+					
 				}
 
+                cout << "CC4 DEBUG: cc4_counter= "<<cc4_counter<<endl;
+                cout << "CC4 DEBUG: cc4_nested_dup= "<<cc4_nested_dup<<endl;
+                cout << "CC4 DEBUG: ignore_cyclomatic_cnt=" << ignore_cyclomatic_cnt<<endl;
                 lineElement cc4_element(cc4_counter -cc4_nested_dup -ignore_cyclomatic_cnt + 1, function_name);
+                cout << "CC4 DEBUG: fuction name is "<<function_name<< " CC4 is "<<cc4_element.lineNumber<<endl;
                 nested_set.clear();
-                cout << "CC4 DEBUG: fuction name is "<<function_name<< " set size is "<<cyclomatic_distinct_cond_set.size()<<endl;
+                cc4_nested_dup=0;
 
                 cond_CC4_map[function_count] = cc4_element;
 

@@ -235,6 +235,7 @@ CountDirectiveSLOC	CVHDLCounter.cpp	/^int CVHDLCounter::CountDirectiveSLOC(filem
 CountDirectiveSLOC	CVbCounter.cpp	/^int CVbCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* \/*fmapBak*\/)$/;"	f	class:CVbCounter
 CountDirectiveSLOC	CVerilogCounter.cpp	/^int CVerilogCounter::CountDirectiveSLOC(filemap* fmap, results* result, filemap* fmapBak)$/;"	f	class:CVerilogCounter
 CountDistinctCond	CUtil.cpp	/^void CUtil::CountDistinctCond(string &valid_statement, const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
+CountNestedNum	CUtil.cpp	/^int CUtil::CountNestedNum(string &combine){$/;"	f	class:CUtil
 CountSLOC	CCodeCounter.cpp	/^int CCodeCounter::CountSLOC(filemap* fmap, results* result)$/;"	f	class:CCodeCounter
 CountSLOC	CWebCounter.cpp	/^int CWebCounter::CountSLOC(filemap* fmap, results* result)$/;"	f	class:CWebCounter
 CountTagTally	CTagCounter.cpp	/^void CTagCounter::CountTagTally(string base, StringVector& container, unsigned int &count, int mode, string exclude,$/;"	f	class:CTagCounter
@@ -403,7 +404,7 @@ MatchedFilePair	DiffTool.h	/^	typedef pair<SourceFileElement *, SourceFileElemen
 MatchingType	DiffTool.h	/^	typedef vector<pair<resultStruct, MatchedFilePair> > MatchingType;$/;"	t	class:DiffTool
 MkPath	CUtil.cpp	/^int CUtil::MkPath(const string &path)$/;"	f	class:CUtil
 NEXTMIDAS	cc_main.h	/^	NEXTMIDAS,				\/\/ NeXtMidas$/;"	e	enum:ClassType
-NestedIfDup	CUtil.cpp	/^size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack){$/;"	f	class:CUtil
+NestedIfDup	CUtil.cpp	/^size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set){$/;"	f	class:CUtil
 OUTPUT_FILE_CPLX	cc_main.h	102;"	d
 OUTPUT_FILE_CPLX_CSV	cc_main.h	103;"	d
 OUTPUT_FILE_CYC_CPLX	cc_main.h	106;"	d
