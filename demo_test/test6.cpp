@@ -24,3 +24,12 @@ int main()
 
     return 0;
 }
+
+int function(){
+
+
+    if (a == true && b == true && c==true) {
+        cout << "a and b is true" << endl;
+    }
+    
+}

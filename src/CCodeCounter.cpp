@@ -709,7 +709,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 			CUtil::CountTally(line, cmplx_cyclomatic_switch_list, cyclomatic_switch_cnt, 1, exclude, "", "", 0, casesensitive);
 
-			cout << line <<endl;
+			cout <<"      " <<line <<endl;
 
 
 			cc4_valid_if="";
@@ -721,13 +721,14 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 					// && comes first and nested if comes later.
 					if(cc4_parent_stack.size()!=0){
 						cc4_nested_dup+=CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack, nested_set);
-						cout << "CC4 DEBUG: cc4_nested_dup = "<< cc4_nested_dup<<endl;
+						cout << "CC4 DEBUG: ---------------cc4_nested_dup = "<< cc4_nested_dup<<endl;
 					}
 				}else{
 					// this is the case that nested comes first and && comes later
 					cout << "CC4 DEBUG: get &&:" <<cc4_valid_if<<endl;
                 	if(nested_set.find(cc4_valid_if) != nested_set.end()){
                 		cyclomatic_distinct_cond_set.erase(cc4_valid_if);
+                		cout << "CC4 DEBUG: ---------------erase  "<< cc4_valid_if<<endl;
                 	}
 
 				}
