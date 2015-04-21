@@ -718,16 +718,15 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 			if(cc4_valid_if!=""){
 
 				if(cc4_valid_if.find("&&") == string::npos){
-					// may be a nested if
+					// && comes first and nested if comes later.
 					if(cc4_parent_stack.size()!=0){
 						cc4_nested_dup+=CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack, nested_set);
-						cout << "------cc4_nested_dup = "<< cc4_nested_dup<<endl;
+						cout << "CC4 DEBUG: cc4_nested_dup = "<< cc4_nested_dup<<endl;
 					}
 				}else{
-					cout << "--------get &&:" <<cc4_valid_if<<endl;
-
+					// this is the case that nested comes first and && comes later
+					cout << "CC4 DEBUG: get &&:" <<cc4_valid_if<<endl;
                 	if(nested_set.find(cc4_valid_if) != nested_set.end()){
-                		// this is the case that nested comes first and && comes later
                 		cyclomatic_distinct_cond_set.erase(cc4_valid_if);
                 	}
 
@@ -831,7 +830,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
                 lineElement cc4_element(cc4_counter -cc4_nested_dup -ignore_cyclomatic_cnt + 1, function_name);
                 nested_set.clear();
-                cout << "XXXXX798 fuction name is "<<function_name<< " set size is "<<cyclomatic_distinct_cond_set.size()<<endl;
+                cout << "CC4 DEBUG: fuction name is "<<function_name<< " set size is "<<cyclomatic_distinct_cond_set.size()<<endl;
 
                 cond_CC4_map[function_count] = cc4_element;
 
@@ -855,7 +854,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 					}
                     if (!cyclomatic_distinct_cond_stack.empty())
                     {
-                    	cout << "go back to a leavl" <<endl;
+                    	cout << "CC4 DEBUG: go back to a leavl" <<endl;
                         cyclomatic_distinct_cond_set = cyclomatic_distinct_cond_stack.top();
                         cyclomatic_distinct_cond_stack.pop();
                     }
@@ -912,6 +911,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
                     cyclomatic_distinct_cond_set.clear();
 
                     cc4_parent_stack.push(cc4_valid_if);
+                    cout << "CC4 DEBUG: cc4_parent_stack push " << cc4_valid_if << endl;
 
                     //cout << "------push into stack, clear set, may start a nested if{}" <<endl;
                     //cout << "------stack size="<<cyclomatic_distinct_cond_stack.size()<<endl;

@@ -877,12 +877,12 @@ size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack,
         string combine = parent + "&&" + cc4_valid_if;
 
         if(nested_set.find(combine)!=nested_set.end()){
-            cout << "already counted the dup" << endl;
+            cout << "CC4 DEBUG: already counted the dup" << endl;
             return 0;
 
         }
         nested_set.insert(combine);
-        cout << "-----insest " << combine << " to nested_set"<<endl;
+        cout << "CC4 DEBUG: insest " << combine << " to nested_set"<<endl;
         if(temp_set.find(combine)!=temp_set.end()){
             //can find a && dup, counter && number
             return CountNestedNum(combine);
@@ -1027,7 +1027,6 @@ void CUtil::SemanticFormat(string &statement)
         }
         SemanticFormat(right);
         statement = statement + right;
-        cout << "get a && statement: "<< statement<<endl;
         return;
     }
 }
