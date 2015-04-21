@@ -1,7 +1,7 @@
 
 
 
-int main()
+int main()  // cc4 is 4
 {
     bool a = false;
     bool b = true;
@@ -25,7 +25,7 @@ int main()
     return 0;
 }
 
-int function(){
+int function(){  //cc4 is 4
 
 
     if (a == true && b == true && c==true) {

@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main() // cc4=2
 {
     bool a = false;
 
@@ -24,9 +24,8 @@ int main()
     return 0;
 }
 
-// CC3=4  CC4=2
 
-int function()
+int function() //cc4=2
 {
     bool flag = false;
 
@@ -46,5 +45,3 @@ int function()
 
     return 0;
 }
-
-// CC4 = 2

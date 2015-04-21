@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main()  //CC4= 2
 {
     bool a = false;
 
@@ -20,7 +20,7 @@ int main()
     return 0;
 }
 
-int function2()
+int function2() //CC4=2
 {
     bool a = false;
 

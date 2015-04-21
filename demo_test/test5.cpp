@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main()  //cc4=4
 {
     bool a = false;
     bool b = true;
@@ -27,7 +27,7 @@ int main()
 
 
 
-int main2()
+int main2() // cc4 =4
 {
     bool a = false;
     bool b = true;
@@ -55,7 +55,7 @@ int main2()
     return 0;
 }
 
-int main3()
+int main3() //cc4=4
 {
     bool a = false;
     bool b = true;
