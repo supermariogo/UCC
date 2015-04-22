@@ -918,7 +918,7 @@ void CUtil::SemanticFormat(string &statement)
     size_t idx;
     string left;
     string right;
-    string eq = "==", ne = "!=", eqT = "==1", eqF = "==0", concat_op_and = "&&"; concat_op_or=="||";
+    string eq = "==", ne = "!=", eqT = "==1", eqF = "==0", concat_op_and = "&&", concat_op_or="||";
 
     int eq_len = eq.length();
     int ne_len = ne.length();
