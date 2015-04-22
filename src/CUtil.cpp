@@ -964,7 +964,7 @@ void CUtil::SemanticFormat(string &statement)
     	}
     }
 
-    if(statement.find(concat_op_and) == string::npos){
+    if(statement.find(concat_op_and) == string::npos && statement.find(concat_op_or) == string::npos){
 
         if(statement[0]=='!'){
             eq_pos = statement.find(eq);
@@ -1031,19 +1031,38 @@ void CUtil::SemanticFormat(string &statement)
         }
 
     }else{
-
-        string temp_statement = statement;
-        statement = "";
-        while(temp_statement.find(concat_op_and) != string::npos){
-            idx = temp_statement.find(concat_op_and);
-            left = temp_statement.substr(0, idx);
-            right = temp_statement.substr(idx + concat_op_and.length(), string::npos);
-            SemanticFormat(left);
-            statement= statement + left + concat_op_and;
-            temp_statement = temp_statement.substr(idx + concat_op_and.length(), string::npos);
+        // for &&
+        if(statement.find(concat_op_and) != string::npos){
+            string temp_statement = statement;
+            statement = "";
+            while(temp_statement.find(concat_op_and) != string::npos){
+                idx = temp_statement.find(concat_op_and);
+                left = temp_statement.substr(0, idx);
+                right = temp_statement.substr(idx + concat_op_and.length(), string::npos);
+                SemanticFormat(left);
+                statement= statement + left + concat_op_and;
+                temp_statement = temp_statement.substr(idx + concat_op_and.length(), string::npos);
+            }
+            SemanticFormat(right);
+            statement = statement + right;
         }
-        SemanticFormat(right);
-        statement = statement + right;
+
+        // for ||
+        if(statement.find(concat_op_or) != string::npos){
+            string temp_statement = statement;
+            statement = "";
+            while(temp_statement.find(concat_op_or) != string::npos){
+                idx = temp_statement.find(concat_op_or);
+                left = temp_statement.substr(0, idx);
+                right = temp_statement.substr(idx + concat_op_or.length(), string::npos);
+                SemanticFormat(left);
+                statement= statement + left + concat_op_or;
+                temp_statement = temp_statement.substr(idx + concat_op_or.length(), string::npos);
+            }
+            SemanticFormat(right);
+            statement = statement + right;
+        }
+
         return;
     }
 }
@@ -1117,6 +1136,7 @@ void CUtil::CountDistinctCond(string &valid_statement, const string &base, Strin
                             CUtil::SemanticFormat(temp);
                             distinct_cond_set.insert(temp);
                             valid_statement=temp;
+
                             //cout << "-------insert performed, set size=" << distinct_cond_set.size() <<endl;
                             //cout << temp << " | set size: "<< distinct_cond_set.size()<< endl;
                             /*
