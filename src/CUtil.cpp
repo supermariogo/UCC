@@ -918,7 +918,7 @@ void CUtil::SemanticFormat(string &statement)
     size_t idx;
     string left;
     string right;
-    string eq = "==", ne = "!=", eqT = "==1", eqF = "==0", concat_op = "&&";
+    string eq = "==", ne = "!=", eqT = "==1", eqF = "==0", concat_op_and = "&&"; concat_op_or=="||";
 
     int eq_len = eq.length();
     int ne_len = ne.length();
@@ -947,7 +947,7 @@ void CUtil::SemanticFormat(string &statement)
     	}
     }
 
-    if(statement.find(concat_op) == string::npos){
+    if(statement.find(concat_op_and) == string::npos){
 
         if(statement[0]=='!'){
             eq_pos = statement.find(eq);
@@ -1017,13 +1017,13 @@ void CUtil::SemanticFormat(string &statement)
 
         string temp_statement = statement;
         statement = "";
-        while(temp_statement.find(concat_op) != string::npos){
-            idx = temp_statement.find(concat_op);
+        while(temp_statement.find(concat_op_and) != string::npos){
+            idx = temp_statement.find(concat_op_and);
             left = temp_statement.substr(0, idx);
-            right = temp_statement.substr(idx + concat_op.length(), string::npos);
+            right = temp_statement.substr(idx + concat_op_and.length(), string::npos);
             SemanticFormat(left);
-            statement= statement + left + concat_op;
-            temp_statement = temp_statement.substr(idx + concat_op.length(), string::npos);
+            statement= statement + left + concat_op_and;
+            temp_statement = temp_statement.substr(idx + concat_op_and.length(), string::npos);
         }
         SemanticFormat(right);
         statement = statement + right;
