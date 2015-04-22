@@ -204,6 +204,7 @@ CmpMngrHtml	CmpMngrHtml.h	/^class CmpMngrHtml$/;"	c
 Compare	CmpMngr.cpp	/^void CmpMngr::Compare(srcLineVector* baseFileMap, srcLineVector* compFileMap, double match_threshold)$/;"	f	class:CmpMngr
 CompareFileNames	DiffTool.cpp	/^int DiffTool::CompareFileNames(const string &file1, const string &file2)$/;"	f	class:DiffTool
 CompareForDuplicate	MainObject.cpp	/^void MainObject::CompareForDuplicate(srcLineVector &firstFile, srcLineVector &secondFile,$/;"	f	class:MainObject
+ConcatAndDup	CUtil.cpp	/^size_t CUtil::ConcatAndDup(string &cc4_valid_if, set<string> &nested_set){$/;"	f	class:CUtil
 ConnectUserIF	MainObject.cpp	/^void MainObject::ConnectUserIF(QWidget *parent)$/;"	f	class:MainObject
 ContinueLine	CCodeCounter.h	/^	string ContinueLine;					\/\/!< Line continuation character(s) (ex. \\\\ in C++)$/;"	m	class:CCodeCounter
 ConvertClearCaseFile	CUtil.cpp	/^string CUtil::ConvertClearCaseFile(const string &fileName)$/;"	f	class:CUtil
