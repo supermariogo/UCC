@@ -47,6 +47,7 @@ public:
 	static void SemanticFormat(string &statement);
 	static size_t NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set);
     static size_t ConcatAndDup(string &cc4_valid_if, set<string> &nested_set);
+    static size_t ConcatOrDup(set<string> &string_set);
     static void CountDistinctCond(string &valid_statement, const string &base, StringVector &constainer, unsigned int &count, int mode, const string &exclude, const string &include1, const string &include2, set<string> &set, UIntVector *counter_container = 0, bool case_sensitive = true);
     static string ExtractFilename(const string &filepath);
 	static bool ListAllFiles(string &folder, StringVector &fileExtList, StringVector &fileList, bool symLinks);

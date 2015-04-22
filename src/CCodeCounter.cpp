@@ -717,17 +717,25 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 			if(cc4_valid_if!=""){
 				cout<< "CC4 DEBUG: cc4_valid_if:"<<cc4_valid_if<<endl;
+
 				if(cc4_valid_if.find("&&") == string::npos){
-					// && comes first and nested if comes later.
 					if(cc4_parent_stack.size()!=0){
+						// && comes first and nested if comes later.
 						cc4_nested_dup+=CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack, nested_set);
 						cout << "CC4 DEBUG: cc4_nested_dup = "<< cc4_nested_dup<<endl;
 					}
 				}else{
-					// this is the case that nested comes first and && comes later
-					cout << "CC4 DEBUG: get &&:" <<cc4_valid_if<<endl;
-					cc4_nested_dup+=CUtil::ConcatAndDup(cc4_valid_if, nested_set);
-					cout << "CC4 DEBUG: cc4_nested_dup = "<< cc4_nested_dup<<endl;
+					if(cc4_valid_if.find("&&") != string::npos){
+						// both && || included
+
+					}
+					if(cc4_valid_if.find("&&") != string::npos){
+						cout << "CC4 DEBUG: get &&:" <<cc4_valid_if<<endl;
+						// this is the case that nested comes first and && comes later
+						cc4_nested_dup+=CUtil::ConcatAndDup(cc4_valid_if, nested_set);
+						cout << "CC4 DEBUG: cc4_nested_dup = "<< cc4_nested_dup<<endl;
+					}
+					
 				}
 			}
 
@@ -784,8 +792,10 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
                 // remove count stack entry for non-function names
 
 				set<string> temp_set = cyclomatic_distinct_cond_stack.top();
-				if (temp_set.size() > 0)
+				if (temp_set.size() > 0){
 					cyclomatic_distinct_cond_set.insert(temp_set.begin(), temp_set.end());
+				}
+
 				cyclomatic_distinct_cond_stack.pop();
 
 

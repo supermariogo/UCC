@@ -881,6 +881,16 @@ size_t CUtil::ConcatAndDup(string &cc4_valid_if, set<string> &nested_set){
 
     return 0;
 }
+
+size_t CUtil::ConcatOrDup(set<string> &string_set){
+
+    set<string>::iterator it;
+    string temp;
+
+    return 0;
+}
+
+
 size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set){
 
 
