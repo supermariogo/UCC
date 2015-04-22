@@ -864,6 +864,23 @@ int CUtil::CountNestedNum(string &combine){
     return res/2+1;
 }
 
+size_t CUtil::ConcatAndDup(string &cc4_valid_if, set<string> &nested_set){
+    set<string>::iterator it;
+    string temp;
+    if(nested_set.count(cc4_valid_if) == 1){
+        return CountNestedNum(cc4_valid_if);
+    }
+
+    for(it=nested_set.begin(); it!=nested_set.end(); it++){
+        temp= *it;
+        if(temp.find(cc4_valid_if)!= string::npos)
+            return CountNestedNum(cc4_valid_if);
+        if(cc4_valid_if.find(temp)!=string::npos)
+            return CountNestedNum(temp);
+    }
+
+    return 0;
+}
 size_t CUtil::NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set){
 
 
