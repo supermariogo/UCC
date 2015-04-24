@@ -1,4 +1,4 @@
-int main()  // cc4 is 3
+int main()  // cc4 is 2
 {
     bool a = false;
     bool b = true;
@@ -14,7 +14,7 @@ int main()  // cc4 is 3
 
     }
 
-    if(b==true || a || a){
+    if(b==true || a || a==1 || b){
 
     }
 }

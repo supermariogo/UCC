@@ -1127,10 +1127,25 @@ void CUtil::SemanticFormat(string &statement)
         return;
     }
 }
-
-void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)
+size_t CUtil::SemanticDeduplicate(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set)
 {
-    return;
+    if(cc4_valid_if!=""){
+        cout<< "CC4 DEBUG: cc4_valid_if:"<<cc4_valid_if<<endl;
+
+        if(cc4_valid_if.find("&&") == string::npos){
+            if(cc4_parent_stack.size()!=0){
+                        // && comes first and nested if comes later.
+                return CUtil::NestedIfDup(cc4_valid_if, cc4_parent_stack, cyclomatic_distinct_cond_stack, nested_set);
+            }
+        }else{
+            if(cc4_valid_if.find("&&") != string::npos){
+                cout << "CC4 DEBUG: get &&:" <<cc4_valid_if<<endl;
+                        // this is the case that nested comes first and && comes later
+                return CUtil::ConcatAndDup(cc4_valid_if, nested_set);
+            }
+        }
+    }
+    return 0;
 }
 
 void CUtil::CountDistinctCond(string &valid_statement, const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,
@@ -1142,7 +1157,7 @@ void CUtil::CountDistinctCond(string &valid_statement, const string &base, Strin
     UIntVector::iterator cit;
     unsigned int single_count = 0;
     base1 = " " + base + " ";
-
+    valid_statement="";
 
 
     if (counter_container)

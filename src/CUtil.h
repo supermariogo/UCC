@@ -44,7 +44,7 @@ public:
 		const string &include1, const string &include2, UIntVector *counter_container = 0, bool case_sensitive = true);
 	static vector<string> SplitByConcat(string &statement, string concat);
 	static int CountNestedNum(string &combine);
-	static void SemanticDeduplicate(set<string> &distinct_cond_set);
+	static size_t SemanticDeduplicate(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set);
 	static void SemanticFormat(string &statement);
 	static size_t NestedIfDup(string &cc4_valid_if, stack<string> &cc4_parent_stack, stack<set<string> > &cyclomatic_distinct_cond_stack, set<string> &nested_set);
     static size_t ConcatAndDup(string &cc4_valid_if, set<string> &nested_set);
