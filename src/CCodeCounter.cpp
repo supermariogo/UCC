@@ -726,10 +726,6 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 					}
 				}else{
 					if(cc4_valid_if.find("&&") != string::npos){
-						// both && || included
-
-					}
-					if(cc4_valid_if.find("&&") != string::npos){
 						cout << "CC4 DEBUG: get &&:" <<cc4_valid_if<<endl;
 						// this is the case that nested comes first and && comes later
 						cc4_nested_dup+=CUtil::ConcatAndDup(cc4_valid_if, nested_set);

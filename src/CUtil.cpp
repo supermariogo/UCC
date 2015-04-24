@@ -864,6 +864,23 @@ int CUtil::CountNestedNum(string &combine){
     return res/2+1;
 }
 
+vector<string> CUtil::SplitByConcat(string &statement, string concat){
+    vector<string> result;
+    string temp_statement = statement;
+    int idx;
+    string left;
+    string right;
+    while(temp_statement.find(concat) != string::npos){
+        idx = temp_statement.find(concat);
+        left = temp_statement.substr(0, idx);
+        right = temp_statement.substr(idx + concat.length(), string::npos);
+        result.push_back(left);
+        temp_statement = temp_statement.substr(idx + concat.length(), string::npos);
+    }
+    result.push_back(right);
+    return result;
+}
+
 size_t CUtil::ConcatAndDup(string &cc4_valid_if, set<string> &nested_set){
     set<string>::iterator it;
     string temp;
@@ -1135,24 +1152,15 @@ void CUtil::CountDistinctCond(string &valid_statement, const string &base, Strin
 
 
                             // if || included, we insert all the statement split it by "||"
-                            string temp_statement = temp;
                             string concat_op_or="||";
-                            if(temp_statement.find(concat_op_or) != string::npos){
-                                int idx;
-                                string left;
-                                string right;
-                                while(temp_statement.find(concat_op_or) != string::npos){
-                                    idx = temp_statement.find(concat_op_or);
-                                    left = temp_statement.substr(0, idx);
-                                    right = temp_statement.substr(idx + concat_op_or.length(), string::npos);
-                                    distinct_cond_set.insert(left);
-                                    temp_statement = temp_statement.substr(idx + concat_op_or.length(), string::npos);
-                                }
-                                distinct_cond_set.insert(right);
+                            vector<string> multi;
+                            if(temp.find(concat_op_or) != string::npos){
+                                multi=CUtil::SplitByConcat(temp, concat_op_or);
+                                std::copy(multi.begin(), multi.end(), std::inserter(distinct_cond_set, distinct_cond_set.end()));
                             }else{
                                 distinct_cond_set.insert(temp);
                             }
-                            // but keep, because we need to push it into cc4 parent stack
+                            // but keep, because we need to push it into cc4 parent stack as a special case
                             valid_statement=temp;
 
 
