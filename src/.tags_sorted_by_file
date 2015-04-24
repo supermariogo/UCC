@@ -286,7 +286,8 @@ PreCountProcess	CTagCounter.h	/^	virtual int PreCountProcess(filemap* \/*fmap*\/
 CheckBlank	CUtil.cpp	/^bool CUtil::CheckBlank(const string &str)$/;"	f	class:CUtil
 ClearRedundantSpaces	CUtil.cpp	/^string CUtil::ClearRedundantSpaces(const string &str)$/;"	f	class:CUtil
 ConcatAndDup	CUtil.cpp	/^size_t CUtil::ConcatAndDup(string &cc4_valid_if, set<string> &nested_set){$/;"	f	class:CUtil
-ConcatOrDup	CUtil.cpp	/^size_t CUtil::ConcatOrDup(set<string> &string_set){$/;"	f	class:CUtil
+ConcatOrReorder	CUtil.cpp	/^void CUtil::ConcatOrReorder(set<string> &string_set, string &statement){$/;"	f	class:CUtil
+ConcatOrReorderDFS	CUtil.cpp	/^void CUtil::ConcatOrReorderDFS(vector<string> &original, int step, set<int> &visited, string &output, vector<string> &permute){$/;"	f	class:CUtil
 ConvertClearCaseFile	CUtil.cpp	/^string CUtil::ConvertClearCaseFile(const string &fileName)$/;"	f	class:CUtil
 CountDistinctCond	CUtil.cpp	/^void CUtil::CountDistinctCond(string &valid_statement, const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
 CountNestedNum	CUtil.cpp	/^int CUtil::CountNestedNum(string &combine){$/;"	f	class:CUtil

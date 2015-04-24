@@ -899,12 +899,46 @@ size_t CUtil::ConcatAndDup(string &cc4_valid_if, set<string> &nested_set){
     return 0;
 }
 
-size_t CUtil::ConcatOrDup(set<string> &string_set){
+void CUtil::ConcatOrReorder(set<string> &string_set, string &statement){
 
-    set<string>::iterator it;
-    string temp;
+    if(statement.find("||")==string::npos)
+        return;
+    vector<string> original = SplitByConcat(statement, "||");
+    //make unique
+    sort( original.begin(), original.end() );
+    original.erase( unique( original.begin(), original.end() ), original.end() );
 
-    return 0;
+    vector<string> permute;
+    string output;
+    if(original.size()<=1) //no || in statement
+        return;
+    set<int> visited;
+    ConcatOrReorderDFS(original, 0, visited, output, permute);
+    for(int i=0; i<permute.size(); i++){
+        if(string_set.count(permute[i])==1){
+            statement=permute[i];
+            return;
+        }
+    }
+    statement=permute[0];
+    return;
+}
+
+void CUtil::ConcatOrReorderDFS(vector<string> &original, int step, set<int> &visited, string &output, vector<string> &permute){
+    if(step == original.size()){
+        permute.push_back(output.substr(2, string::npos));
+        return;
+    }
+    for(int i=0; i<original.size(); i++){
+        if(visited.find(i)==visited.end()){
+            visited.insert(i);
+            output = output+"||"+original[i];
+            ConcatOrReorderDFS(original, step+1, visited, output, permute);
+            output.resize(output.size()-original[i].size()-2);
+            visited.erase(i);
+        }
+    }
+    return;
 }
 
 
@@ -1151,21 +1185,9 @@ void CUtil::CountDistinctCond(string &valid_statement, const string &base, Strin
                             CUtil::SemanticFormat(temp);
 
 
-                            // if || included, we insert all the statement split it by "||"
-                            /*
-                            string concat_op_or="||";
-                            vector<string> multi;
-                            if(temp.find(concat_op_or) != string::npos){
-                                multi=CUtil::SplitByConcat(temp, concat_op_or);
-                                std::copy(multi.begin(), multi.end(), std::inserter(distinct_cond_set, distinct_cond_set.end()));
-                            }else{
-                                distinct_cond_set.insert(temp);
-                            }
-                            */
-                            // but keep, because we need to push it into cc4 parent stack as a special case
+                            CUtil::ConcatOrReorder(distinct_cond_set, temp);// only check order
                             distinct_cond_set.insert(temp);
                             valid_statement=temp;
-
 
                         }
                     }
