@@ -793,7 +793,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 				set<string> temp_set = cyclomatic_distinct_cond_stack.top();
 				if (temp_set.size() > 0){
-					cout << "-----------line796"<<endl;
+					//cout << "-----------line796"<<endl;
 					cyclomatic_distinct_cond_set.insert(temp_set.begin(), temp_set.end());
 				}
 
