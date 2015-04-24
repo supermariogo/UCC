@@ -205,6 +205,7 @@ Compare	CmpMngr.cpp	/^void CmpMngr::Compare(srcLineVector* baseFileMap, srcLineV
 CompareFileNames	DiffTool.cpp	/^int DiffTool::CompareFileNames(const string &file1, const string &file2)$/;"	f	class:DiffTool
 CompareForDuplicate	MainObject.cpp	/^void MainObject::CompareForDuplicate(srcLineVector &firstFile, srcLineVector &secondFile,$/;"	f	class:MainObject
 ConcatAndDup	CUtil.cpp	/^size_t CUtil::ConcatAndDup(string &cc4_valid_if, set<string> &nested_set){$/;"	f	class:CUtil
+ConcatOrDup	CUtil.cpp	/^size_t CUtil::ConcatOrDup(set<string> &string_set){$/;"	f	class:CUtil
 ConnectUserIF	MainObject.cpp	/^void MainObject::ConnectUserIF(QWidget *parent)$/;"	f	class:MainObject
 ContinueLine	CCodeCounter.h	/^	string ContinueLine;					\/\/!< Line continuation character(s) (ex. \\\\ in C++)$/;"	m	class:CCodeCounter
 ConvertClearCaseFile	CUtil.cpp	/^string CUtil::ConvertClearCaseFile(const string &fileName)$/;"	f	class:CUtil
@@ -514,6 +515,7 @@ SourceFileA	MainObject.h	/^	SourceFileList SourceFileA;						\/\/!< List of sour
 SourceFileB	MainObject.h	/^	SourceFileList SourceFileB;						\/\/!< List of source files in baseline B$/;"	m	class:MainObject
 SourceFileElement	cc_main.h	/^typedef pair<filemap, results> SourceFileElement;$/;"	t
 SourceFileList	MainObject.h	/^	typedef list<SourceFileElement> SourceFileList;$/;"	t	class:MainObject
+SplitByConcat	CUtil.cpp	/^vector<string> CUtil::SplitByConcat(string &statement, string concat){$/;"	f	class:CUtil
 StringVector	cc_main.h	/^typedef vector<string> StringVector;$/;"	t
 TO_END_OF_STRING	CUtil.h	16;"	d
 TagTable	CWebCounter.h	/^	map<string, int> TagTable;					\/\/!< Script language tags$/;"	m	class:CWebCounter

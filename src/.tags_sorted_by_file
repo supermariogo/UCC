@@ -286,6 +286,7 @@ PreCountProcess	CTagCounter.h	/^	virtual int PreCountProcess(filemap* \/*fmap*\/
 CheckBlank	CUtil.cpp	/^bool CUtil::CheckBlank(const string &str)$/;"	f	class:CUtil
 ClearRedundantSpaces	CUtil.cpp	/^string CUtil::ClearRedundantSpaces(const string &str)$/;"	f	class:CUtil
 ConcatAndDup	CUtil.cpp	/^size_t CUtil::ConcatAndDup(string &cc4_valid_if, set<string> &nested_set){$/;"	f	class:CUtil
+ConcatOrDup	CUtil.cpp	/^size_t CUtil::ConcatOrDup(set<string> &string_set){$/;"	f	class:CUtil
 ConvertClearCaseFile	CUtil.cpp	/^string CUtil::ConvertClearCaseFile(const string &fileName)$/;"	f	class:CUtil
 CountDistinctCond	CUtil.cpp	/^void CUtil::CountDistinctCond(string &valid_statement, const string &base, StringVector &container, unsigned int &count, int mode, const string &exclude,$/;"	f	class:CUtil
 CountNestedNum	CUtil.cpp	/^int CUtil::CountNestedNum(string &combine){$/;"	f	class:CUtil
@@ -310,6 +311,7 @@ SPECIAL_CHARS	CUtil.cpp	812;"	d	file:
 SPECIAL_CHARS	CUtil.cpp	837;"	d	file:
 SemanticDeduplicate	CUtil.cpp	/^void CUtil::SemanticDeduplicate(set<string> &distinct_cond_set)$/;"	f	class:CUtil
 SemanticFormat	CUtil.cpp	/^void CUtil::SemanticFormat(string &statement)$/;"	f	class:CUtil
+SplitByConcat	CUtil.cpp	/^vector<string> CUtil::SplitByConcat(string &statement, string concat){$/;"	f	class:CUtil
 ToLower	CUtil.cpp	/^string CUtil::ToLower(const string &string_to_lower)$/;"	f	class:CUtil
 TrimString	CUtil.cpp	/^string CUtil::TrimString(const string &str, int mode)$/;"	f	class:CUtil
 TruncateLine	CUtil.cpp	/^size_t CUtil::TruncateLine(size_t length, size_t totalLength, size_t truncate, bool &trunc_flag)$/;"	f	class:CUtil
