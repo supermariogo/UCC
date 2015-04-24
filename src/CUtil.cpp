@@ -1129,37 +1129,32 @@ void CUtil::CountDistinctCond(string &valid_statement, const string &base, Strin
                             index++;
                         }
                         if (index < base1.length()){
-                            //distinct_cond_set.insert(base1.substr(left_bracket_idx, index - left_bracket_idx));
-
-                            /*
-                            set<string>::iterator itr = distinct_cond_set.begin();
-                            cout << "before deduplacation, distinct set size :: " << distinct_cond_set.size() << endl;
-                            while(itr != distinct_cond_set.end())
-                            {
-                                cout << (*itr) << endl;
-                                itr++;
-                            }
-                            */
-                            //cout << base << " -------------------> " ;
 
                             string temp = base1.substr(left_bracket_idx+1, index - left_bracket_idx-2);
                             CUtil::SemanticFormat(temp);
-                            distinct_cond_set.insert(temp);
+
+
+                            // if || included, we insert all the statement split it by "||"
+                            string temp_statement = temp;
+                            string concat_op_or="||";
+                            if(temp_statement.find(concat_op_or) != string::npos){
+                                int idx;
+                                string left;
+                                string right;
+                                while(temp_statement.find(concat_op_or) != string::npos){
+                                    idx = temp_statement.find(concat_op_or);
+                                    left = temp_statement.substr(0, idx);
+                                    right = temp_statement.substr(idx + concat_op_or.length(), string::npos);
+                                    distinct_cond_set.insert(left);
+                                    temp_statement = temp_statement.substr(idx + concat_op_or.length(), string::npos);
+                                }
+                                distinct_cond_set.insert(right);
+                            }else{
+                                distinct_cond_set.insert(temp);
+                            }
+                            // but keep, because we need to push it into cc4 parent stack
                             valid_statement=temp;
 
-                            //cout << "-------insert performed, set size=" << distinct_cond_set.size() <<endl;
-                            //cout << temp << " | set size: "<< distinct_cond_set.size()<< endl;
-                            /*
-                            cout << "after deduplacation, distinct set size :: " << distinct_cond_set.size() << endl;
-                            itr = distinct_cond_set.begin();
-                            while(itr != distinct_cond_set.end())
-                            {
-                                cout << (*itr) << endl;
-                                itr++;
-                            }
-                            */
-
-                            //cout << "-----------------------------------------------------" <<endl;
 
                         }
                     }

@@ -793,6 +793,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 				set<string> temp_set = cyclomatic_distinct_cond_stack.top();
 				if (temp_set.size() > 0){
+					cout << "-----------line796"<<endl;
 					cyclomatic_distinct_cond_set.insert(temp_set.begin(), temp_set.end());
 				}
 
@@ -800,6 +801,7 @@ int CCodeCounter::CountComplexity(filemap* fmap, results* result)
 
 
 				cc4_parent_stack.pop();
+				cout << "CC4 DEBUG: cc4_parent_stack pop " << cc4_valid_if << endl;
 
                 // this is the end of a if(){}, nice place to perform NestIfDup
 
