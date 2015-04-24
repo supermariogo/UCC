@@ -1152,6 +1152,7 @@ void CUtil::CountDistinctCond(string &valid_statement, const string &base, Strin
 
 
                             // if || included, we insert all the statement split it by "||"
+                            /*
                             string concat_op_or="||";
                             vector<string> multi;
                             if(temp.find(concat_op_or) != string::npos){
@@ -1160,7 +1161,9 @@ void CUtil::CountDistinctCond(string &valid_statement, const string &base, Strin
                             }else{
                                 distinct_cond_set.insert(temp);
                             }
+                            */
                             // but keep, because we need to push it into cc4 parent stack as a special case
+                            distinct_cond_set.insert(temp);
                             valid_statement=temp;
 
 
