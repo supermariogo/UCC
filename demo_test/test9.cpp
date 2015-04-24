@@ -1,4 +1,4 @@
-int main()  // cc4 is 5
+int main()  // cc4 is 3
 {
     bool a = false;
     bool b = true;
