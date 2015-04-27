@@ -1,49 +1,20 @@
-int main()  // cc4 is 5
+int main()  // cc4 is 2
 {
     bool a = false;
     bool b = true;
-
-    if(a==1){
-    	if(c==1){
-        	cout<<"worng"<<endl;
-        }
-    }
-
-    if(b==1){
-    	if(c==1){
-        	cout<<"worng"<<endl;
-        }
-
-    }
 
     if(a==1 || b==1){
-        if(c==1){
-        	cout<<"worng"<<endl;
-        }
+
     }
-}
-
-int main()  // cc4 is 5
-{
-    bool a = false;
-    bool b = true;
-
-    if(a==1){
-        if(c==1){
-            cout<<"worng"<<endl;
-        }
-    }
-
-    if(b==1){
-        if(c==1){
-            cout<<"worng"<<endl;
-        }
+    if(b==1 || a==1){
 
     }
 
-    if(f==1){
-        if(c==1){
-            cout<<"worng"<<endl;
-        }
+    if(b==true || a){
+
+    }
+
+    if(b==true || a || a==1 || b){
+
     }
 }

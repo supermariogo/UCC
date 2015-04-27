@@ -3,6 +3,7 @@
 #include <iostream>
 using namespace std;
 
+// logic equivalent
 int main() // cc4=2
 {
     bool a = false;

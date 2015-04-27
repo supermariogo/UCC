@@ -2,7 +2,7 @@
 #include "stdafx.h";
 #include <iostream>
 using namespace std;
-
+// nested if comes first
 int main()  //cc4=4
 {
     bool a = false;

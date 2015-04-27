@@ -2,7 +2,7 @@
 #include "stdafx.h";
 #include <iostream>
 using namespace std;
-
+// basic case
 int main()  //CC4= 2
 {
     bool a = false;

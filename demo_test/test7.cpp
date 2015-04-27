@@ -1,6 +1,6 @@
 
 
-
+// cover
 int main()  // cc4 is 4
 {
     bool a = false;
